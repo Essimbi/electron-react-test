@@ -1,0 +1,20 @@
+{
+  "name": "testelectronreact",
+  "version": "1.0.0",
+  "description": "Trying to start a new project for desktop using electron and react",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "keywords": [
+    "electron",
+    "reactjs",
+    "typesript"
+  ],
+  "author": "Deranot",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^29.1.5"
+  }
+}
