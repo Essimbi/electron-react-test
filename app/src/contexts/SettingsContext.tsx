@@ -4,7 +4,10 @@ import { Settings } from '../configs/types';
 const initialSettings: Settings = {
   themeColor: 'primary',
   mode: 'dark',
-  contentWidth: 'full',
+  contentWidth: {
+    innerHeight: window.innerHeight,
+    innerWidth: window.innerWidth,
+  },
   language: 'fr',
 };
 
@@ -29,5 +32,3 @@ export const SettingsProvider = ({ children }: { children: ReactNode }) => {
     </SettingsContext.Provider>
   );
 };
-
-
