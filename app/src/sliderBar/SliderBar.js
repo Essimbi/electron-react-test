@@ -63,11 +63,6 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 const Sidebar = () => {
 
     const [open, setOpen] = React.useState(true);
-    const [isCollapse, setIsCollapse] = React.useState(false);
-
-    const handleCollapse = () => {
-        setIsCollapse(!isCollapse);
-    }
 
     return (
         <Box sx={{ display: 'flex' }} class="sidebar">
