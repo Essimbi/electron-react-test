@@ -5,12 +5,13 @@ const path = require('node:path')
 const createWindow = () => {
   const win = new BrowserWindow({
     title: "Test 0",
-    width: 800,
-    height: 600,
+    width: 1100,
+    height: 700,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js')
     }
-  }) ;
+  }) ; 
+  
 
   const startUrl = url.format({
     pathname: path.join(__dirname, 'index.html'),
