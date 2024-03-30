@@ -5,26 +5,29 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { SettingsProvider } from './contexts/SettingsContext';
 import { ThemeProvider } from '@mui/material';
+import { ChakraProvider } from '@chakra-ui/react';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <ThemeProvider
-      theme={{
-        palette: {
-          primary: {
-            main: '#008080',
-            dark: '#008080',
+    <ChakraProvider>
+      <ThemeProvider
+        theme={{
+          palette: {
+            primary: {
+              main: '#008080',
+              dark: '#008080',
+            },
           },
-        },
-      }}
-    >
-      <SettingsProvider>
-        <App />
-      </SettingsProvider>
-    </ThemeProvider>
+        }}
+      >
+        <SettingsProvider>
+          <App />
+        </SettingsProvider>
+      </ThemeProvider>
+    </ChakraProvider>
   </React.StrictMode>
 );
 

@@ -20,6 +20,7 @@ function App() {
     ...GlobalStyles.sideBar,
     backgroundColor: settings.themeColor,
   };
+
  
   return (
     <Box display={'flex'} flexDirection={'row'}>
@@ -29,7 +30,7 @@ function App() {
         sx={sideBarStyle}
         height={innerHeight - (0.31 * innerHeight) / 100}
       ></Box>
-      <Box>
+      <Box width={(innerWidth)-((innerWidth * 20) / 100)}>
         <RouterWrapper />
       </Box>
     </Box>
