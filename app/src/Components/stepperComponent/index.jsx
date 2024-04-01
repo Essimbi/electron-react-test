@@ -36,7 +36,7 @@ export const StepperComponent = () => {
         width={'75%'}
         bgColor={settings.themeColor}
         size="sm"
-        index={3}
+        index={1}
         gap="0"
       >
         {steps.map((step, index) => (
