@@ -1,9 +1,11 @@
 import { ReactNode, createContext, useState } from 'react';
 import { Settings } from '../configs/types';
+import { GlobalColors } from '../constants/GlobalStyles';
 
 const initialSettings: Settings = {
   themeColor: 'primary',
   mode: 'dark',
+  globalColors: GlobalColors,
   contentWidth: {
     innerHeight: window.innerHeight,
     innerWidth: window.innerWidth,

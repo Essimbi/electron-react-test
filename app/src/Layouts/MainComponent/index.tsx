@@ -1,28 +1,38 @@
 import React from 'react';
-//import { useSettingsContext } from '../../Hooks/useSettings';
+import { useSettingsContext } from '../../Hooks/useSettings';
 import { StepperComponent } from '../../Components/stepperComponent';
 import { Box } from '@mui/material';
 import { ContentStepWrapper } from '../ContentStepWrapper';
 import { useDimensions } from '../../Hooks/useDimensions';
 
 export const MainComponent = () => {
-  //const { settings } = useSettingsContext();
+  const { settings } = useSettingsContext();
   const { innerHeight, innerWidth } = useDimensions();
+
   return (
     <Box
       width={innerWidth - (innerWidth * 20) / 100}
       height={innerHeight - (0.31 * innerHeight) / 100}
+      padding={3}
+      sx={{ backgroundColor: settings.globalColors.lowGray.main }}
     >
       <Box
-        height={'15%'}
-        display={'flex'}
-        flexDirection={'row'}
-        alignItems={'center'}
+        width={'100%'}
+        borderRadius={2}
+        height={'100%'}
+        sx={{ backgroundColor: 'white' }}
       >
-        <StepperComponent />
-      </Box>
-      <Box height={'85%'}>
-        <ContentStepWrapper />
+        <Box
+          height={'15%'}
+          display={'flex'}
+          flexDirection={'row'}
+          alignItems={'center'}
+        >
+          <StepperComponent />
+        </Box>
+        <Box height={'85%'}>
+          <ContentStepWrapper />
+        </Box>
       </Box>
     </Box>
   );

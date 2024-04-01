@@ -31,3 +31,12 @@ export const useStyles = makeStyles({
     },
   },
 });
+
+export const GlobalColors = {
+  lowGray: {
+    main: '#F5F5F5',
+  },
+  pureWhite: {
+    main: '#FFFFFF',
+  },
+};
