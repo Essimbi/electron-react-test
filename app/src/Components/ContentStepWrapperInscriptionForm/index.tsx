@@ -1,10 +1,5 @@
-import { Box } from "@chakra-ui/react"
-import React from "react"
+import { Box } from '@chakra-ui/react';
 
 export const InformForm = () => {
-    return (
-        <Box>
-            form
-        </Box>
-    )
-}
+  return <Box>form 1</Box>;
+};

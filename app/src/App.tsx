@@ -10,6 +10,7 @@ import { useDimensions } from './Hooks/useDimensions';
 import { useSettingsContext } from './Hooks/useSettings';
 import { GlobalStyles, useStyles } from './constants/GlobalStyles';
 import { SideBarStyleType } from './configs/types';
+import { SideBarContent } from './Components/SideBarContent';
 
 function App() {
   const classes = useStyles();
@@ -29,7 +30,9 @@ function App() {
         width={(innerWidth * 20) / 100}
         sx={sideBarStyle}
         height={innerHeight - (0.31 * innerHeight) / 100}
-      ></Box>
+      >
+        <SideBarContent />
+      </Box>
       <Box width={(innerWidth)-((innerWidth * 20) / 100)}>
         <RouterWrapper />
       </Box>

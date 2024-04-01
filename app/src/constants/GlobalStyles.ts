@@ -33,6 +33,12 @@ export const useStyles = makeStyles({
 });
 
 export const GlobalColors = {
+  primary: {
+    main: '#008080',
+  },
+  black: {
+    main: '#000000',
+  },
   lowGray: {
     main: '#F5F5F5',
   },
