@@ -1,15 +1,26 @@
 import { Box } from '@mui/material';
 import { InformForm } from '../../Components/ContentStepWrapperInscriptionForm';
+import { useStepContext } from '../../Hooks/useStep';
 
 export const ContentStepWrapper = () => {
+  const { activeStep } = useStepContext();
   let result: any;
-  const step = '1';
-  switch (parseInt(step)) {
-    case 1:
+
+  switch (activeStep) {
+    case 'STEP-0':
       result = <InformForm />;
       break;
-    case 2:
+    case 'STEP-1':
       result = 'second form component';
+      break;
+    case 'STEP-2':
+      result = 'third form component';
+      break;
+    case 'STEP-3':
+      result = 'fourth form component';
+      break;
+    case 'STEP-4':
+      result = 'fifth form component';
       break;
 
     default:

@@ -20,7 +20,7 @@ export const SideBarContent = () => {
       ></Box>
       <Box width={'90%'} height={'auto'}>
         {data.map(({ label, icon }) => (
-          <SideBarContentItem label={label} icon={icon} />
+          <SideBarContentItem key={label} label={label} icon={icon} />
         ))}
       </Box>
     </Box>
