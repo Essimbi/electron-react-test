@@ -14,7 +14,6 @@ export const MainComponent = () => {
       width={innerWidth - (innerWidth * 20) / 100}
       height={innerHeight - (0.31 * innerHeight) / 100}
       padding={3}
-      sx={{ backgroundColor: settings.globalColors.lowGray.main }}
     >
       <Box
         width={'100%'}
