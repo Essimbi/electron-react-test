@@ -1,15 +1,14 @@
 import {
   Stack,
   Step,
-  StepIcon,
   StepIndicator,
   StepSeparator,
   StepStatus,
   Stepper,
-  Text,
-  useSteps,
+  useSteps
 } from '@chakra-ui/react';
-import * as React from 'react';
+
+import HomeIcon from '@mui/icons-material/Home';
 import { useSettingsContext } from '../../Hooks/useSettings';
 
 const steps = [
@@ -38,7 +37,7 @@ export const StepperComponent = () => {
         {steps.map((step, index) => (
           <Step key={index} gap="0">
             <StepIndicator>
-              <StepStatus complete={<StepIcon />} />
+              <StepStatus complete={<HomeIcon />} />
             </StepIndicator>
             <StepSeparator _horizontal={{ ml: 0 }} />
           </Step>
