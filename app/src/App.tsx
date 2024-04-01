@@ -23,7 +23,7 @@ function App() {
 
  
   return (
-    <Box sx={{ backgroundColor: settings.globalColors.lowGray.main }} display={'flex'} flexDirection={'row'}>
+    <Box sx={{ backgroundColor: settings.globalColors.lowGray.main, }} display={'flex'} flexDirection={'row'}>
       <Box
         className={classes.animatedBox}
         width={(innerWidth * 20) / 100}
