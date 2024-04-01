@@ -1,12 +1,10 @@
 import React from 'react';
-import { useSettingsContext } from '../../Hooks/useSettings';
 import { StepperComponent } from '../../Components/stepperComponent';
 import { Box } from '@mui/material';
 import { ContentStepWrapper } from '../ContentStepWrapper';
 import { useDimensions } from '../../Hooks/useDimensions';
 
 export const MainComponent = () => {
-  const { settings } = useSettingsContext();
   const { innerHeight, innerWidth } = useDimensions();
 
   return (
