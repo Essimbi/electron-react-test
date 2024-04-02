@@ -15,7 +15,7 @@ export const DonneesPiecesForm = () => {
     <>
       <Box style={{'display': 'flex', 'flexDirection': 'row'}}>
 
-        <FormControl ml={40} width={'40%'} mt={25}>
+        <FormControl ml={28} width={'40%'} mt={25}>
           <FormLabel >Matériaux du toit</FormLabel>
           <Select>
               <option value="Toles en aluminium">Toles en aluminium</option>
@@ -34,7 +34,7 @@ export const DonneesPiecesForm = () => {
 
       <Box style={{'display': 'flex', 'flexDirection': 'row'}}>
 
-        <FormControl ml={40} width={'40%'} mt={25}>
+        <FormControl ml={28} width={'40%'} mt={25}>
           <FormLabel >Matériaux du sol </FormLabel>
           <Input type={'text'} placeholder="Menionner l'ouverture"/>
         </FormControl>
@@ -48,7 +48,7 @@ export const DonneesPiecesForm = () => {
 
       <Box style={{'display': 'flex', 'flexDirection': 'row'}}>
 
-        <FormControl ml={40} width={'40%'} mt={25}>
+        <FormControl ml={28} width={'40%'} mt={25}>
           <FormLabel >Longueur </FormLabel>
           <Input type={'number'} placeholder="Entrer la longueur"/>
         </FormControl>
@@ -60,7 +60,7 @@ export const DonneesPiecesForm = () => {
 
       </Box>
 
-      <Box style={{'display': 'flex', 'flexDirection': 'row'}} ml={40} mt={25}>
+      <Box style={{'display': 'flex', 'flexDirection': 'row'}} ml={28} mt={25}>
 
         <TableContainer width={'94%'}>
           <Table>
