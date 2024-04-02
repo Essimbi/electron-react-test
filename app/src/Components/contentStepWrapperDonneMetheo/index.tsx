@@ -1,13 +1,5 @@
 import { Box, Button, Container, FormControl, FormLabel, Input, Select, Stack } from '@chakra-ui/react';
 
-const theme = {
-    colors: {
-        gray: {
-            100: '#817876',
-        },
-    },
-}
-
 export const DonneMetheo = () => {
     return (
 

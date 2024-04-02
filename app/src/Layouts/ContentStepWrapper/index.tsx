@@ -5,11 +5,22 @@ import { useStepContext } from '../../Hooks/useStep';
 export const ContentStepWrapper = () => {
   let result: any;
 
+  const { activeStep } = useStepContext();
+
   switch (activeStep) {
     case 'STEP-0':
       result = <DonneesPiecesForm />;
       break;
-    case 2:
+    case 'STEP-1':
+      result = 'second form component';
+      break;
+    case 'STEP-2':
+      result = 'second form component';
+      break;
+    case 'STEP-3':
+      result = 'second form component';
+      break;
+    case 'STEP-4':
       result = 'second form component';
       break;
 
