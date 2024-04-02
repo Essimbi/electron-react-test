@@ -5,7 +5,7 @@ export const InformForm = () => {
     <>
       <Box style={{'display': 'flex', 'flexDirection': 'row'}}>
 
-        <FormControl ml={40} width={'40%'} mt={25}>
+        <FormControl ml={28} width={'40%'} mt={25}>
           <FormLabel >Matériaux du plafond</FormLabel>
           <Select>
               <option value="Dalle">Dalle</option>
@@ -33,7 +33,7 @@ export const InformForm = () => {
 
       <Box style={{'display': 'flex', 'flexDirection': 'row'}}>
 
-        <FormControl ml={40} width={'40%'} mt={25}>
+        <FormControl ml={28} width={'40%'} mt={25}>
           <FormLabel >Matériaux du sol </FormLabel>
           <Select>
               <option value="Mortier">Mortier</option>
