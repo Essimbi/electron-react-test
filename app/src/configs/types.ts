@@ -15,6 +15,7 @@ export type Settings = {
   themeColor: ThemeColor;
   contentWidth: ContentWidth;
   language: LanguageType;
+  globalColors: any
 };
 
 export type SideBar = {
