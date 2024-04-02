@@ -24,7 +24,7 @@ export const StepperComponent = () => {
     count: steps.length,
   });
 
-  const activeStepText = steps[activeStep].description;
+  const activeStepText = steps[activeStep]?.description;
   return (
     <Stack
       display={'flex'}
