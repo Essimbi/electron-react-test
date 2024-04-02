@@ -17,6 +17,7 @@
   "author": "Deranot",
   "license": "ISC",
   "dependencies": {
+    "@chakra-ui/icons": "^2.1.1",
     "@electron-forge/plugin-fuses": "^7.3.1",
     "@electron/fuses": "^1.8.0",
     "awesome-react-stepper": "^1.1.1",
