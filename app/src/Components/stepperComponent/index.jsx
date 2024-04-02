@@ -1,15 +1,14 @@
 import {
   Stack,
   Step,
-  StepIcon,
   StepIndicator,
   StepSeparator,
   StepStatus,
   Stepper,
-  Text,
   useSteps,
 } from '@chakra-ui/react';
-import * as React from 'react';
+
+import HomeIcon from '@mui/icons-material/Home';
 import { useSettingsContext } from '../../Hooks/useSettings';
 
 const steps = [
@@ -21,24 +20,29 @@ const steps = [
 export const StepperComponent = () => {
   const { settings } = useSettingsContext();
   const { activeStep, setActiveStep } = useSteps({
-    index: 1,
+    index: 3,
     count: steps.length,
   });
 
-  const activeStepText = steps[activeStep].description;
+  const activeStepText = steps[activeStep]?.description;
   return (
-    <Stack display={'flex'} flexDir={'row'} justifyContent={"center"} width={'100%'}>
+    <Stack
+      display={'flex'}
+      flexDir={'row'}
+      justifyContent={'center'}
+      width={'100%'}
+    >
       <Stepper
         width={'75%'}
         bgColor={settings.themeColor}
         size="sm"
-        index={activeStep}
+        index={1}
         gap="0"
       >
         {steps.map((step, index) => (
           <Step key={index} gap="0">
             <StepIndicator>
-              <StepStatus complete={<StepIcon />} />
+              <StepStatus complete={<HomeIcon />} />
             </StepIndicator>
             <StepSeparator _horizontal={{ ml: 0 }} />
           </Step>

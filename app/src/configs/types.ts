@@ -17,7 +17,10 @@ export type Settings = {
   language: LanguageType;
   globalColors: any
 };
-
+export type SideBarContentItemType = {
+  label: String
+  icon: String
+}
 export type SideBar = {
   boxShadow: String;
   background: String;

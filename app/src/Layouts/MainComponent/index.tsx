@@ -17,7 +17,10 @@ export const MainComponent = () => {
         width={'100%'}
         borderRadius={2}
         height={'100%'}
-        sx={{ backgroundColor: 'white', boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.05)' }}
+        sx={{
+          backgroundColor: 'white',
+          boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.05)',
+        }}
       >
         <Box
           height={'15%'}
