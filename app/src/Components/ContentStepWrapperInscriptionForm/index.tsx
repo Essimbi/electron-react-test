@@ -1,6 +1,7 @@
 import { Box, Button, Container, FormControl, FormLabel, Input, Select } from '@chakra-ui/react';
 
 export const InformForm = () => {
+
   return (
     <>
       <Box style={{'display': 'flex', 'flexDirection': 'row'}}>
