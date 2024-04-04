@@ -18,9 +18,12 @@ import {
 } from '@chakra-ui/react';
 import { DeleteIcon, EditIcon } from '@chakra-ui/icons';
 import { useSettingsContext } from '../../Hooks/useSettings';
+import { useStepContext } from '../../Hooks/useStep';
 
 export const DonneesPiecesForm = () => {
   const { settings } = useSettingsContext();
+  const { setActiveStep } = useStepContext();
+
   return (
     <Box display={'flex'} flexDirection={'column'} width={'100%'}>
       <Box
@@ -93,9 +96,9 @@ export const DonneesPiecesForm = () => {
           <Table>
             <Thead>
               <Tr>
-                <Th fontFamily={"roboto"}>Sol</Th>
-                <Th fontFamily={"roboto"}>Nombre de pièces</Th>
-                <Th fontFamily={"roboto"}>Actions</Th>
+                <Th fontFamily={'roboto'}>Sol</Th>
+                <Th fontFamily={'roboto'}>Nombre de pièces</Th>
+                <Th fontFamily={'roboto'}>Actions</Th>
               </Tr>
             </Thead>
             <Tbody>
@@ -123,6 +126,7 @@ export const DonneesPiecesForm = () => {
       <Box mt={6}>
         <Container style={{ display: 'flex', flexDirection: 'row' }}>
           <Button
+            onClick={() => setActiveStep('STEP-0')}
             _hover={{
               backgroundColor: settings.globalColors.pureWhite.main,
               opacity: 0.5,
@@ -139,6 +143,7 @@ export const DonneesPiecesForm = () => {
             Précédent
           </Button>
           <Button
+            onClick={() => setActiveStep('STEP-2')}
             _hover={{
               backgroundColor: settings.globalColors.primary.main,
               opacity: 0.5,
