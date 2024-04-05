@@ -25,7 +25,7 @@ export const DonneesPiecesForm = () => {
   const { setActiveStep } = useStepContext();
 
   return (
-    <Box display={'flex'} flexDirection={'column'} width={'100%'}>
+    <Box display={'flex'} className={'fade-out'} flexDirection={'column'} width={'100%'}>
       <Box
         style={{
           display: 'flex',

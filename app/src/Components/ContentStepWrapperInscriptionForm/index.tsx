@@ -14,7 +14,7 @@ export const InformForm = () => {
   const { settings  } = useSettingsContext();
   const { setActiveStep } = useStepContext();
   return (
-    <Box display={'flex'} flexDirection={'column'} width={'100%'}>
+    <Box display={'flex'} flexDirection={'column'} className={'fade-out'} width={'100%'}>
       <Box
         style={{
           display: 'flex',
