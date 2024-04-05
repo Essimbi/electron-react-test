@@ -1,6 +1,8 @@
 import { Box } from '@mui/material';
 import { DonneesPiecesForm } from '../../Components/ContenSteperWraperDonneesPieces';
 import { useStepContext } from '../../Hooks/useStep';
+import { InformForm } from '../../Components/ContentStepWrapperInscriptionForm';
+import { DonneMetheo } from '../../Components/contentStepWrapperDonneMetheo';
 
 export const ContentStepWrapper = () => {
   let result: any;
@@ -9,13 +11,13 @@ export const ContentStepWrapper = () => {
 
   switch (activeStep) {
     case 'STEP-0':
-      result = <DonneesPiecesForm />;
+      result = <InformForm />;
       break;
     case 'STEP-1':
-      result = 'second form component';
+      result = <DonneesPiecesForm />;
       break;
     case 'STEP-2':
-      result = 'second form component';
+      result = <DonneMetheo />;
       break;
     case 'STEP-3':
       result = 'second form component';

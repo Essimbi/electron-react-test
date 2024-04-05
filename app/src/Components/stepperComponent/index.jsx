@@ -10,6 +10,8 @@ import {
 
 import HomeIcon from '@mui/icons-material/Home';
 import { useSettingsContext } from '../../Hooks/useSettings';
+import { useEffect } from 'react';
+import { useStepContext } from '../../Hooks/useStep';
 
 const steps = [
   { title: 'First', description: 'Contact Info' },
@@ -18,13 +20,28 @@ const steps = [
 ];
 
 export const StepperComponent = () => {
-  const { settings } = useSettingsContext();
-  const { activeStep, setActiveStep } = useSteps({
+  const { settings  } = useSettingsContext();
+  const { activeStep } = useStepContext();
+  const { ac, setActiveStep } = useSteps({
     index: 3,
     count: steps.length,
   });
 
   const activeStepText = steps[activeStep]?.description;
+
+  const computeStepperIndex = () => {
+    switch (activeStep) {
+      case 'STEP-0':
+        return 0;
+      case 'STEP-1':
+        return 1;
+      case 'STEP-2':
+        return 2;
+      default:
+        return 0;
+    }
+  };
+
   return (
     <Stack
       display={'flex'}
@@ -36,7 +53,7 @@ export const StepperComponent = () => {
         width={'75%'}
         bgColor={settings.themeColor}
         size="sm"
-        index={1}
+        index={computeStepperIndex()}
         gap="0"
       >
         {steps.map((step, index) => (
