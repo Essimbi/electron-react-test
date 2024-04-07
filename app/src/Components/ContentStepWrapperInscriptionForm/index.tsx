@@ -1,10 +1,11 @@
 import {
   Box,
   Button,
+  Container,
   FormControl,
   FormLabel,
   Input,
-  Select
+  Select,
 } from '@chakra-ui/react';
 import { useSettingsContext } from '../../Hooks/useSettings';
 import { useStepContext } from '../../Hooks/useStep';
@@ -22,7 +23,7 @@ export const InformForm = () => {
         }}
       >
         <FormControl width={'45%'} mt={25}>
-          <FormLabel>Matériau du toit</FormLabel>
+          <FormLabel>Matériaux du plafond</FormLabel>
           <Select>
             <option value="Dalle">Dalle</option>
             <option value="Contre plaquet">Contre plaquet</option>

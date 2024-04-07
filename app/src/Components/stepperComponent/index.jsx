@@ -5,22 +5,22 @@ import {
   StepSeparator,
   StepStatus,
   Stepper,
-  Text,
-  useSteps
+  useSteps,
 } from '@chakra-ui/react';
 
+import HomeIcon from '@mui/icons-material/Home';
 import { useSettingsContext } from '../../Hooks/useSettings';
+import { useEffect } from 'react';
 import { useStepContext } from '../../Hooks/useStep';
-import { CloudIcon, DomainIcon, HomeIcon } from '../../img//Icons/iconItems';
 
 const steps = [
-  { title: 'Batiment', description: 'Contact Info' },
-  { title: 'Constitution de la pièce', description: 'Date & Time' },
-  { title: 'Données metheorologique', description: 'Select Rooms' },
+  { title: 'First', description: 'Contact Info' },
+  { title: 'Second', description: 'Date & Time' },
+  { title: 'Third', description: 'Select Rooms' },
 ];
 
 export const StepperComponent = () => {
-  const { settings } = useSettingsContext();
+  const { settings  } = useSettingsContext();
   const { activeStep } = useStepContext();
   const { ac, setActiveStep } = useSteps({
     index: 3,
@@ -57,20 +57,14 @@ export const StepperComponent = () => {
         gap="0"
       >
         {steps.map((step, index) => (
-          <div>
-            <Step key={index} gap="0">
-              <StepIndicator>
-                <StepStatus complete={index === 0 ? <HomeIcon sx={{ color: 'blue' }} /> : index === 1 ? <DomainIcon sx={{ color: 'blue' }} /> : <CloudIcon sx={{ color: 'blue' }} />}
-                  incomplete={index === 0 ? <HomeIcon sx={{ color: 'gray' }} /> : index === 1 ? <DomainIcon sx={{ color: 'gray' }} /> : <CloudIcon sx={{ color: 'gray' }} />}
-                  active={index === 0 ? <HomeIcon sx={{ color: 'gray' }} /> : index === 1 ? <DomainIcon sx={{ color: 'gray' }} /> : <CloudIcon sx={{ color: 'gray' }} />} />
-              </StepIndicator>
-              <StepSeparator _horizontal={{ ml: 0, w: 80 }} />
-            </Step>
-            <Text fontSize="sm">{step.title}</Text>
-          </div>
+          <Step key={index} gap="0">
+            <StepIndicator>
+              <StepStatus complete={<HomeIcon />} />
+            </StepIndicator>
+            <StepSeparator _horizontal={{ ml: 0 }} />
+          </Step>
         ))}
       </Stepper>
-
     </Stack>
   );
 };
