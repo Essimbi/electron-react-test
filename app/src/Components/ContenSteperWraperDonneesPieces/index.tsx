@@ -5,18 +5,8 @@ import {
   FormControl,
   FormLabel,
   Input,
-  Select,
+  Select
 } from '@chakra-ui/react';
-import {
-  Table,
-  Thead,
-  Tbody,
-  Tr,
-  Th,
-  Td,
-  TableContainer,
-} from '@chakra-ui/react';
-import { DeleteIcon, EditIcon } from '@chakra-ui/icons';
 import { useSettingsContext } from '../../Hooks/useSettings';
 import { useStepContext } from '../../Hooks/useStep';
 
@@ -34,7 +24,7 @@ export const DonneesPiecesForm = () => {
         }}
       >
         <FormControl width={'45%'} mt={15}>
-          <FormLabel>Matériaux du toit</FormLabel>
+          <FormLabel>Matériau du plafond</FormLabel>
           <Select>
             <option value="Toles en aluminium">Toles en aluminium</option>
             <option value="Tuiles en micro béton">Tuiles en micro béton</option>
@@ -44,8 +34,8 @@ export const DonneesPiecesForm = () => {
         </FormControl>
 
         <FormControl ml={'3%'} width={'45%'} mt={15}>
-          <FormLabel>Nom de la pièce</FormLabel>
-          <Input type={'number'} placeholder="Entrer le nom de la pièce" />
+          <FormLabel>Type de pièce</FormLabel>
+          <Input type={'number'} placeholder="Entrer le Type de pièce" />
         </FormControl>
       </Box>
       <Box
@@ -56,13 +46,13 @@ export const DonneesPiecesForm = () => {
         }}
       >
         <FormControl width={'45%'} mt={25}>
-          <FormLabel>Matériaux du sol </FormLabel>
-          <Input type={'text'} placeholder="Menionner l'ouverture" />
+          <FormLabel>Revêtement du sol</FormLabel>
+          <Input type={'text'} placeholder="Revêtement intérieur du mur" />
         </FormControl>
 
         <FormControl ml={'3%'} width={'45%'} mt={25}>
-          <FormLabel>Hauteur</FormLabel>
-          <Input type={'number'} placeholder="Entrer la hauteur" />
+          <FormLabel>Hauteur sous plafond</FormLabel>
+          <Input type={'number'} placeholder="Entrer la Hauteur sous plafond" />
         </FormControl>
       </Box>
 
@@ -92,7 +82,7 @@ export const DonneesPiecesForm = () => {
         }}
         mt={25}
       >
-        <TableContainer width={'94%'}>
+        {/* <TableContainer width={'94%'}>
           <Table>
             <Thead>
               <Tr>
@@ -120,7 +110,7 @@ export const DonneesPiecesForm = () => {
               </Tr>
             </Tbody>
           </Table>
-        </TableContainer>
+        </TableContainer> */}
       </Box>
 
       <Box mt={6}>

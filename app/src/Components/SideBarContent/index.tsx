@@ -1,6 +1,6 @@
 import { Box } from '@chakra-ui/react';
-import { SideBarContentItem } from './SideBarContentItem';
 import { data } from '../../Helper/data';
+import { SideBarContentItem } from './SideBarContentItem';
 
 export const SideBarContent = () => {
   return (
