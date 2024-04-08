@@ -23,7 +23,7 @@ export const InformForm = () => {
         }}
       >
         <FormControl width={'45%'} mt={25}>
-          <FormLabel>Matériaux du plafond</FormLabel>
+          <FormLabel>Matériaux du toit</FormLabel>
           <Select>
             <option value="Dalle">Dalle</option>
             <option value="Contre plaquet">Contre plaquet</option>
