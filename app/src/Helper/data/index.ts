@@ -1,7 +1,7 @@
 export const data = [
-    { label: "Donnees d'entree", icon: '' },
-    { label: 'Modeles predefinis', icon: '' },
-    { label: 'Resultats de sortie', icon: '' },
+    { label: "Donneés d'entrée", icon: '' },
+    { label: 'Modèles prédéfinis', icon: '' },
+    { label: 'Résultats', icon: '' },
     { label: 'Aide', icon: '' },
     { label: 'A propos', icon: '' },
   ]
