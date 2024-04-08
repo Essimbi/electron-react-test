@@ -64,7 +64,7 @@ export const StepperComponent = () => {
                   incomplete={index === 0 ? <HomeIcon sx={{ color: 'gray' }} /> : index === 1 ? <DomainIcon sx={{ color: 'gray' }} /> : <CloudIcon sx={{ color: 'gray' }} />}
                   active={index === 0 ? <HomeIcon sx={{ color: 'gray' }} /> : index === 1 ? <DomainIcon sx={{ color: 'gray' }} /> : <CloudIcon sx={{ color: 'gray' }} />} />
               </StepIndicator>
-              <StepSeparator _horizontal={{ ml: 0, w: [10, 20, 40, 60,80] }} />
+              <StepSeparator _horizontal={{ ml: 0, w: [10, 20, 40, 60, 80] }} />
             </Step>
             <Text fontSize="sm">{step.title}</Text>
           </div>
