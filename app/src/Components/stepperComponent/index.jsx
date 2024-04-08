@@ -11,7 +11,7 @@ import {
 
 import { useSettingsContext } from '../../Hooks/useSettings';
 import { useStepContext } from '../../Hooks/useStep';
-import { CloudIcon, DomainIcon, HomeIcon } from '../../img//Icons/iconItems';
+import { CloudIcon, DomainIcon, HomeIcon } from '../../img/Icons/iconItems';
 
 const steps = [
   { title: 'Batiment', description: 'Contact Info' },

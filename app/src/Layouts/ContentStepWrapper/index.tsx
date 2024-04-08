@@ -3,6 +3,8 @@ import { DonneesPiecesForm } from '../../Components/ContenSteperWraperDonneesPie
 import { useStepContext } from '../../Hooks/useStep';
 import { InformForm } from '../../Components/ContentStepWrapperInscriptionForm';
 import { DonneMetheo } from '../../Components/contentStepWrapperDonneMetheo';
+import './style.css';
+import { useEffect } from 'react';
 
 export const ContentStepWrapper = () => {
   let result: any;
@@ -30,5 +32,6 @@ export const ContentStepWrapper = () => {
       break;
   }
 
+  useEffect(() => {}, [activeStep]);
   return <Box>{result}</Box>;
 };

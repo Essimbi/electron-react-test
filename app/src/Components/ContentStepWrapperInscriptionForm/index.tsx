@@ -1,10 +1,11 @@
 import {
   Box,
   Button,
+  Container,
   FormControl,
   FormLabel,
   Input,
-  Select
+  Select,
 } from '@chakra-ui/react';
 import { useSettingsContext } from '../../Hooks/useSettings';
 import { useStepContext } from '../../Hooks/useStep';
@@ -13,7 +14,7 @@ export const InformForm = () => {
   const { settings  } = useSettingsContext();
   const { setActiveStep } = useStepContext();
   return (
-    <Box display={'flex'} flexDirection={'column'} width={'100%'}>
+    <Box display={'flex'} flexDirection={'column'} className={'fade-out'} width={'100%'}>
       <Box
         style={{
           display: 'flex',
@@ -22,7 +23,7 @@ export const InformForm = () => {
         }}
       >
         <FormControl width={'45%'} mt={25}>
-          <FormLabel>Matériau du toit</FormLabel>
+          <FormLabel>Matériaux du toit</FormLabel>
           <Select>
             <option value="Dalle">Dalle</option>
             <option value="Contre plaquet">Contre plaquet</option>

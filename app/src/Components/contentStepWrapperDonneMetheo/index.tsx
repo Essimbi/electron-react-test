@@ -16,7 +16,7 @@ export const DonneMetheo = () => {
     const { setActiveStep } = useStepContext();
   return (
     <Container>
-      <Box>
+      <Box className={'fade-out'}>
         <FormControl mb={4} width={'100%'} mt={25}>
           <FormLabel>Sélectionnez une Zone geographique :</FormLabel>
           <Select>
