@@ -1,10 +1,10 @@
 import { Box } from '@mui/material';
-import { DonneesPiecesForm } from '../../Components/ContenSteperWraperDonneesPieces';
 import { useStepContext } from '../../Hooks/useStep';
 import { InformForm } from '../../Components/ContentStepWrapperInscriptionForm';
 import { DonneMetheo } from '../../Components/contentStepWrapperDonneMetheo';
 import './style.css';
 import { useEffect } from 'react';
+import { DonneesPiecesCategoryWrapper } from '../DonneesPiecesCategoryWrapper';
 
 export const ContentStepWrapper = () => {
   let result: any;
@@ -16,7 +16,7 @@ export const ContentStepWrapper = () => {
       result = <InformForm />;
       break;
     case 'STEP-1':
-      result = <DonneesPiecesForm />;
+      result = <DonneesPiecesCategoryWrapper />;
       break;
     case 'STEP-2':
       result = <DonneMetheo />;
@@ -33,5 +33,5 @@ export const ContentStepWrapper = () => {
   }
 
   useEffect(() => {}, [activeStep]);
-  return <Box>{result}</Box>;
+  return <Box width={"100%"} height={"100%"}>{result}</Box>;
 };

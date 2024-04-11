@@ -10,7 +10,7 @@ const createWindow = () => {
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
     }
-  }) ;
+  });
 
   win.setMenu(null)
 
@@ -18,7 +18,7 @@ const createWindow = () => {
   const startUrl = url.format({
     pathname: path.join(__dirname, 'index.html'),
     protocol: 'file'
-  }) ;
+  });
 
   // win.loadFile('index.html')
 

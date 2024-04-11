@@ -40,3 +40,5 @@ export type useDimensionsType = {
   innerHeight: number;
   innerWidth: number;
 };
+
+export type CategoryValueType = 1 | 2 | 3 | 4
