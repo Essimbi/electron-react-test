@@ -22,7 +22,7 @@ export const InformForm = () => {
           justifyContent: 'center',
         }}
       >
-        <FormControl width={'45%'} mt={25}>
+        <FormControl width={'45%'} mt={10}>
           <FormLabel>Matériaux du toit</FormLabel>
           <Select>
             <option value="Dalle">Dalle</option>
@@ -34,7 +34,7 @@ export const InformForm = () => {
           </Select>
         </FormControl>
 
-        <FormControl ml={'3%'} width={'45%'} mt={25}>
+        <FormControl ml={'3%'} width={'45%'} mt={10}>
           <FormLabel>Matériaux du mur</FormLabel>
           <Select>
             <option value="Parpaing standard">Parpaing standard</option>
@@ -62,7 +62,7 @@ export const InformForm = () => {
           justifyContent: 'center',
         }}
       >
-        <FormControl width={'45%'} mt={25}>
+        <FormControl width={'45%'} mt={10}>
           <FormLabel>Matériaux du sol </FormLabel>
           <Select>
             <option value="Mortier">Mortier</option>
@@ -73,7 +73,7 @@ export const InformForm = () => {
           </Select>
         </FormControl>
 
-        <FormControl ml={'3%'} width={'45%'} mt={25}>
+        <FormControl ml={'3%'} width={'45%'} mt={10}>
           <FormLabel>Nombres de pièces</FormLabel>
           <Input type={'number'} placeholder="Entrer le nombre de pièces" />
         </FormControl>
