@@ -3,6 +3,8 @@ import { useSettingsContext } from '../../Hooks/useSettings';
 import { DonneesPiecesForm } from '../../Components/ContenSteperWraperDonneesPieces';
 import { useState } from 'react';
 import { CategoryValueType } from '../../configs/types';
+import DimensionsForm from '../../Components/ContentCarouselDimensionsForm';
+import OuverturesForm from '../../Components/ContentCarouselOuverturesForm';
 
 export const DonneesPiecesCategoryWrapper = () => {
   const { settings } = useSettingsContext();
@@ -18,10 +20,10 @@ export const DonneesPiecesCategoryWrapper = () => {
         result = <DonneesPiecesForm />;
         break;
       case 2:
-        result = 'sub step 2';
+        result = <DimensionsForm />;
         break;
       case 3:
-        result = 'sub step 3';
+        result = <OuverturesForm />;
         break;
       case 4:
         result = 'sub step 4';
