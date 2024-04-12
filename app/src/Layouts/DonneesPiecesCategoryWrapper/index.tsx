@@ -25,9 +25,9 @@ export const DonneesPiecesCategoryWrapper = () => {
       case 3:
         result = <OuverturesForm />;
         break;
-      case 4:
-        result = 'sub step 4';
-        break;
+      // case 4:
+      //   result = 'sub step 4';
+      //   break;
       default:
         break;
     }
@@ -111,7 +111,7 @@ export const DonneesPiecesCategoryWrapper = () => {
             }
             boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)"
           ></Box>
-          <Box
+          {/* <Box
             style={{
               transition: 'width 0.2s, height 0.2s',
             }}
@@ -126,7 +126,7 @@ export const DonneesPiecesCategoryWrapper = () => {
                 : settings.globalColors.lowGray.main
             }
             boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)"
-          ></Box>
+          ></Box> */}
         </Box>
       </Box>
       <Box
@@ -171,7 +171,7 @@ export const DonneesPiecesCategoryWrapper = () => {
             color={settings.globalColors.pureWhite.main}
             backgroundColor={settings.globalColors.primary.main}
             background={
-              selectedIndex === 4
+              selectedIndex === 3
                 ? 'linear-gradient(to right, #09AFAF, #09AFAF)'
                 : 'linear-gradient(to right, #afc4c4, #afc4c4)'
             }

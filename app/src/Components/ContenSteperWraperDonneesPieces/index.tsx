@@ -3,6 +3,7 @@ import {
   FormControl,
   FormLabel,
   Select,
+  Text,
 } from '@chakra-ui/react';
 // import { DeleteIcon, EditIcon } from '@chakra-ui/icons';
 import { useSettingsContext } from '../../Hooks/useSettings';
@@ -14,6 +15,7 @@ export const DonneesPiecesForm = () => {
 
   return (
     <Box display={'flex'} className={'fade-out'} flexDirection={'column'} width={'100%'}>
+      <Text fontSize='lg' ml={10} mt={-20}>Matériaux de la pièce</Text>
       <Box
         style={{
           display: 'flex',
@@ -21,7 +23,7 @@ export const DonneesPiecesForm = () => {
           justifyContent: 'center',
         }}
       >
-        <FormControl width={'45%'} mt={-10}>
+        <FormControl width={'45%'} mt={10}>
           <FormLabel>Matériaux du plafond</FormLabel>
           <Select>
             <option value="Toles en aluminium">Toles en aluminium</option>
@@ -31,7 +33,7 @@ export const DonneesPiecesForm = () => {
           </Select>
         </FormControl>
 
-        <FormControl ml={'3%'} width={'45%'} mt={-10}>
+        <FormControl ml={'3%'} width={'45%'} mt={10}>
           <FormLabel>Revêtement intérieur du mur</FormLabel>
           <Select>
             <option value="Peinture blanche">Peinture blanche</option>

@@ -3,11 +3,13 @@ import {
   FormControl,
   FormLabel,
   Input,
+  Text,
 } from '@chakra-ui/react';
 
 const DimensionsForm = () => {
   return (
     <Box display={'flex'} className={'fade-out'} flexDirection={'column'} width={'100%'}>
+      <Text fontSize='lg' ml={10} mt={-20}>Dimensions de la pièce</Text>
       <Box
         style={{
           display: 'flex',
@@ -15,12 +17,12 @@ const DimensionsForm = () => {
           justifyContent: 'center',
         }}
       >
-        <FormControl width={'45%'} mt={-10}>
+        <FormControl width={'45%'} mt={10}>
           <FormLabel>Nom de la pièce</FormLabel>
           <Input type={'text'} placeholder="Entrer le nom de la pièce" />
         </FormControl>
 
-        <FormControl ml={'3%'} width={'45%'} mt={-10}>
+        <FormControl ml={'3%'} width={'45%'} mt={10}>
           <FormLabel>Hauteur sous plafond</FormLabel>
           <Input type={'number'} placeholder="En mètre" />
         </FormControl>
