@@ -66,7 +66,7 @@ export const StepperComponent = () => {
               </StepIndicator>
               <StepSeparator _horizontal={{ ml: 0, w: [10, 20, 40, 60, 80] }} />
             </Step>
-            <Text fontSize="sm">{step.title}</Text>
+            <Text fontSize="sm" sx={{ marginLeft: '-2%' }}>{step.title}</Text>
           </div>
         ))}
       </Stepper>
