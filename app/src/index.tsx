@@ -7,6 +7,7 @@ import { SettingsProvider } from './contexts/SettingsContext';
 import { ThemeProvider } from '@mui/material';
 import { ChakraProvider } from '@chakra-ui/react';
 import { StepContextProvider } from './contexts/StepContext';
+import { theme } from './configs/themes';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -14,7 +15,7 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
       <ThemeProvider
         theme={{
           palette: {
