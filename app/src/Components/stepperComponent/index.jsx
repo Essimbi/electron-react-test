@@ -55,10 +55,11 @@ export const StepperComponent = () => {
         size="sm"
         index={computeStepperIndex()}
         gap="0"
+        colorScheme='gray'
       >
         {steps.map((step, index) => (
           <div>
-            <Step key={index} gap="0" >
+            <Step key={index} gap="0">
               <StepIndicator>
                 <StepStatus complete={index === 0 ? <HomeIcon sx={{ color: 'white' }} /> : index === 1 ? <DomainIcon sx={{ color: 'white' }} /> : <CloudIcon sx={{ color: 'white' }} />}
                   incomplete={index === 0 ? <HomeIcon sx={{ color: 'gray' }} /> : index === 1 ? <DomainIcon sx={{ color: 'gray' }} /> : <CloudIcon sx={{ color: 'gray' }} />}
