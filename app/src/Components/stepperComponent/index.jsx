@@ -55,18 +55,19 @@ export const StepperComponent = () => {
         size="sm"
         index={computeStepperIndex()}
         gap="0"
+        colorScheme='gray'
       >
         {steps.map((step, index) => (
           <div>
-            <Step key={index} gap="0" >
+            <Step key={index} gap="0" mt={index === 0 ? 4 : index === 1 ? 4 : 8}>
               <StepIndicator>
-                <StepStatus complete={index === 0 ? <HomeIcon sx={{ color: 'blue' }} /> : index === 1 ? <DomainIcon sx={{ color: 'blue' }} /> : <CloudIcon sx={{ color: 'blue' }} />}
+                <StepStatus complete={index === 0 ? <HomeIcon sx={{ color: 'white' }} /> : index === 1 ? <DomainIcon sx={{ color: 'white' }} /> : <CloudIcon sx={{ color: 'white' }} />}
                   incomplete={index === 0 ? <HomeIcon sx={{ color: 'gray' }} /> : index === 1 ? <DomainIcon sx={{ color: 'gray' }} /> : <CloudIcon sx={{ color: 'gray' }} />}
                   active={index === 0 ? <HomeIcon sx={{ color: 'gray' }} /> : index === 1 ? <DomainIcon sx={{ color: 'gray' }} /> : <CloudIcon sx={{ color: 'gray' }} />} />
               </StepIndicator>
               <StepSeparator _horizontal={{ ml: 0, w: [10, 20, 40, 60, 80] }} />
             </Step>
-            <Text fontSize="sm">{step.title}</Text>
+            <Text fontSize="sm" mt={2}  ml={index === 0 ? 0 : index === 1 ? -8 : -4}>{step.title}</Text>
           </div>
         ))}
       </Stepper>
