@@ -1,6 +1,7 @@
 import { Box } from '@chakra-ui/react';
-import { SideBarContentItem } from './SideBarContentItem';
 import { data } from '../../Helper/data';
+import Logo from '../../img/logo16-removebg-preview.png';
+import { SideBarContentItem } from './SideBarContentItem';
 
 export const SideBarContent = () => {
   return (
@@ -12,12 +13,12 @@ export const SideBarContent = () => {
       alignItems={'center'}
     >
       <Box
-        border={'1px solid white'}
         height={'15%'}
         mt={10}
         mb={20}
         width={'75%'}
-      ></Box>
+      > <img height={'auto'}
+        width={'auto'} src={Logo} /></Box>
       <Box width={'90%'} height={'auto'}>
         {data.map(({ label, icon }) => (
           <SideBarContentItem key={label} label={label} icon={icon} />
