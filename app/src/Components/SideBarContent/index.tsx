@@ -1,6 +1,6 @@
 import { Box } from '@chakra-ui/react';
 import { data } from '../../Helper/data';
-import Logo from '../../img/logo16-removebg-preview.png';
+import Logo from '../../img/logo.png';
 import { SideBarContentItem } from './SideBarContentItem';
 
 export const SideBarContent = () => {
