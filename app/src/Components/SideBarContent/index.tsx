@@ -13,7 +13,7 @@ export const SideBarContent = () => {
       alignItems={'center'}
     >
       <Box
-        height={'15%'}
+        height={'20%'}
         mt={10}
         mb={20}
         width={'75%'}
