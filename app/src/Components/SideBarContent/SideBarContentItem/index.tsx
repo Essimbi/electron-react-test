@@ -1,9 +1,9 @@
 import { Box } from '@chakra-ui/react';
+import { styled } from '@mui/styles';
 import { SideBarContentItemType } from '../../../configs/types';
 import { useSettingsContext } from '../../../Hooks/useSettings';
-import { styled } from '@mui/styles';
+import { BarChartIcon, FolderCopyIcon, HelpIcon, HomeIcon, InfoIcon } from '../../../img/Icons/iconItems';
 import './index.css';
-
 export const SideBarContentItem = ({ label, icon }: SideBarContentItemType) => {
   const { settings } = useSettingsContext();
   const AnimatedBox = styled(Box)({
@@ -13,6 +13,23 @@ export const SideBarContentItem = ({ label, icon }: SideBarContentItemType) => {
       borderRadius: 5,
     },
   });
+
+  const renderIcon = () => {
+    switch (icon) {
+      case 'home':
+        return <HomeIcon />;
+      case 'FolderCopyIcon':
+        return <FolderCopyIcon />;
+      case 'BarChartIcon':
+        return <BarChartIcon />;
+      case 'InfoIcon':
+        return <InfoIcon />;
+      case 'help':
+        return <HelpIcon />;
+      default:
+        return null;
+    }
+  };
   return (
     <AnimatedBox borderRadius={5}>
       <Box
@@ -30,6 +47,7 @@ export const SideBarContentItem = ({ label, icon }: SideBarContentItemType) => {
         cursor={'pointer'}
         paddingLeft={5}
       >
+        {renderIcon()}&nbsp;
         {label}
       </Box>
     </AnimatedBox>
