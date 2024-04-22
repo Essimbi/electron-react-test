@@ -1,14 +1,17 @@
 import { Box, Button } from '@chakra-ui/react';
-import { useSettingsContext } from '../../Hooks/useSettings';
-import { DonneesPiecesForm } from '../../Components/ContenSteperWraperDonneesPieces';
 import { useState } from 'react';
-import { CategoryValueType } from '../../configs/types';
+import { DonneesPiecesForm } from '../../Components/ContenSteperWraperDonneesPieces';
 import DimensionsForm from '../../Components/ContentCarouselDimensionsForm';
 import OuverturesForm from '../../Components/ContentCarouselOuverturesForm';
+import { CategoryValueType } from '../../configs/types';
+import { useSettingsContext } from '../../Hooks/useSettings';
+import { useStepContext } from '../../Hooks/useStep';
 
 export const DonneesPiecesCategoryWrapper = () => {
   const { settings } = useSettingsContext();
   const [selectedIndex, setSelectedIndex] = useState<CategoryValueType>(1);
+
+  const { setActiveStep } = useStepContext();
 
   const renderCategory = (): any => {
     let result: any;
@@ -164,7 +167,7 @@ export const DonneesPiecesCategoryWrapper = () => {
             Précédent
           </Button>
           <Button
-            onClick={() => null}
+            onClick={() => setActiveStep('STEP-2')}
             _hover={{
               backgroundColor: settings.globalColors.primary.main,
               opacity: 0.5,
