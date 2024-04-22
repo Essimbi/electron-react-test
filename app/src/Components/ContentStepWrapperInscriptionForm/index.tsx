@@ -45,12 +45,12 @@ export const InformForm = () => {
               })
             }
           >
-            <option value="Dalle">Dalle</option>
-            <option value="Contre plaquet">Contre plaquet</option>
-            <option value="Faux plafond en platre">
-              Faux plafond en platre
-            </option>
-            <option value="Bambou">Bambou</option>
+            <option value="Toiture en tuiles romane 1 & 2">Toitures en tuiles romane 1 & 2</option>
+            <option value="Toiture en tôles d'aluminium">Toiture en tôles d'aluminium</option>
+            <option value="Toiture en dalle de beton">Toiture en dalle de béton</option>
+            <option value="Toiture en paille">Toitures en paille</option>
+            <option value="Dalle en Hourdis">Dalle en Hourdis</option>
+            <option value="Couche d'air intra-plafond">Couche d'air intra-plafond</option>
           </Select>
         </FormControl>
 
@@ -72,19 +72,10 @@ export const InformForm = () => {
             }
           >
             <option value="Parpaing standard">Parpaing standard</option>
-            <option value="Parpaing ordinaire">Parpaing ordinaire</option>
-            <option value="Parpaing haute performance">
-              Parpaing haute performance
-            </option>
-            <option value="Briques BTC bloc de pleins">
-              Briques BTC bloc de pleins
-            </option>
-            <option value="Briques BTC bloc autocolants">
-              Briques BTC bloc autocolants
-            </option>
-            <option value="Roches taillées">Roches taillées</option>
-            <option value="Bois">Bois</option>
-            <option value="Béton armé">Béton armé</option>
+            <option value="Briques de terre cuites avec vide">Briques de terre cuites avec vide</option>
+            <option value="Briques de terre cuites pleines">Briques de terre cuites pleines</option>
+            <option value="Briques de terre compressées">Briques de terre compressées</option>
+            <option value="Briques de terre stabilisées">Briques de terre stabilisées</option>
           </Select>
         </FormControl>
       </Box>
@@ -113,11 +104,11 @@ export const InformForm = () => {
               })
             }
           >
-            <option value="Mortier">Mortier</option>
-            <option value="Carreaux">Carreaux</option>
-            <option value="Parquets en bois">Parquets en bois</option>
-            <option value="Lamelles en roches">Lamelles en roches</option>
-            <option value="Marbres">Marbres</option>
+            <option value="Peinture blanche">Peinture blanche</option>
+            <option value="Peinture claire">Peinture claire</option>
+            <option value="Peinture foncée">Peinture foncée</option>
+            <option value="Peinture mate">Peinture mate</option>
+            <option value="Peinture en aluminium">Peinture en aluminium</option>
           </Select>
         </FormControl>
 

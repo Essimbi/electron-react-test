@@ -40,10 +40,12 @@ export const DonneesPiecesForm = () => {
               setStep({ ...ancian });
             }}
           >
-            <option value="Toles en alu">Toles en aluminium</option>
-            <option value="Tuiles en micro béton">Tuiles en micro béton</option>
-            <option value="Pailles">Pailles</option>
-            <option value="Toitures en terrace">Toitures en terrace</option>
+            <option value="Toiture en tuiles romane 1 & 2">Toitures en tuiles romane 1 & 2</option>
+            <option value="Toiture en tôles d'aluminium">Toiture en tôles d'aluminium</option>
+            <option value="Toiture en dalle de beton">Toiture en dalle de béton</option>
+            <option value="Toiture en paille">Toitures en paille</option>
+            <option value="Dalle en Hourdis">Dalle en Hourdis</option>
+            <option value="Couche d'air intra-plafond">Couche d'air intra-plafond</option>
           </Select>
         </FormControl>
 
@@ -84,11 +86,9 @@ export const DonneesPiecesForm = () => {
               setStep({ ...ancian });
             }}
           >
-            <option value="Mortier">Mortier</option>
-            <option value="Carreaux">Carreaux</option>
-            <option value="Parquets en bois">Parquets en bois</option>
-            <option value="Lamelles en roches">Lamelles en roches</option>
-            <option value="Marbres">Marbres</option>
+            <option value="Dalle de beton + carreaux">Dalle de béton + carreaux</option>
+            <option value="Sol cimente simple">Sol cimenté simple</option>
+            <option value="Sol en terre simple">Sol en terre simple</option>
           </Select>
         </FormControl>
 

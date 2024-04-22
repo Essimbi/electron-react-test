@@ -20,12 +20,11 @@ export const DonneMetheo = () => {
         <FormControl mb={4} width={'100%'} mt={25}>
           <FormLabel>Sélectionnez une Zone geographique :</FormLabel>
           <Select>
-            <option value="option1">Littoral</option>
-            <option value="option2">Centre</option>
-            <option value="option3">Extreme Nord</option>
-            <option value="option3">Extreme sud</option>
-            <option value="option3">Sud</option>
-            <option value="option3">EST</option>
+            <option value="Douala">Littoral</option>
+            <option value="Yaounde">Centre</option>
+            <option value="Maroua">Extreme Nord</option>
+            <option value="Garoua">Nord</option>
+            <option value="Bafoussam">Ouest</option>
           </Select>
         </FormControl>
 
