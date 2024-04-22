@@ -40,7 +40,7 @@ export const DonneesPiecesForm = () => {
               setStep({ ...ancian });
             }}
           >
-            <option value="Toles en aluminium">Toles en aluminium</option>
+            <option value="Toles en alu">Toles en aluminium</option>
             <option value="Tuiles en micro béton">Tuiles en micro béton</option>
             <option value="Pailles">Pailles</option>
             <option value="Toitures en terrace">Toitures en terrace</option>
