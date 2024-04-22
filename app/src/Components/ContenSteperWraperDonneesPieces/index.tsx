@@ -1,21 +1,27 @@
-import {
-  Box,
-  FormControl,
-  FormLabel,
-  Select,
-  Text,
-} from '@chakra-ui/react';
+import { Box, FormControl, FormLabel, Select, Text } from '@chakra-ui/react';
 // import { DeleteIcon, EditIcon } from '@chakra-ui/icons';
 import { useSettingsContext } from '../../Hooks/useSettings';
 import { useStepContext } from '../../Hooks/useStep';
+import { initialStepType } from '../../contexts/StepContext';
+
+const _this = 'STEP-1';
+const _subThis = 'STEP-1-0';
 
 export const DonneesPiecesForm = () => {
   const { settings } = useSettingsContext();
-  const { setActiveStep } = useStepContext();
+  const { setActiveStep, steps, setStep } = useStepContext();
 
   return (
-    <Box display={'flex'} className={'fade-out'} flexDirection={'column'} width={'100%'}>
-      <Text fontSize='lg' ml={10} mt={-20}>Matériaux de la pièce</Text>
+    <Box
+      display={'flex'}
+      className={'fade-out'}
+      flexDirection={'column'}
+      width={'100%'}
+    >
+      {JSON.stringify(steps)}
+      <Text fontSize="lg" ml={10} mt={-20}>
+        Matériaux de la pièce
+      </Text>
       <Box
         style={{
           display: 'flex',
@@ -25,7 +31,15 @@ export const DonneesPiecesForm = () => {
       >
         <FormControl width={'45%'} mt={10}>
           <FormLabel>Matériaux du plafond</FormLabel>
-          <Select>
+          <Select
+            value={steps[_this].payload[_subThis]['materiaux_plafond']}
+            onChange={(e) => {
+              let ancian = steps;
+              ancian[_this].payload[_subThis]['materiaux_plafond'] =
+                e.target.value;
+              setStep({ ...ancian });
+            }}
+          >
             <option value="Toles en aluminium">Toles en aluminium</option>
             <option value="Tuiles en micro béton">Tuiles en micro béton</option>
             <option value="Pailles">Pailles</option>
@@ -35,7 +49,15 @@ export const DonneesPiecesForm = () => {
 
         <FormControl ml={'3%'} width={'45%'} mt={10}>
           <FormLabel>Revêtement intérieur du mur</FormLabel>
-          <Select>
+          <Select
+            value={steps[_this].payload[_subThis]['revetement_interieur_mur']}
+            onChange={(e) => {
+              let ancian = steps;
+              ancian[_this].payload[_subThis]['revetement_interieur_mur'] =
+                e.target.value;
+              setStep({ ...ancian });
+            }}
+          >
             <option value="Peinture blanche">Peinture blanche</option>
             <option value="Peinture claire">Peinture claire</option>
             <option value="Peinture foncée">Peinture foncée</option>
@@ -53,7 +75,15 @@ export const DonneesPiecesForm = () => {
       >
         <FormControl width={'45%'} mt={10}>
           <FormLabel>Revêtement du sol </FormLabel>
-          <Select>
+          <Select
+            value={steps[_this].payload[_subThis]['revetement_sol']}
+            onChange={(e) => {
+              let ancian = steps;
+              ancian[_this].payload[_subThis]['revetement_sol'] =
+                e.target.value;
+              setStep({ ...ancian });
+            }}
+          >
             <option value="Mortier">Mortier</option>
             <option value="Carreaux">Carreaux</option>
             <option value="Parquets en bois">Parquets en bois</option>
@@ -64,7 +94,15 @@ export const DonneesPiecesForm = () => {
 
         <FormControl ml={'3%'} width={'45%'} mt={10}>
           <FormLabel>Revêtement extérieur du mur</FormLabel>
-          <Select>
+          <Select
+            value={steps[_this].payload[_subThis]['revetement_exterieur_mur']}
+            onChange={(e) => {
+              let ancian = steps;
+              ancian[_this].payload[_subThis]['revetement_exterieur_mur'] =
+                e.target.value;
+              setStep({ ...ancian });
+            }}
+          >
             <option value="Peinture blanche">Peinture blanche</option>
             <option value="Peinture claire">Peinture claire</option>
             <option value="Peinture foncée">Peinture foncée</option>
@@ -80,8 +118,7 @@ export const DonneesPiecesForm = () => {
           flexDirection: 'row',
           justifyContent: 'center',
         }}
-      >
-      </Box>
+      ></Box>
     </Box>
   );
 };

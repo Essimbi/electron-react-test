@@ -43,7 +43,7 @@ export const DonneesPiecesCategoryWrapper = () => {
         flexDirection={'row'}
         justifyContent={'center'}
         alignItems={'center'}
-        overflowY={"scroll"}
+        overflowY={'scroll'}
       >
         {renderCategory()}
       </Box>
@@ -56,7 +56,7 @@ export const DonneesPiecesCategoryWrapper = () => {
         alignItems={'center'}
       >
         <Box
-          width={'15%'}
+          width={'10%'}
           height={'100%'}
           display={'flex'}
           alignItems={'center'}

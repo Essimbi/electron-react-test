@@ -1,7 +1,6 @@
 import {
   Box,
   Button,
-  Container,
   FormControl,
   FormLabel,
   Input,
@@ -10,11 +9,18 @@ import {
 import { useSettingsContext } from '../../Hooks/useSettings';
 import { useStepContext } from '../../Hooks/useStep';
 
+const _this = 'STEP-0';
 export const InformForm = () => {
-  const { settings  } = useSettingsContext();
-  const { setActiveStep } = useStepContext();
+  const { settings } = useSettingsContext();
+  const { setActiveStep, steps, setStep } = useStepContext();
+
   return (
-    <Box display={'flex'} flexDirection={'column'} className={'fade-out'} width={'100%'}>
+    <Box
+      display={'flex'}
+      flexDirection={'column'}
+      className={'fade-out'}
+      width={'100%'}
+    >
       <Box
         style={{
           display: 'flex',
@@ -24,7 +30,21 @@ export const InformForm = () => {
       >
         <FormControl width={'45%'} mt={10}>
           <FormLabel>Matériaux du toit</FormLabel>
-          <Select>
+          <Select
+            value={steps[_this].payload['materiaux_toit']}
+            onChange={(e) =>
+              setStep({
+                ...steps,
+                [_this]: {
+                  ...steps[_this],
+                  payload: {
+                    ...steps[_this].payload,
+                    materiaux_toit: e.target.value,
+                  },
+                },
+              })
+            }
+          >
             <option value="Dalle">Dalle</option>
             <option value="Contre plaquet">Contre plaquet</option>
             <option value="Faux plafond en platre">
@@ -36,7 +56,21 @@ export const InformForm = () => {
 
         <FormControl ml={'3%'} width={'45%'} mt={10}>
           <FormLabel>Matériaux du mur</FormLabel>
-          <Select>
+          <Select
+            value={steps[_this].payload['materiaux_mur']}
+            onChange={(e) =>
+              setStep({
+                ...steps,
+                [_this]: {
+                  ...steps[_this],
+                  payload: {
+                    ...steps[_this].payload,
+                    materiaux_mur: e.target.value,
+                  },
+                },
+              })
+            }
+          >
             <option value="Parpaing standard">Parpaing standard</option>
             <option value="Parpaing ordinaire">Parpaing ordinaire</option>
             <option value="Parpaing haute performance">
@@ -64,7 +98,21 @@ export const InformForm = () => {
       >
         <FormControl width={'45%'} mt={10}>
           <FormLabel>Matériaux du sol </FormLabel>
-          <Select>
+          <Select
+            value={steps[_this].payload['materiaux_sol']}
+            onChange={(e) =>
+              setStep({
+                ...steps,
+                [_this]: {
+                  ...steps[_this],
+                  payload: {
+                    ...steps[_this].payload,
+                    materiaux_sol: e.target.value,
+                  },
+                },
+              })
+            }
+          >
             <option value="Mortier">Mortier</option>
             <option value="Carreaux">Carreaux</option>
             <option value="Parquets en bois">Parquets en bois</option>
@@ -75,7 +123,23 @@ export const InformForm = () => {
 
         <FormControl ml={'3%'} width={'45%'} mt={10}>
           <FormLabel>Nombres de pièces</FormLabel>
-          <Input type={'number'} placeholder="Entrer le nombre de pièces" />
+          <Input
+            type={'number'}
+            value={steps[_this].payload['nombre_pieces']}
+            onChange={(e) =>
+              setStep({
+                ...steps,
+                [_this]: {
+                  ...steps[_this],
+                  payload: {
+                    ...steps[_this].payload,
+                    nombre_pieces: e.target.value,
+                  },
+                },
+              })
+            }
+            placeholder="Entrer le nombre de pièces"
+          />
         </FormControl>
       </Box>
 
@@ -88,7 +152,27 @@ export const InformForm = () => {
         }}
       >
         <Button
-        onClick={() => setActiveStep("STEP-1")}
+          onClick={() => {
+            setActiveStep('STEP-1');
+            setStep({
+              ...steps,
+              'STEP-1': {
+                ...steps['STEP-1'],
+                activeSubstep: "STEP-1-0",
+                payload: (() => {
+                  let result: any = {};
+                  for (
+                    let index = 0;
+                    index < parseInt(steps[_this].payload.nombre_pieces);
+                    index++
+                  ) {
+                    result['STEP-1-' + index] = {};
+                  }
+                  return result;
+                })(),
+              },
+            });
+          }}
           _hover={{
             backgroundColor: settings.globalColors.primary.main,
             opacity: 0.5,
@@ -106,6 +190,7 @@ export const InformForm = () => {
           Suivant
         </Button>
       </Box>
+      {JSON.stringify(steps)}
     </Box>
   );
 };
