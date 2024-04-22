@@ -84,9 +84,10 @@ const OuverturesForm = () => {
             }}
             size={'sm'}
           >
+            <option value="Verre">Verre (simple vitrage) </option>
+            <option value="Verre">Verre (double vitrage) </option>
             <option value="Bois">Bois</option>
-            <option value="Bambou">Bambou</option>
-            <option value="Verre">Verre</option>
+            <option value="Aluminium">Verre</option>
           </Select>
         </FormControl>
       </Box>
