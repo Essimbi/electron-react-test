@@ -10,6 +10,7 @@ import {
 } from '@chakra-ui/react';
 import { useSettingsContext } from '../../Hooks/useSettings';
 import { useStepContext } from '../../Hooks/useStep';
+import data from '../../Helper/data/tempExt/dataTempExt.json';
 
 const _this = 'STEP-2';
 export const DonneMetheo = () => {
@@ -20,6 +21,8 @@ export const DonneMetheo = () => {
     const dataBuilding = steps['STEP-0'].payload ;
     const dataRoomMaterial = steps['STEP-1'].payload['STEP-1-0'] ;
     const  meteoData = steps['STEP-2'].payload;
+
+    console.log(meteoData);
 
     // CONSTANTES DU CALCUL
     const Rsiw = 0.13;
@@ -38,7 +41,7 @@ export const DonneMetheo = () => {
     var lair=0.024;
     var edoor=0.0345;
     var ldoor=0.165;
-    
+
     var eFT=0.009; var lFT=5.077;
     var eS=0.15; var lS=1.75;
     var eRT2=0.008; var lRT2=1.58; var ep=10.8/1000; var lp=0.11; var eattic=0.9;
@@ -57,31 +60,43 @@ export const DonneMetheo = () => {
     var Sfloor=Lw*lw;
     var Sroof=Sfloor;
 
-    var Text=[24.820,
-      24.593,
-      24.330,
-      25.019,
-      25.126,
-      25.252,
-      25.287,
-      25.761,
-      26.259,
-      27.340,
-      27.659,
-      28.708,
-      27.822,
-      26.924,
-      26.216,
-      25.980,
-      25.891,
-      26.077,
-      25.931,
-      25.505,
-      25.254,
-      24.551,
-      24.640,
-      24.749
-    ];
+    // Utilisez la fonction fetch() pour charger le contenu du fichier JSON
+
+    const town : string = meteoData.Zone_geographique ;
+    const dateBrute = meteoData.date ;
+    const date = dateBrute.split('-') ;
+
+    let dataBrute = [] ;
+
+    switch (town) {
+      case "Bafoussam":
+        dataBrute = data.Bafoussam ;
+        break;
+
+      case "Douala":
+        dataBrute = data.Douala ;
+        break;
+
+      case "Garoua":
+        dataBrute = data.Garoua ;
+        break;
+
+      case "Maroua":
+        dataBrute = data.Maroua ;
+        break;
+
+      case "Yaounde":
+        dataBrute = data.Yaounde ;
+        break;
+    }
+
+    const temperaturesForDay = dataBrute.filter(obj => {
+      return (
+        obj.month + "-" + obj.day === date[1] + "-" + date[2]
+      );
+    });
+    var Text = temperaturesForDay.map(obj => obj.temperature);
+    console.log(Text);
 
     var awalle=0.006;
     var awind=0.008;
@@ -133,7 +148,7 @@ export const DonneMetheo = () => {
     var T4 : any ;
     var T5 = [] ;
 
-    for (var k = 0; k < 23; k++) {
+    for (var k = 0; k < 24; k++) {
 
       Tvwalle[k]=(Text[k]+273)+(awalle*phi[k]*Rso);
       Tvdoor[k]=(Text[k]+273)+(adoor*phi[k]*Rso);
