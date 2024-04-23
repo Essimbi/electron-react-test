@@ -11,6 +11,7 @@ import {
 import { useSettingsContext } from '../../Hooks/useSettings';
 import { useStepContext } from '../../Hooks/useStep';
 import data from '../../Helper/data/tempExt/dataTempExt.json';
+import dataPhi from '../../Helper/data/phi/dataPhi.json' ;
 
 const _this = 'STEP-2';
 export const DonneMetheo = () => {
@@ -66,68 +67,62 @@ export const DonneMetheo = () => {
     const dateBrute = meteoData.date ;
     const date = dateBrute.split('-') ;
 
-    let dataBrute = [] ;
+    let dataBrute : any[] = [] ;
+    let dataPhiBrute : any[] = [] ;
 
     switch (town) {
       case "Bafoussam":
         dataBrute = data.Bafoussam ;
+        dataPhiBrute = dataPhi.Bafoussam ;
         break;
 
       case "Douala":
         dataBrute = data.Douala ;
+        dataPhiBrute = dataPhi.Douala ;
         break;
 
       case "Garoua":
         dataBrute = data.Garoua ;
+        dataPhiBrute = dataPhi.Garoua ;
         break;
 
       case "Maroua":
         dataBrute = data.Maroua ;
+        dataPhiBrute = dataPhi.Maroua ;
         break;
 
       case "Yaounde":
         dataBrute = data.Yaounde ;
+        dataPhiBrute = dataPhi.Yaounde ;
         break;
     }
+
+    console.log(dataPhiBrute) ;
 
     const temperaturesForDay = dataBrute.filter(obj => {
       return (
         obj.month + "-" + obj.day === date[1] + "-" + date[2]
       );
     });
+
+    const phiValuesForDay = dataPhiBrute.filter(obj => {
+      const timestampRange = obj.timestamp_range.split("/")[1];
+      const timestampDate = new Date(timestampRange);
+      const timestampFormattedDate = timestampDate.toISOString().split("T")[0];
+      const  timestampHour = timestampFormattedDate.split('-') ;
+      return (
+        timestampHour[1] + "-" + timestampHour[2] === date[1] + "-" + date[2]
+      );
+    });
+
     var Text = temperaturesForDay.map(obj => obj.temperature);
-    console.log(Text);
+    var phi = phiValuesForDay.map(obj => obj.phi);
+
 
     var awalle=0.006;
     var awind=0.008;
     var adoor=0.007;
     var aroof=0.006;
-
-    var phi=[0,
-      0,
-      0,
-      0,
-      0,
-      2.5242,
-      15.7738,
-      57.8489,
-      161.9427,
-      175.3972,
-      283.2687,
-      349.6502,
-      242.2585,
-      187.4573,
-      41.9429,
-      82.6173,
-      99.2815,
-      15.1657,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ];
 
     var Tint = [] ;
     var Tvwalle = [] ; //virtual wall temperature
