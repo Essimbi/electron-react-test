@@ -104,11 +104,9 @@ export const InformForm = () => {
               })
             }
           >
-            <option value="Peinture blanche">Peinture blanche</option>
-            <option value="Peinture claire">Peinture claire</option>
-            <option value="Peinture foncée">Peinture foncée</option>
-            <option value="Peinture mate">Peinture mate</option>
-            <option value="Peinture en aluminium">Peinture en aluminium</option>
+            <option value="Dalle de beton + carreaux">Dalle de béton + carreaux</option>
+            <option value="Sol cimente simple">Sol cimenté simple</option>
+            <option value="Sol en terre simple">Sol en terre simple</option>
           </Select>
         </FormControl>
 
