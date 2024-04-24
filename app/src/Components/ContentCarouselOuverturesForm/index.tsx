@@ -175,8 +175,8 @@ const OuverturesForm = () => {
           Ajouter
         </Button>
       </Box>
-      {JSON.stringify(steps[_this].payload)}
-      {JSON.stringify(dataGraph)}
+      {/* {JSON.stringify(steps[_this].payload)} */}
+      {/* {JSON.stringify(dataGraph)} */}
       <Box
         mt={5}
         style={{

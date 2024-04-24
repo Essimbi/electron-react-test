@@ -179,7 +179,7 @@ export const InformForm = () => {
           Suivant
         </Button>
       </Box>
-      {JSON.stringify(steps)}
+      {/* {JSON.stringify(steps)} */}
     </Box>
   );
 };
