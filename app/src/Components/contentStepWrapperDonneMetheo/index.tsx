@@ -26,8 +26,13 @@ export const DonneMetheo = () => {
   const Rsir=0.1;
   const Rsig=0.17;
 
-  const eCEB=0.14;
-  const lCEB=1;
+  var awalle=0.006;
+  var awind=0.008;
+  var adoor=0.007;
+  var aroof=0.006;
+
+  // const eCEB=0.14;
+  // const lCEB=1;
 
   var eair=0.0032;
   var lair=0.024;
@@ -80,7 +85,7 @@ export const DonneMetheo = () => {
     const dataRoomMaterial = steps['STEP-1'].payload['STEP-1-0'] ;
     const  meteoData = steps['STEP-2'].payload;
 
-    var eFT=0.009; var lFT=5.077;
+    // var eFT=0.009; var lFT=5.077;
     var eS=0.15; var lS=1.75;
     var eRT2=0.008; var lRT2=1.58; var ep=10.8/1000; var lp=0.11; var eattic=0.9;
 
@@ -116,12 +121,91 @@ export const DonneMetheo = () => {
       }
     }
 
+    const floorMaterial = dataBuilding.materiaux_sol ;
+    const wallMaterial = dataBuilding.materiaux_mur
+    const roofMaterial = dataBuilding.materiaux_toit
 
-    var uenv=1/(Rsiw+Rso+(eCEB/lCEB));
+    var eF = 0 ; var lF = 0 ;
+    var eR = 0 ; var lR = 0 ;
+    var eWall = 0 ; var lWall = 0 ;
+
+    switch (floorMaterial) {
+      case "Dalle de beton + carreaux":
+        eF = 0.16; lF = 1.3 ;
+        break;
+
+      case "Sol cimente simple":
+        eF = 0.007; lF = 1.215 ;
+        break;
+
+      case "Sol en terre simple":
+        eF = 0.15; lF = 0.321 ;
+        break ;
+
+      default:
+        break;
+    }
+
+    switch (wallMaterial) {
+      case "Parpaing standard":
+        eWall = 0.15; lWall = 0.9 ;
+        break;
+
+      case "Briques de terre cuites avec vide":
+        eWall = 0.14; lWall = 0.25 ;
+        break;
+
+      case "Briques de terre cuites pleines":
+        eWall = 0.14; lWall = 1.31 ;
+        break ;
+
+      case "Briques de terre compressées":
+        eWall = 0.14; lWall = 1 ;
+        break;
+
+      case "Briques de terre stabilisées":
+        eWall = 0.14; lWall = 1.05 ;
+        break;
+
+      default:
+        break;
+    }
+
+    switch (roofMaterial) {
+      case "Toiture en tuiles romane 1 & 2":
+        eR = 0.08; lR = 1.58 ;
+        break;
+
+      case "Toiture en tôles d'aluminium":
+        eR = 0.15; lR = 221 ;
+        break;
+
+      case "Toiture en dalle de beton":
+        eR = 0.2; lR = 1.3 ;
+        break ;
+
+      case "Toiture en paille":
+        eR = 0.37; lR = 0.0625 ;
+        break;
+
+      case "Dalle en Hourdis":
+        eR = 0.37; lR = 1.7 ;
+        break;
+
+      case "Couche d'air intra-plafond":
+        eR = 0.9; lR = 0.024 ;
+        break;
+
+      default:
+        break;
+    }
+
+
+    var uenv=1/(Rsiw+Rso+(eWall/lWall));
     // var uwind=1/(Rsiw+Rso+(2*eglass/lglass)+(eair/lair));
     // var udoor=1/(Rsiw+Rso+(edoor/ldoor));
-    var ufloor=1/(Rsig+(eFT/lFT)+(eS/lS));
-    var uroof=1/(Rsir+Rso+(eRT2/lRT2)+(ep/lp)+(eattic/lair));
+    var ufloor=1/(Rsig+(eF/lF)+(eS/lS));
+    var uroof=1/(Rsir+Rso+(eR/lR)+(ep/lp)+(eattic/lair));
 
 
 
@@ -180,17 +264,11 @@ export const DonneMetheo = () => {
     var Text = temperaturesForDay.map(obj => obj.temperature);
     var phi = phiValuesForDay.map(obj => obj.phi);
 
-
-    var awalle=0.006;
-    var awind=0.008;
-    var adoor=0.007;
-    var aroof=0.006;
-
     var Tint = [] ;
-    var Tvwalle = [] ; //virtual wall temperature
+    var Tvwalle = [] ;
     var Tvwind = [] ;
-    var Tvdoor = [] ;  //virtual door temperature
-    var Tvroof = [] ;//virtual roof temperature
+    var Tvdoor = [] ;
+    var Tvroof = [] ;
     var phiwind = [] ;
     var phidoor = [] ;
     var phiwalle = [] ;
@@ -227,8 +305,6 @@ export const DonneMetheo = () => {
       T5[k]=(phiwall[k]+phiwalle[k]+phiwind[k]+phidoor[k]+phiroof[k]+phifloor[k]);
       Tint[k]=((T5[k]+T1[k]+T3[k]-phitotal[k])/T4)-273;
     }
-
-    console.log(Tint) ;
 
   }
 
