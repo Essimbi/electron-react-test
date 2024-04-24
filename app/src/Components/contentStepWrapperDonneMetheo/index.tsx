@@ -18,50 +18,114 @@ export const DonneMetheo = () => {
   const { settings } = useSettingsContext();
   const { setActiveStep, steps, setStep } = useStepContext();
 
+  // CONSTANTES DU CALCUL
+  const Rsiw = 0.13;
+  const Tsky = 253;
+  const Rso = 0.04;
+  const sigma = 5.6703e-8;
+  const Rsir=0.1;
+  const Rsig=0.17;
+
+  const eCEB=0.14;
+  const lCEB=1;
+
+  var eair=0.0032;
+  var lair=0.024;
+
+  // var Lw=5; var lw=4; var hw=3;
+  // var Lf=1.5; var lf=0.9; var Ld=2; var ld=0.9;
+  // var Swind=(Lf*lf); var Sdoor=Ld*ld;
+  // var Swalle=(Lw*hw)-Swind-Sdoor;
+  // var Swall=(2*lw*hw)+(Lw*hw);
+  // var Sfloor=Lw*lw;
+  // var Sroof=Sfloor;
+
+  const calculateU = (materiau : string) => {
+    let e = 0; let  l = 0; let u = 0 ;
+
+    switch (materiau) {
+      case "Bois":
+        e = 0.0345 ; l = 0.165 ;
+        u=1/(Rsiw+Rso+(e/l));
+        break;
+
+      case "Verre":
+        e = 0.06 ; l = 0.9 ;
+        u=1/(Rsiw+Rso+(e/l));
+        break ;
+
+      case "Verre double vitrage":
+        e = 0.06 ; l = 0.9 ;
+        u=1/(Rsiw+Rso+(2*e/l)+(eair/lair));
+        break ;
+
+      case "Aluminium":
+        e = 0.072 ; l = 160 ;
+        u=1/(Rsiw+Rso+(e/l));
+        break ;
+
+      default:
+        break;
+    }
+    return u ;
+  }
+
+  const calculateSurface = (L : number, l: number) => {
+    return L*l
+  }
+
   const calculate = () => {
+
     const dataBuilding = steps['STEP-0'].payload ;
     const dataRoomMaterial = steps['STEP-1'].payload['STEP-1-0'] ;
     const  meteoData = steps['STEP-2'].payload;
-
-    console.log(meteoData);
-
-    // CONSTANTES DU CALCUL
-    const Rsiw = 0.13;
-    const Tsky = 253;
-    const Rso = 0.04;
-    const sigma = 5.6703e-8;
-    const Rsir=0.1;
-    const Rsig=0.17;
-
-    const eCEB=0.14;
-    const lCEB=1;
-
-    var eglass=0.006;
-    var lglass=0.9;
-    var eair=0.0032;
-    var lair=0.024;
-    var edoor=0.0345;
-    var ldoor=0.165;
 
     var eFT=0.009; var lFT=5.077;
     var eS=0.15; var lS=1.75;
     var eRT2=0.008; var lRT2=1.58; var ep=10.8/1000; var lp=0.11; var eattic=0.9;
 
+    const h = Number(dataRoomMaterial.hauteur_sous_plafond)
+    const L = Number(dataRoomMaterial.longueur)
+    const l = Number(dataRoomMaterial.largeur)
+
+    var Sfloor= calculateSurface(L,l);
+    var Sroof=Sfloor;
+    var Swall= calculateSurface(l, h) * 2 + calculateSurface(L, h);
+    var Swalle = calculateSurface(L, h) ;
+
+    const openings : any[] = [];
+    Object.keys(dataRoomMaterial).map((key) =>
+      key.indexOf("ouverture-") !== -1 && openings.push(dataRoomMaterial[key])
+    );
+
+    var udoor = 0 ;
+    var uwind = 0 ;
+    var Sdoor = 0 ; var Swind = 0 ;
+
+    for (let i = 0; i < openings.length; i++) {
+      const opening = openings[i];
+      if (opening.type_ouverture === "Fenetre") {
+        uwind = calculateU(opening.materiau) ;
+        Swind = calculateSurface(Number(opening.largeur), Number(opening.hauteur))
+        Swalle -= Swind
+      }
+      else {
+        udoor = calculateU(opening.materiau) ;
+        Sdoor = calculateSurface(Number(opening.largeur), Number(opening.hauteur))
+        Swalle -= Sdoor
+      }
+    }
+
+
     var uenv=1/(Rsiw+Rso+(eCEB/lCEB));
-    var uwind=1/(Rsiw+Rso+(2*eglass/lglass)+(eair/lair));
-    var udoor=1/(Rsiw+Rso+(edoor/ldoor));
+    // var uwind=1/(Rsiw+Rso+(2*eglass/lglass)+(eair/lair));
+    // var udoor=1/(Rsiw+Rso+(edoor/ldoor));
     var ufloor=1/(Rsig+(eFT/lFT)+(eS/lS));
     var uroof=1/(Rsir+Rso+(eRT2/lRT2)+(ep/lp)+(eattic/lair));
 
-    var Lw=5; var lw=4; var hw=3;
-    var Lf=1.5; var lf=0.9; var Ld=2; var ld=0.9;
-    var Swind=(Lf*lf); var Sdoor=Ld*ld;
-    var Swalle=(Lw*hw)-Swind-Sdoor;
-    var Swall=(2*lw*hw)+(Lw*hw);
-    var Sfloor=Lw*lw;
-    var Sroof=Sfloor;
 
-    // Utilisez la fonction fetch() pour charger le contenu du fichier JSON
+
+    // Récupération des données de température extérieur et de flux de chaleur
 
     const town : string = meteoData.Zone_geographique ;
     const dateBrute = meteoData.date ;
@@ -96,8 +160,6 @@ export const DonneMetheo = () => {
         dataPhiBrute = dataPhi.Yaounde ;
         break;
     }
-
-    console.log(dataPhiBrute) ;
 
     const temperaturesForDay = dataBrute.filter(obj => {
       return (
@@ -167,9 +229,6 @@ export const DonneMetheo = () => {
     }
 
     console.log(Tint) ;
-
-    // Définition des variables de l'échangeur de chaleur (matériaux du bâtiment)
-
 
   }
 

@@ -11,7 +11,6 @@ import {
   Table,
   Thead,
   Tbody,
-  Tfoot,
   Tr,
   Th,
   Td,
@@ -68,7 +67,7 @@ const OuverturesForm = () => {
             }}
             size={'sm'}
           >
-            <option value="Porte">Porte</option>
+            <option value="Porte" defaultChecked>Porte</option>
             <option value="Fenetre">Fenêtre</option>
           </Select>
         </FormControl>
@@ -85,9 +84,9 @@ const OuverturesForm = () => {
             size={'sm'}
           >
             <option value="Verre">Verre (simple vitrage) </option>
-            <option value="Verre">Verre (double vitrage) </option>
+            <option value="Verre doule vitrage">Verre (double vitrage) </option>
             <option value="Bois">Bois</option>
-            <option value="Aluminium">Verre</option>
+            <option value="Aluminium">Aluminium</option>
           </Select>
         </FormControl>
       </Box>
