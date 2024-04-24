@@ -8,14 +8,19 @@ import {
   Select,
   Stack,
 } from '@chakra-ui/react';
+import { useNavigate } from 'react-router-dom';
+import { useTintContext } from '../../contexts/GraphContext';
+import dataPhi from '../../Helper/data/phi/dataPhi.json';
+import data from '../../Helper/data/tempExt/dataTempExt.json';
 import { useSettingsContext } from '../../Hooks/useSettings';
 import { useStepContext } from '../../Hooks/useStep';
-import { useDataGraphContext } from '../../Hooks/useDataGraph' ;
-import data from '../../Helper/data/tempExt/dataTempExt.json';
-import dataPhi from '../../Helper/data/phi/dataPhi.json' ;
 
 const _this = 'STEP-2';
 export const DonneMetheo = () => {
+
+  const navigate = useNavigate();
+
+  const { updateTintData } = useTintContext();
   const { settings } = useSettingsContext();
   const { setActiveStep, steps, setStep } = useStepContext();
   var { dataGraph, setDataGraph} = useDataGraphContext() ;
@@ -308,9 +313,12 @@ export const DonneMetheo = () => {
       Tint[k]=((T5[k]+T1[k]+T3[k]-phitotal[k])/T4)-273;
     }
 
-    dataGraph = Tint ;
-    setDataGraph(Tint) ;
     console.log(Tint) ;
+
+    // Définition des variables de l'échangeur de chaleur (matériaux du bâtiment)
+
+    navigate('/Donnee_de_resultat')
+    updateTintData(Tint);
 
   }
 
