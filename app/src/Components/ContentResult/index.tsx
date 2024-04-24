@@ -17,7 +17,9 @@ const Index: React.FC = () => {
 
     const { TintData } = useTintContext();
 
-    console.log('les data', TintData);
+    const hours = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]
+    console.log('les data', hours);
+
 
     // Calcul de la température globale (moyenne)
     const calculateGlobalTemperature = () => {
@@ -41,13 +43,13 @@ const Index: React.FC = () => {
     const hauteurSousPlafond = steps['STEP-1']?.payload?.['STEP-1-0']?.hauteur_sous_plafond;
     const longueur = steps['STEP-1']?.payload?.['STEP-1-0']?.longueur;
     const largeur = steps['STEP-1']?.payload?.['STEP-1-0']?.largeur;
-  
+
 
     return (
         <>
             <TintProvider>
                 <Box>
-                    <Center h='400px' color='white' marginTop={['50%', '35%', '30%', '25%', '20%', '15%']} >
+                    <Center h='500px' color='white' marginTop={['50%', '35%', '30%', '25%', '20%', '15%']} >
                         <Card
                             width={'90%'}
                             height={'170%'}
@@ -101,7 +103,7 @@ const Index: React.FC = () => {
                                     <Plot
                                         data={[
                                             {
-                                                x: Array.from({ length: TintData.length }, (_, i) => i + 1),
+                                                x: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],
                                                 y: TintData,
                                                 type: 'scatter',
                                                 mode: 'lines',
@@ -109,15 +111,15 @@ const Index: React.FC = () => {
                                             },
                                         ]}
                                         layout={{
-                                            width: 500,
-                                            height: 340,
+                                            width: 1150,
+                                            height: 440,
                                             title: 'Courbe de la temperature',
-                                            xaxis: { title: 'Temps' },
-                                            yaxis: { title: 'Valeur' },
+                                            xaxis: { title: 'Heure', tick0: 0, tickvals: hours },
+                                            yaxis: { title: 'Température (en °C)' },
                                         }} />
                                 </GridItem>
                                 <GridItem colSpan={2} >
-                                    <Text>La Température intérieur est de:  {globalTemperature} °C</Text>
+                                    <Text>La Température moyenne intérieure est de:  {globalTemperature} °C</Text>
                                     {/* {JSON.stringify(steps)} */}
                                 </GridItem>
                             </Grid>
