@@ -23,7 +23,6 @@ export const DonneMetheo = () => {
   const { updateTintData } = useTintContext();
   const { settings } = useSettingsContext();
   const { setActiveStep, steps, setStep } = useStepContext();
-  var { dataGraph, setDataGraph} = useDataGraphContext() ;
 
   // CONSTANTES DU CALCUL
   const Rsiw = 0.13;
