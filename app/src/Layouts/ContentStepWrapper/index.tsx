@@ -5,12 +5,13 @@ import { DonneMetheo } from '../../Components/contentStepWrapperDonneMetheo';
 import './style.css';
 import { useEffect } from 'react';
 import { DonneesPiecesCategoryWrapper } from '../DonneesPiecesCategoryWrapper';
+import Index from '../../Components/ContentResult';
 
 export const ContentStepWrapper = () => {
   let result: any;
 
   const { activeStep } = useStepContext();
-
+  console.log(activeStep);
   switch (activeStep) {
     case 'STEP-0':
       result = <InformForm />;
@@ -22,7 +23,7 @@ export const ContentStepWrapper = () => {
       result = <DonneMetheo />;
       break;
     case 'STEP-3':
-      result = 'second form component';
+      result = <Index />;
       break;
     case 'STEP-4':
       result = 'second form component';
@@ -33,5 +34,9 @@ export const ContentStepWrapper = () => {
   }
 
   useEffect(() => {}, [activeStep]);
-  return <Box width={"100%"} height={"100%"}>{result}</Box>;
+  return (
+    <Box width={'100%'} height={'100%'}>
+      {result}
+    </Box>
+  );
 };

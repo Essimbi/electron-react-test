@@ -8,7 +8,6 @@ import {
   Select,
   Stack,
 } from '@chakra-ui/react';
-import { useNavigate } from 'react-router-dom';
 import { useTintContext } from '../../contexts/GraphContext';
 import dataPhi from '../../Helper/data/phi/dataPhi.json';
 import data from '../../Helper/data/tempExt/dataTempExt.json';
@@ -17,8 +16,6 @@ import { useStepContext } from '../../Hooks/useStep';
 
 const _this = 'STEP-2';
 export const DonneMetheo = () => {
-
-  const navigate = useNavigate();
 
   const { updateTintData } = useTintContext();
   const { settings } = useSettingsContext();
@@ -316,7 +313,7 @@ export const DonneMetheo = () => {
 
     // Définition des variables de l'échangeur de chaleur (matériaux du bâtiment)
 
-    navigate('/Donnee_de_resultat')
+    //setActiveStep("STEP-3")
     updateTintData(Tint);
 
   }

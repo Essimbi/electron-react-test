@@ -12,9 +12,12 @@ import { RouterWrapper } from './RouterWrapper';
 import { SideBarStyleType } from './configs/types';
 import { GlobalStyles, useStyles } from './constants/GlobalStyles';
 import { TintProvider } from './contexts/GraphContext';
+import { useStepContext } from './Hooks/useStep';
+import Index from './Components/ContentResult';
 
 function App() {
   const classes = useStyles();
+  const { activeStep } = useStepContext();
   const { settings } = useSettingsContext();
   const { innerHeight, innerWidth } = useDimensions();
 
@@ -23,10 +26,28 @@ function App() {
     backgroundColor: settings.themeColor,
   };
 
+  const renderMainContent = () => {
+    switch (activeStep) {
+      case 'STEP-0':
+        return <RouterWrapper />;
+      case 'STEP-1':
+        return <RouterWrapper />;
+      case 'STEP-2':
+        return <RouterWrapper />;
+      case 'STEP-3':
+        return <Index />;
+      default:
+        return 'a component here!';
+    }
+  };
 
   return (
     <TintProvider>
-      <Box sx={{ backgroundColor: settings.globalColors.lowGray.main, }} display={'flex'} flexDirection={'row'}>
+      <Box
+        sx={{ backgroundColor: settings.globalColors.lowGray.main }}
+        display={'flex'}
+        flexDirection={'row'}
+      >
         <Box
           className={classes.animatedBox}
           width={(innerWidth * 20) / 100}
@@ -35,8 +56,8 @@ function App() {
         >
           <SideBarContent />
         </Box>
-        <Box width={(innerWidth) - ((innerWidth * 20) / 100)}>
-          <RouterWrapper />
+        <Box width={innerWidth - (innerWidth * 20) / 100}>
+          {renderMainContent()}
         </Box>
       </Box>
     </TintProvider>

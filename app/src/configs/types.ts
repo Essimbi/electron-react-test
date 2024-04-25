@@ -1,3 +1,5 @@
+import { StepType } from "../contexts/StepContext";
+
 export type ContentWidth = useDimensionsType;
 
 export type ThemeColor =
@@ -19,7 +21,8 @@ export type Settings = {
 };
 export type SideBarContentItemType = {
   label: String
-  icon: String
+  icon: String,
+  step: StepType | any
 }
 export type SideBar = {
   boxShadow: String;

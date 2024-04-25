@@ -12,7 +12,7 @@ const createWindow = () => {
     }
   });
 
- win.setMenu(null)
+ //win.setMenu(null)
 
 
   const startUrl = url.format({
