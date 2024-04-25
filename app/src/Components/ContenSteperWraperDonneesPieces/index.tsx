@@ -18,7 +18,7 @@ export const DonneesPiecesForm = () => {
       flexDirection={'column'}
       width={'100%'}
     >
-      {JSON.stringify(steps)}
+      {/* {JSON.stringify(steps)} */}
       <Text fontSize="lg" ml={10} mt={-20}>
         Matériaux de la pièce
       </Text>

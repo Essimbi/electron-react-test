@@ -409,7 +409,7 @@ export const DonneMetheo = () => {
             Calculer
           </Button>
         </Stack>
-        {JSON.stringify(steps)}
+        {/* {JSON.stringify(steps)} */}
 
       </Box>
     </Container>

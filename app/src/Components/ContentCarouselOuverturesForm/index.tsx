@@ -18,6 +18,7 @@ import {
   TableContainer,
 } from '@chakra-ui/react';
 import { useStepContext } from '../../Hooks/useStep';
+import { useDataGraphContext } from '../../Hooks/useDataGraph' ;
 import { useState } from 'react';
 
 const _this = 'STEP-1';
@@ -33,6 +34,7 @@ export type openStateType = {
 const OuverturesForm = () => {
   const { setActiveStep, steps, setStep } = useStepContext();
   const [openTabLength, setOpenTablength] = useState<number>();
+  var { dataGraph } = useDataGraphContext() ;
   const [openState, setOpenState] = useState<openStateType>({
     type_ouverture: '',
     materiau: '',
@@ -173,7 +175,8 @@ const OuverturesForm = () => {
           Ajouter
         </Button>
       </Box>
-      {JSON.stringify(steps[_this].payload)}
+      {/* {JSON.stringify(steps[_this].payload)} */}
+      {/* {JSON.stringify(dataGraph)} */}
       <Box
         mt={5}
         style={{
