@@ -12,6 +12,9 @@ import { TintProvider, useTintContext } from '../../contexts/GraphContext';
 import { useStepContext } from '../../Hooks/useStep';
 import { useSettingsContext } from '../../Hooks/useSettings';
 
+import * as XLSX from 'xlsx';
+import { saveAs } from 'file-saver'
+
 const Index: React.FC = () => {
 
     const { setActiveStep, steps, setStep } = useStepContext();
@@ -44,6 +47,18 @@ const Index: React.FC = () => {
     const hauteurSousPlafond = steps['STEP-1']?.payload?.['STEP-1-0']?.hauteur_sous_plafond;
     const longueur = steps['STEP-1']?.payload?.['STEP-1-0']?.longueur;
     const largeur = steps['STEP-1']?.payload?.['STEP-1-0']?.largeur;
+
+    const dataExportation = () => {
+        const worksheet = XLSX.utils.aoa_to_sheet([TintData]);
+        for (let i = 0; i < TintData.length; i++) {
+            worksheet['A' + (i+1)] = {t: 'n', v: TintData[i]};
+        }
+        const workbook = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(workbook, worksheet, 'Feuille1');
+        const excelBuffer = XLSX.write(workbook, { bookType: 'xlsx', type: 'array' });
+        const blob = new Blob([excelBuffer], {type: 'application/octet-stream'});
+        saveAs(blob, `Resultalt-LOBATIN.xlsx`);
+    }
 
 
     return (
@@ -105,6 +120,7 @@ const Index: React.FC = () => {
                                       boxShadow="0px 4px 10px rgba(0, 0, 0, 0.2)"
                                       background="linear-gradient(to right, #09AFAF, #09AFAF)"
                                       colorScheme="teal"
+                                      onClick={dataExportation}
                                     >
                                         Exporter
                                     </Button>
