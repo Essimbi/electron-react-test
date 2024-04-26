@@ -2,18 +2,17 @@ import {
     Box,
     Button,
     Card,
-    Center,
     Grid,
     GridItem,
     Text
 } from '@chakra-ui/react';
 import Plot from 'react-plotly.js';
 import { TintProvider, useTintContext } from '../../contexts/GraphContext';
-import { useStepContext } from '../../Hooks/useStep';
 import { useSettingsContext } from '../../Hooks/useSettings';
+import { useStepContext } from '../../Hooks/useStep';
 
+import { saveAs } from 'file-saver';
 import * as XLSX from 'xlsx';
-import { saveAs } from 'file-saver'
 
 const Index: React.FC = () => {
 
@@ -22,7 +21,7 @@ const Index: React.FC = () => {
 
     const { TintData } = useTintContext();
 
-    const hours = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]
+    const hours = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
 
 
     // Calcul de la température globale (moyenne)
@@ -51,12 +50,12 @@ const Index: React.FC = () => {
     const dataExportation = () => {
         const worksheet = XLSX.utils.aoa_to_sheet([TintData]);
         for (let i = 0; i < TintData.length; i++) {
-            worksheet['A' + (i+1)] = {t: 'n', v: TintData[i]};
+            worksheet['A' + (i + 1)] = { t: 'n', v: TintData[i] };
         }
         const workbook = XLSX.utils.book_new();
         XLSX.utils.book_append_sheet(workbook, worksheet, 'Feuille1');
         const excelBuffer = XLSX.write(workbook, { bookType: 'xlsx', type: 'array' });
-        const blob = new Blob([excelBuffer], {type: 'application/octet-stream'});
+        const blob = new Blob([excelBuffer], { type: 'application/octet-stream' });
         saveAs(blob, `Resultalt-LOBATIN.xlsx`);
     }
 
@@ -64,11 +63,19 @@ const Index: React.FC = () => {
     return (
         <>
             <TintProvider>
-                <Box>
-                    <Center h='400px' color='white' marginTop={['50%', '35%', '30%', '25%', '14%', '10%']} >
+                <Box padding={5}>
                         <Card
-                            width={'90%'}
-                            height={'170%'}
+                            height={{
+                                base: '610px', // 0-48em
+                                md: '605px', // 48em-80em,
+                                xl: '685px', // 80em+
+                            }}
+                            width={{
+                                base: '100%', // 0-30em
+                                md: '100%', // 30em-48em
+                                xl: '100%', // 48em-62em
+                            }}
+                            style={{overflowX:'scroll', overflowY:'scroll'}}
                         >
                             <Grid
                                 h='190px'
@@ -113,14 +120,14 @@ const Index: React.FC = () => {
                                 </GridItem>
                                 <GridItem colSpan={2} >
                                     <Button
-                                      _hover={{
-                                        backgroundColor: settings.globalColors.primary.main,
-                                        opacity: 0.5,
-                                      }}
-                                      boxShadow="0px 4px 10px rgba(0, 0, 0, 0.2)"
-                                      background="linear-gradient(to right, #09AFAF, #09AFAF)"
-                                      colorScheme="teal"
-                                      onClick={dataExportation}
+                                        _hover={{
+                                            backgroundColor: settings.globalColors.primary.main,
+                                            opacity: 0.5,
+                                        }}
+                                        boxShadow="0px 4px 10px rgba(0, 0, 0, 0.2)"
+                                        background="linear-gradient(to right, #09AFAF, #09AFAF)"
+                                        colorScheme="teal"
+                                        onClick={dataExportation}
                                     >
                                         Exporter
                                     </Button>
@@ -138,16 +145,16 @@ const Index: React.FC = () => {
                                             },
                                         ]}
                                         layout={{
-                                            width: 900,
+                                            width: 750,
                                             height: 300,
                                             title: 'Courbe de la temperature',
                                             xaxis: { title: 'Heure', tick0: 0, tickvals: hours },
                                             yaxis: { title: 'Température (en °C)' },
-                                        }} />
+                                        }} 
+                                        config={{ responsive: true }} />
                                 </GridItem>
                             </Grid>
                         </Card>
-                    </Center>
                 </Box >
             </TintProvider>
         </>
