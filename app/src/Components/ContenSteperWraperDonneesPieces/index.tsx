@@ -2,7 +2,6 @@ import { Box, FormControl, FormLabel, Select, Text } from '@chakra-ui/react';
 // import { DeleteIcon, EditIcon } from '@chakra-ui/icons';
 import { useSettingsContext } from '../../Hooks/useSettings';
 import { useStepContext } from '../../Hooks/useStep';
-import { initialStepType } from '../../contexts/StepContext';
 
 const _this = 'STEP-1';
 const _subThis = 'STEP-1-0';

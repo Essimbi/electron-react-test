@@ -41,8 +41,8 @@ const Index: React.FC = () => {
     const hauteurSousPlafond = steps['STEP-1']?.payload?.['STEP-1-0']?.hauteur_sous_plafond;
     const longueur = steps['STEP-1']?.payload?.['STEP-1-0']?.longueur;
     const largeur = steps['STEP-1']?.payload?.['STEP-1-0']?.largeur;
-  
 
+    const longeur = ['40%', '50%', '35%', '30%']
     return (
         <>
             <TintProvider>
