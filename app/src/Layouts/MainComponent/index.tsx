@@ -3,6 +3,7 @@ import { StepperComponent } from '../../Components/stepperComponent';
 import { Box } from '@mui/material';
 import { ContentStepWrapper } from '../ContentStepWrapper';
 import { useDimensions } from '../../Hooks/useDimensions';
+import ChooseLang from '../../Components/ChooseLang';
 
 export const MainComponent = () => {
   const { innerHeight, innerWidth } = useDimensions();
@@ -22,6 +23,7 @@ export const MainComponent = () => {
           boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.05)',
         }}
       >
+        <ChooseLang />
         <Box
           height={'15%'}
           display={'flex'}
