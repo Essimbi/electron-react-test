@@ -1,6 +1,7 @@
 import React, { ChangeEvent, useState } from "react"
 import { useTranslation } from 'react-i18next';
 import { Language } from '../../Helper/Language';
+import { Select, Box } from '@chakra-ui/react'
 
 const ChooseLang = () => {
     const { i18n } = useTranslation();
@@ -24,12 +25,12 @@ const ChooseLang = () => {
 
     return (
         <div>
-            <div>
-                <select value={lang} name="language" onChange={changeLanguage}>
+            <Box width={'7%'} padding={2} ml={'auto'}>
+                <Select value={lang} name="language" onChange={changeLanguage}>
                     <option value={Language.FR}>FR</option>
                     <option value={Language.EN}>EN</option>
-                </select>
-            </div>
+                </Select>
+            </Box>
         </div>
     )
 }
