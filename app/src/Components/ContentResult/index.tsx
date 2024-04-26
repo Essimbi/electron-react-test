@@ -14,6 +14,7 @@ import { useTranslation } from "react-i18next";
 
 import { saveAs } from 'file-saver';
 import * as XLSX from 'xlsx';
+import ChooseLang from '../ChooseLang';
 
 const Index: React.FC = () => {
 
@@ -79,6 +80,7 @@ const Index: React.FC = () => {
                             }}
                             style={{overflowX:'scroll', overflowY:'scroll'}}
                         >
+                          <ChooseLang />
                             <Grid
                                 h='190px'
                                 templateRows='repeat(2, 1fr)'
