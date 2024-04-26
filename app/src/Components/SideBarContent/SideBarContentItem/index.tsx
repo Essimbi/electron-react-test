@@ -11,6 +11,7 @@ import {
 } from '../../../img/Icons/iconItems';
 import './index.css';
 import { useStepContext } from '../../../Hooks/useStep';
+import { useTranslation } from "react-i18next";
 
 export const SideBarContentItem = ({
   label,
@@ -19,6 +20,7 @@ export const SideBarContentItem = ({
 }: SideBarContentItemType) => {
   const { settings } = useSettingsContext();
   const { activeStep, setActiveStep } = useStepContext();
+  const { t } = useTranslation();
   const AnimatedBox = styled(Box)({
     transition: 'background-color 0.3s',
     '&:hover': {
@@ -86,7 +88,7 @@ export const SideBarContentItem = ({
         paddingLeft={5}
       >
         {renderIcon()}&nbsp;
-        {label}
+        {t(`${label}`)}
       </Box>
     </AnimatedBox>
   );

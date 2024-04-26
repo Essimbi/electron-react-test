@@ -16,6 +16,7 @@ import dataPhi from '../../Helper/data/phi/dataPhi.json';
 import data from '../../Helper/data/tempExt/dataTempExt.json';
 import { useSettingsContext } from '../../Hooks/useSettings';
 import { useStepContext } from '../../Hooks/useStep';
+import { useTranslation } from "react-i18next";
 
 const _this = 'STEP-2';
 export const DonneMetheo = () => {
@@ -25,6 +26,7 @@ export const DonneMetheo = () => {
   const { updateTintData } = useTintContext();
   const { settings } = useSettingsContext();
   const { setActiveStep, steps, setStep } = useStepContext();
+  const { t } = useTranslation();
 
   // CONSTANTES DU CALCUL
   const Rsiw = 0.13;
@@ -331,11 +333,11 @@ export const DonneMetheo = () => {
         {showAlert && (
           <Alert status="success" marginBottom={4}>
             <AlertIcon />
-            Le calcul de la température de votre pièce a été effectué. Veuillez cliquer sur l'onglet Résultat pour consulter la température de votre pièce!
+            {t('steper-3.alert')}
           </Alert>
         )}
         <FormControl mb={4} width={'100%'} mt={25}>
-          <FormLabel>Sélectionnez une Zone geographique :</FormLabel>
+          <FormLabel>{t('steper-3.zone')} :</FormLabel>
           <Select
             value={steps[_this].payload['Zone_geographique']}
             onChange={(e) =>
@@ -351,12 +353,11 @@ export const DonneMetheo = () => {
               })
             }
           >
-            <option value="">Selectinner une Zone geographique</option>
-            <option value="Douala">Littoral</option>
-            <option value="Yaounde">Centre</option>
-            <option value="Maroua">Extreme Nord</option>
-            <option value="Garoua">Nord</option>
-            <option value="Bafoussam">Ouest</option>
+            <option value="Douala" defaultChecked>{t('steper-3.section-zone.val-1')}</option>
+            <option value="Yaounde">{t('steper-3.section-zone.val-2')}</option>
+            <option value="Maroua">{t('steper-3.section-zone.val-3')}</option>
+            <option value="Garoua">{t('steper-3.section-zone.val-4')}</option>
+            <option value="Bafoussam">{t('steper-3.section-zone.val-5')}</option>
           </Select>
         </FormControl>
 
@@ -397,7 +398,7 @@ export const DonneMetheo = () => {
             boxShadow="0px 4px 10px rgba(0, 0, 0, 0.2)"
             fontWeight={400}
           >
-            Precedent
+            {t('btn-precedent')}
           </Button>
 
           <Button
@@ -415,7 +416,7 @@ export const DonneMetheo = () => {
             size="md"
             onClick={calculate}
           >
-            Calculer
+            {t('steper-3.calculer')}
           </Button>
         </Stack>
         {/* {JSON.stringify(steps)} */}

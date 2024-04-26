@@ -19,6 +19,7 @@ import {
 } from '@chakra-ui/react';
 import { useStepContext } from '../../Hooks/useStep';
 import { useState } from 'react';
+import { useTranslation } from "react-i18next";
 
 const _this = 'STEP-1';
 const _subThis = 'STEP-1-0';
@@ -32,6 +33,7 @@ export type openStateType = {
 
 const OuverturesForm = () => {
   const { steps, setStep } = useStepContext();
+  const { t } = useTranslation();
   const [openState, setOpenState] = useState<openStateType>({
     type_ouverture: '',
     materiau: '',
@@ -46,7 +48,7 @@ const OuverturesForm = () => {
       width={'100%'}
     >
       <Text fontSize="lg" ml={10} mt={20}>
-        Ouvertures de la pièce
+        {t('steper-2-2.titre')}
       </Text>
       <Box
         style={{
@@ -56,7 +58,7 @@ const OuverturesForm = () => {
         }}
       >
         <FormControl width={'45%'} mt={5}>
-          <FormLabel>Type d'ouverture</FormLabel>
+          <FormLabel>{t('steper-2-2.type-ouverture')}</FormLabel>
           <Select
             value={openState['type_ouverture']}
             onChange={(e) => {
@@ -67,14 +69,14 @@ const OuverturesForm = () => {
             size={'sm'}
           >
             <option value="Porte" defaultChecked>
-              Porte
+            {t('steper-2-2.section-ouverture.val-1')}
             </option>
-            <option value="Fenetre">Fenêtre</option>
+            <option value="Fenetre">{t('steper-2-2.section-ouverture.val-2')}</option>
           </Select>
         </FormControl>
 
         <FormControl ml={'3%'} width={'45%'} mt={5}>
-          <FormLabel>Matériau</FormLabel>
+          <FormLabel>{t('steper-2-2.materiaux')}</FormLabel>
           <Select
             value={openState['materiau']}
             onChange={(e) => {
@@ -84,10 +86,10 @@ const OuverturesForm = () => {
             }}
             size={'sm'}
           >
-            <option value="Verre">Verre (simple vitrage) </option>
-            <option value="Verre doule vitrage">Verre (double vitrage) </option>
-            <option value="Bois">Bois</option>
-            <option value="Aluminium">Aluminium</option>
+            <option value="Verre">{t('steper-2-2.section-materiaux.val-1')} </option>
+            <option value="Verre doule vitrage">{t('steper-2-2.section-materiaux.val-2')} </option>
+            <option value="Bois">{t('steper-2-2.section-materiaux.val-3')}</option>
+            <option value="Aluminium">{t('steper-2-2.section-materiaux.val-4')}</option>
           </Select>
         </FormControl>
       </Box>
@@ -99,7 +101,7 @@ const OuverturesForm = () => {
         }}
       >
         <FormControl width={'45%'} mt={5}>
-          <FormLabel>Hauteur </FormLabel>
+          <FormLabel>{t('steper-2-2.hauteur')} </FormLabel>
           <Input
             value={openState['hauteur']}
             onChange={(e) => {
@@ -114,7 +116,7 @@ const OuverturesForm = () => {
         </FormControl>
 
         <FormControl ml={'3%'} width={'45%'} mt={5}>
-          <FormLabel>Largeur</FormLabel>
+          <FormLabel>{t('steper-2-2.largeur')}</FormLabel>
           <Input
             value={openState['largeur']}
             onChange={(e) => {
@@ -186,13 +188,13 @@ const OuverturesForm = () => {
       >
         <TableContainer width={'90%'}>
           <Table variant="simple" size={'sm'}>
-            <TableCaption>Les ouvertures de la pièce</TableCaption>
+            <TableCaption>{t('steper-2-2.tableau-titre')}</TableCaption>
             <Thead>
               <Tr>
-                <Th>Type</Th>
-                <Th>Matériau</Th>
-                <Th>Hauteur</Th>
-                <Th>Largeur</Th>
+                <Th>{t('steper-2-2.type')}</Th>
+                <Th>{t('steper-2-2.materiaux')}</Th>
+                <Th>{t('steper-2-2.hauteur')}</Th>
+                <Th>{t('steper-2-2.largeur')}</Th>
               </Tr>
               {Object.keys(steps[_this].payload[_subThis]).map(
                 (key) =>

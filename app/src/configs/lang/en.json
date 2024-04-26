@@ -1,0 +1,119 @@
+{
+  "common": {
+      "translate-button": "EN",
+      "translated-text": "This is english"
+  },
+  "sidebar": {
+    "donnes-entree": "Input data",
+    "resultats": "Results",
+    "model-predefini": "Predefined models",
+    "aide": "Help",
+    "apropos": "About"
+  },
+  "btn-suivant": "Next",
+  "btn-precedent": "Previous",
+  "steper": {
+    "batiment": "Building",
+    "piece": "Part construction",
+    "donnees-meteorologique": "Meteorological data"
+  },
+  "steper-1": {
+    "materiaux-toit": "Roof materials",
+    "section-materiaux-toit": {
+      "val-1":"Roman tile roofs 1 & 2",
+      "val-2":"Aluminium sheet roofing",
+      "val-3":"Concrete slab roof",
+      "val-4":"Straw roofs",
+      "val-5":"Hourdis slab",
+      "val-6":"Intra-ceiling air layer"
+    },
+    "materiaux-mur": "Wall materials",
+    "section-materiaux-mur": {
+      "val-1":"Standard breeze block",
+      "val-2":"Clay bricks with vacuum",
+      "val-3":"Solid clay bricks",
+      "val-4":"Compressed earth bricks",
+      "val-5":"Stabilized earth bricks"
+    },
+    "materiaux-sol": "Floor materials",
+    "section-materiaux-sol": {
+      "val-1": "Concrete slab + tiles",
+      "val-2": "Single cemented floor",
+      "val-3": "Simple earth floor"
+    },
+    "nombre-piece": "Number of parts",
+    "placeholder": "Enter number of pieces"
+  },
+  "steper-2-0": {
+    "titre": "Part materials",
+    "materiaux-plafond": "Ceiling materials",
+    "revetement-int": "Interior wall cladding",
+    "section-revetement": {
+      "val-1": "White paint",
+      "val-2": "Clear paint",
+      "val-3": "Dark paint",
+      "val-4": "Matt paint",
+      "val-5": "Aluminum paint"
+    },
+    "revetement-sol": "Floor covering",
+    "revetement-ext": "Exterior wall cladding"
+  },
+  "steper-2-1": {
+    "titre": "Part dimensions",
+    "nom": "Part name",
+    "placeholder-nom": "Enter part name",
+    "hateur": "Ceiling height",
+    "longueur": "Length",
+    "largeur": "Width",
+    "placeholder-metre": "In meters"
+  },
+  "steper-2-2": {
+    "titre": "Room openings",
+    "type-ouverture": "Opening type",
+    "section-ouverture": {
+      "val-1": "Door",
+      "val-2": "Window"
+    },
+    "materiaux": "Materials",
+    "section-materiaux": {
+      "val-1": "Glass (single glazing)",
+      "val-2": "Glass (double glazing)",
+      "val-3": "Wood",
+      "val-4": "Aluminum"
+    },
+    "hauteur": "Height",
+    "largeur": "Width",
+    "tableau-titre": "Room openings",
+    "type": "Type",
+    "btn-ajouter": "Add"
+  },
+  "steper-3": {
+    "alert": "Your room temperature has been calculated. Please click on the Result tab to view your room temperature!",
+    "zone": "Select a geographical area",
+    "section-zone": {
+      "val-1": "Coast",
+      "val-2": "Center",
+      "val-3": "Far North",
+      "val-4": "North",
+      "val-5": "West"
+    },
+    "calculer": "Calculate"
+  },
+  "result": {
+    "plafond": "Ceiling material",
+    "toit": "Roof materials",
+    "mur": "Hard material",
+    "enrobage": "Coating",
+    "sol": "Floor materials",
+    "region": "Region",
+    "dimension": "Part dimensions",
+    "h": "H",
+    "l": "L",
+    "largeur": "W",
+    "temperature": "Average indoor temperature",
+    "btn-exporter": "Export",
+    "titre-courbe": "Temperature curve",
+    "heure": "Hour",
+    "temp": "Temperature (in °C)"
+  }
+}

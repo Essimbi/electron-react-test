@@ -6,12 +6,14 @@ import OuverturesForm from '../../Components/ContentCarouselOuverturesForm';
 import { CategoryValueType } from '../../configs/types';
 import { useSettingsContext } from '../../Hooks/useSettings';
 import { useStepContext } from '../../Hooks/useStep';
+import { useTranslation } from "react-i18next";
 
 export const DonneesPiecesCategoryWrapper = () => {
   const { settings } = useSettingsContext();
   const [selectedIndex, setSelectedIndex] = useState<CategoryValueType>(1);
 
   const { setActiveStep } = useStepContext();
+  const { t } = useTranslation();
 
   const renderCategory = (): any => {
     let result: any;
@@ -164,7 +166,7 @@ export const DonneesPiecesCategoryWrapper = () => {
             fontWeight={400}
             boxShadow="0px 4px 10px rgba(0, 0, 0, 0.2)"
           >
-            Précédent
+            {t('btn-precedent')}
           </Button>
           <Button
             onClick={() => setActiveStep('STEP-2')}
@@ -186,7 +188,7 @@ export const DonneesPiecesCategoryWrapper = () => {
             fontWeight={400}
             boxShadow="0px 4px 10px rgba(0, 0, 0, 0.2)"
           >
-            Suivant
+            {t('btn-suivant')}
           </Button>
         </Box>
       </Box>

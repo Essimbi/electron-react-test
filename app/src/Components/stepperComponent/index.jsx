@@ -12,16 +12,18 @@ import {
 import { useSettingsContext } from '../../Hooks/useSettings';
 import { useStepContext } from '../../Hooks/useStep';
 import { CloudIcon, DomainIcon, HomeIcon } from '../../img/Icons/iconItems';
+import { useTranslation } from "react-i18next";
 
 const steps = [
-  { title: 'Batiment', description: 'Contact Info' },
-  { title: 'Constitution de la pièce', description: 'Date & Time' },
-  { title: 'Données metheorologique', description: 'Select Rooms' },
+  { title: 'steper.batiment', description: 'Contact Info' },
+  { title: 'steper.piece', description: 'Date & Time' },
+  { title: 'steper.donnees-meteorologique', description: 'Select Rooms' },
 ];
 
 export const StepperComponent = () => {
   const { settings } = useSettingsContext();
   const { activeStep } = useStepContext();
+  const { t } = useTranslation();
   const { ac, setActiveStep } = useSteps({
     index: 3,
     count: steps.length,
@@ -102,7 +104,7 @@ export const StepperComponent = () => {
               mt={2}
               ml={index === 0 ? 0 : index === 1 ? -8 : -4}
             >
-              {step.title}
+              {t(`${step.title}`)}
             </Text>
           </div>
         ))}
