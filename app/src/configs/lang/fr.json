@@ -98,5 +98,22 @@
       "val-5": "Ouest"
     },
     "calculer": "Calculer"
+  },
+  "result": {
+    "plafond": "Matériel du plafond",
+    "toit": "Matériaux du toit",
+    "mur": "Matériau du mur",
+    "enrobage": "Enrobage",
+    "sol": "Matériaux du sol",
+    "region": "Région",
+    "dimension": "Dimensions de la pièce",
+    "h": "H",
+    "l": "L",
+    "largeur": "Largeur",
+    "temperature": "Température moyenne intérieure",
+    "btn-exporter": "Exporter",
+    "titre-courbe": "Courbe de la température",
+    "heure": "Heure",
+    "temp": "Température (en °C)"
   }
 }

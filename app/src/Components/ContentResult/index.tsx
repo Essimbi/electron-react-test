@@ -10,6 +10,7 @@ import Plot from 'react-plotly.js';
 import { TintProvider, useTintContext } from '../../contexts/GraphContext';
 import { useSettingsContext } from '../../Hooks/useSettings';
 import { useStepContext } from '../../Hooks/useStep';
+import { useTranslation } from "react-i18next";
 
 import { saveAs } from 'file-saver';
 import * as XLSX from 'xlsx';
@@ -20,6 +21,7 @@ const Index: React.FC = () => {
     const { settings } = useSettingsContext();
 
     const { TintData } = useTintContext();
+    const { t } = useTranslation();
 
     const hours = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
 
@@ -92,27 +94,27 @@ const Index: React.FC = () => {
                                         height={'auto'}
                                     >
                                         <Grid templateColumns='repeat(2, 1fr)' gap={0} padding={2}>
-                                            <GridItem w='100%' h='10' ><Text>Matériel du plafond :</Text></GridItem>
+                                            <GridItem w='100%' h='10' ><Text>{t('result.plafond')} :</Text></GridItem>
                                             <GridItem w='100%' h='10' ><Text>{materiauxPlafond}</Text></GridItem>
 
-                                            <GridItem w='100%' h='10' ><Text>Matériaux du toit :</Text></GridItem>
+                                            <GridItem w='100%' h='10' ><Text>{t('result.toit')} :</Text></GridItem>
                                             <GridItem w='100%' h='10' ><Text>{materiauxToit}</Text></GridItem>
 
-                                            <GridItem w='100%' h='10' ><Text>matériau du dur :</Text></GridItem>
+                                            <GridItem w='100%' h='10' ><Text>{t('result.mur')} :</Text></GridItem>
                                             <GridItem w='100%' h='10' ><Text>{materiauxMur}</Text></GridItem>
 
-                                            <GridItem w='100%' h='10' ><Text>Enrobage :</Text></GridItem>
+                                            <GridItem w='100%' h='10' ><Text>{t('result.enrobage')} :</Text></GridItem>
                                             <GridItem w='100%' h='10' ><Text>{revetementExterieurMur}</Text></GridItem>
 
-                                            <GridItem w='100%' h='10' ><Text>Matériaux du sol :</Text></GridItem>
+                                            <GridItem w='100%' h='10' ><Text>{t('result.sol')} :</Text></GridItem>
                                             <GridItem w='100%' h='10' ><Text>{revetementSol}</Text></GridItem>
 
-                                            <GridItem w='100%' h='10' ><Text>Région :</Text></GridItem>
+                                            <GridItem w='100%' h='10' ><Text>{t('result.region')} :</Text></GridItem>
                                             <GridItem w='100%' h='10' ><Text>{zoneGeographique}</Text></GridItem>
 
-                                            <GridItem w='100%' h='10' ><Text>Dimensions de la pièce : </Text></GridItem>
-                                            <GridItem w='100%' h='10' ><Text>H: {hauteurSousPlafond}, L: {longueur}, largeur: {largeur}</Text></GridItem>
-                                            <GridItem w='100%' h='10' ><Text>La Température moyenne intérieure : </Text></GridItem>
+                                            <GridItem w='100%' h='10' ><Text>{t('result.dimension')} : </Text></GridItem>
+                                            <GridItem w='100%' h='10' ><Text>{t('result.h')}: {hauteurSousPlafond}, {t('result.l')}: {longueur}, {t('result.largeur')}: {largeur}</Text></GridItem>
+                                            <GridItem w='100%' h='10' ><Text>{t('result.temperature')} : </Text></GridItem>
                                             <GridItem w='100%' h='10' ><Text>{globalTemperature} °C</Text></GridItem>
 
                                         </Grid>
@@ -129,7 +131,7 @@ const Index: React.FC = () => {
                                         colorScheme="teal"
                                         onClick={dataExportation}
                                     >
-                                        Exporter
+                                        {t('result.btn-exporter')}
                                     </Button>
 
                                 </GridItem>
@@ -147,10 +149,10 @@ const Index: React.FC = () => {
                                         layout={{
                                             width: 750,
                                             height: 300,
-                                            title: 'Courbe de la temperature',
-                                            xaxis: { title: 'Heure', tick0: 0, tickvals: hours },
-                                            yaxis: { title: 'Température (en °C)' },
-                                        }} 
+                                            title: `${t('result.titre-courbe')}`,
+                                            xaxis: { title: `${t('result.heure')}`, tick0: 0, tickvals: hours },
+                                            yaxis: { title: `${t('result.temp')}` },
+                                        }}
                                         config={{ responsive: true }} />
                                 </GridItem>
                             </Grid>

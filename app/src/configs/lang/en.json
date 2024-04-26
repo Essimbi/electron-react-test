@@ -98,5 +98,22 @@
       "val-5": "West"
     },
     "calculer": "Calculate"
+  },
+  "result": {
+    "plafond": "Ceiling material",
+    "toit": "Roof materials",
+    "mur": "Hard material",
+    "enrobage": "Coating",
+    "sol": "Floor materials",
+    "region": "Region",
+    "dimension": "Part dimensions",
+    "h": "H",
+    "l": "L",
+    "largeur": "W",
+    "temperature": "Average indoor temperature",
+    "btn-exporter": "Export",
+    "titre-courbe": "Temperature curve",
+    "heure": "Hour",
+    "temp": "Temperature (in °C)"
   }
 }
