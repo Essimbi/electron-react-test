@@ -2,5 +2,12 @@
   "common": {
       "translate-button": "FR",
       "translated-text": "C'est du français"
+  },
+  "sidebar": {
+    "donnes-entree": "Données d'entrée",
+    "resultats": "Résultats",
+    "model-predefini": "Modèles prédéfins",
+    "aide": "Aide",
+    "apropos": "A propos"
   }
 }
