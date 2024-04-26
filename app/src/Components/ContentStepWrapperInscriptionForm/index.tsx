@@ -8,11 +8,13 @@ import {
 } from '@chakra-ui/react';
 import { useSettingsContext } from '../../Hooks/useSettings';
 import { useStepContext } from '../../Hooks/useStep';
+import { useTranslation } from "react-i18next";
 
 const _this = 'STEP-0';
 export const InformForm = () => {
   const { settings } = useSettingsContext();
   const { setActiveStep, steps, setStep } = useStepContext();
+  const { t } = useTranslation();
 
   return (
     <Box
@@ -29,7 +31,7 @@ export const InformForm = () => {
         }}
       >
         <FormControl width={'45%'} mt={10}>
-          <FormLabel>Matériaux du toit</FormLabel>
+          <FormLabel>{t('steper-1.materiaux-toit')}</FormLabel>
           <Select
             value={steps[_this].payload['materiaux_toit']}
             onChange={(e) =>
@@ -45,17 +47,17 @@ export const InformForm = () => {
               })
             }
           >
-            <option value="Toiture en tuiles romane 1 & 2">Toitures en tuiles romane 1 & 2</option>
-            <option value="Toiture en tôles d'aluminium">Toiture en tôles d'aluminium</option>
-            <option value="Toiture en dalle de beton">Toiture en dalle de béton</option>
-            <option value="Toiture en paille">Toitures en paille</option>
-            <option value="Dalle en Hourdis">Dalle en Hourdis</option>
-            <option value="Couche d'air intra-plafond">Couche d'air intra-plafond</option>
+            <option value="Toiture en tuiles romane 1 & 2" defaultChecked>{t('steper-1.section-materiaux-toit.val-1')}</option>
+            <option value="Toiture en tôles d'aluminium">{t('steper-1.section-materiaux-toit.val-2')}</option>
+            <option value="Toiture en dalle de beton">{t('steper-1.section-materiaux-toit.val-3')}</option>
+            <option value="Toiture en paille">{t('steper-1.section-materiaux-toit.val-4')}</option>
+            <option value="Dalle en Hourdis">{t('steper-1.section-materiaux-toit.val-5')}</option>
+            <option value="Couche d'air intra-plafond">{t('steper-1.section-materiaux-toit.val-6')}</option>
           </Select>
         </FormControl>
 
         <FormControl ml={'3%'} width={'45%'} mt={10}>
-          <FormLabel>Matériaux du mur</FormLabel>
+          <FormLabel>{t('steper-1.materiaux-mur')}</FormLabel>
           <Select
             value={steps[_this].payload['materiaux_mur']}
             onChange={(e) =>
@@ -71,11 +73,11 @@ export const InformForm = () => {
               })
             }
           >
-            <option value="Parpaing standard">Parpaing standard</option>
-            <option value="Briques de terre cuites avec vide">Briques de terre cuites avec vide</option>
-            <option value="Briques de terre cuites pleines">Briques de terre cuites pleines</option>
-            <option value="Briques de terre compressées">Briques de terre compressées</option>
-            <option value="Briques de terre stabilisées">Briques de terre stabilisées</option>
+            <option value="Parpaing standard" defaultChecked>{t('steper-1.section-materiaux-mur.val-1')}</option>
+            <option value="Briques de terre cuites avec vide">{t('steper-1.section-materiaux-mur.val-2')}</option>
+            <option value="Briques de terre cuites pleines">{t('steper-1.section-materiaux-mur.val-3')}</option>
+            <option value="Briques de terre compressées">{t('steper-1.section-materiaux-mur.val-4')}</option>
+            <option value="Briques de terre stabilisées">{t('steper-1.section-materiaux-mur.val-5')}</option>
           </Select>
         </FormControl>
       </Box>
@@ -88,7 +90,7 @@ export const InformForm = () => {
         }}
       >
         <FormControl width={'45%'} mt={10}>
-          <FormLabel>Matériaux du sol </FormLabel>
+          <FormLabel>{t('steper-1.materiaux-sol')} </FormLabel>
           <Select
             value={steps[_this].payload['materiaux_sol']}
             onChange={(e) =>
@@ -104,14 +106,14 @@ export const InformForm = () => {
               })
             }
           >
-            <option value="Dalle de beton + carreaux">Dalle de béton + carreaux</option>
-            <option value="Sol cimente simple">Sol cimenté simple</option>
-            <option value="Sol en terre simple">Sol en terre simple</option>
+            <option value="Dalle de beton + carreaux" defaultChecked>{t('steper-1.section-materiaux-sol.val-1')}</option>
+            <option value="Sol cimente simple">{t('steper-1.section-materiaux-sol.val-2')}</option>
+            <option value="Sol en terre simple">{t('steper-1.section-materiaux-sol.val-3')}</option>
           </Select>
         </FormControl>
 
         <FormControl ml={'3%'} width={'45%'} mt={10}>
-          <FormLabel>Nombres de pièces</FormLabel>
+          <FormLabel>{t('steper-1.nombre-piece')}</FormLabel>
           <Input
             type={'number'}
             value={steps[_this].payload['nombre_pieces']}
@@ -127,7 +129,7 @@ export const InformForm = () => {
                 },
               })
             }
-            placeholder="Entrer le nombre de pièces"
+            placeholder={t('steper-1.placeholder')}
           />
         </FormControl>
       </Box>
@@ -176,7 +178,7 @@ export const InformForm = () => {
           boxShadow="0px 4px 10px rgba(0, 0, 0, 0.2)"
           background="linear-gradient(to right, #09AFAF, #09AFAF)"
         >
-          Suivant
+          {t('btn-suivant')}
         </Button>
       </Box>
       {/* {JSON.stringify(steps)} */}

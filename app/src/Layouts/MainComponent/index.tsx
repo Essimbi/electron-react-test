@@ -4,11 +4,9 @@ import { Box } from '@mui/material';
 import { ContentStepWrapper } from '../ContentStepWrapper';
 import { useDimensions } from '../../Hooks/useDimensions';
 import ChooseLang from '../../Components/ChooseLang';
-import { useTranslation } from "react-i18next";
 
 export const MainComponent = () => {
   const { innerHeight, innerWidth } = useDimensions();
-  const { t } = useTranslation();
 
   return (
     <Box
@@ -26,7 +24,6 @@ export const MainComponent = () => {
         }}
       >
         <ChooseLang />
-        <p>{t('common.translated-text')}</p>
         <Box
           height={'15%'}
           display={'flex'}
