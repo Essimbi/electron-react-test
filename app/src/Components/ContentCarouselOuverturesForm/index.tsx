@@ -1,0 +1,221 @@
+import {
+  Box,
+  Button,
+  FormControl,
+  FormLabel,
+  Input,
+  Select,
+  Text,
+} from '@chakra-ui/react';
+import {
+  Table,
+  Thead,
+  Tbody,
+  Tr,
+  Th,
+  Td,
+  TableCaption,
+  TableContainer,
+} from '@chakra-ui/react';
+import { useStepContext } from '../../Hooks/useStep';
+import { useState } from 'react';
+import { useTranslation } from "react-i18next";
+
+const _this = 'STEP-1';
+const _subThis = 'STEP-1-0';
+
+export type openStateType = {
+  type_ouverture: String | any;
+  materiau: String | any;
+  hauteur: number | any;
+  largeur: number | any;
+};
+
+const OuverturesForm = () => {
+  const { steps, setStep } = useStepContext();
+  const { t } = useTranslation();
+  const [openState, setOpenState] = useState<openStateType>({
+    type_ouverture: '',
+    materiau: '',
+    hauteur: 0,
+    largeur: 0,
+  });
+  return (
+    <Box
+      display={'flex'}
+      className={'fade-out'}
+      flexDirection={'column'}
+      width={'100%'}
+    >
+      <Text fontSize="lg" ml={10} mt={20}>
+        {t('steper-2-2.titre')}
+      </Text>
+      <Box
+        style={{
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'center',
+        }}
+      >
+        <FormControl width={'45%'} mt={5}>
+          <FormLabel>{t('steper-2-2.type-ouverture')}</FormLabel>
+          <Select
+            value={openState['type_ouverture']}
+            onChange={(e) => {
+              setOpenState((v) => {
+                return { ...v, type_ouverture: e.target.value };
+              });
+            }}
+            size={'sm'}
+          >
+            <option value="Porte" defaultChecked>
+            {t('steper-2-2.section-ouverture.val-1')}
+            </option>
+            <option value="Fenetre">{t('steper-2-2.section-ouverture.val-2')}</option>
+          </Select>
+        </FormControl>
+
+        <FormControl ml={'3%'} width={'45%'} mt={5}>
+          <FormLabel>{t('steper-2-2.materiaux')}</FormLabel>
+          <Select
+            value={openState['materiau']}
+            onChange={(e) => {
+              setOpenState((v) => {
+                return { ...v, materiau: e.target.value };
+              });
+            }}
+            size={'sm'}
+          >
+            <option value="Verre">{t('steper-2-2.section-materiaux.val-1')} </option>
+            <option value="Verre doule vitrage">{t('steper-2-2.section-materiaux.val-2')} </option>
+            <option value="Bois">{t('steper-2-2.section-materiaux.val-3')}</option>
+            <option value="Aluminium">{t('steper-2-2.section-materiaux.val-4')}</option>
+          </Select>
+        </FormControl>
+      </Box>
+      <Box
+        style={{
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'center',
+        }}
+      >
+        <FormControl width={'45%'} mt={5}>
+          <FormLabel>{t('steper-2-2.hauteur')} </FormLabel>
+          <Input
+            value={openState['hauteur']}
+            onChange={(e) => {
+              setOpenState((v) => {
+                return { ...v, hauteur: e.target.value };
+              });
+            }}
+            type={'number'}
+            placeholder="En mètre"
+            size={'sm'}
+          />
+        </FormControl>
+
+        <FormControl ml={'3%'} width={'45%'} mt={5}>
+          <FormLabel>{t('steper-2-2.largeur')}</FormLabel>
+          <Input
+            value={openState['largeur']}
+            onChange={(e) => {
+              setOpenState((v) => {
+                return { ...v, largeur: e.target.value };
+              });
+            }}
+            type={'number'}
+            placeholder="En mètre"
+            size={'sm'}
+          />
+        </FormControl>
+      </Box>
+      <Box
+        mt={5}
+        style={{
+          display: 'flex',
+          flexDirection: 'row',
+        }}
+      >
+        <Button
+          colorScheme="teal"
+          variant="outline"
+          size={'sm'}
+          ml={'auto'}
+          mr={10}
+          onClick={() => {
+            let concernedTab = [];
+            Object.keys(steps[_this].payload[_subThis]).forEach((v) => {
+              if (v.indexOf('ouverture-') !== -1) {
+                console.log('here -', v);
+                concernedTab.push(v);
+              }
+            });
+            let length = concernedTab.length + 1;
+            setStep({
+              ...steps,
+              [_this]: {
+                ...steps[_this],
+                payload: {
+                  ...steps[_this].payload,
+                  [_subThis]: {
+                    ...steps[_this].payload[_subThis],
+                    ['ouverture-' + length]: openState,
+                  },
+                },
+              },
+            });
+            setOpenState({
+              type_ouverture: '',
+              materiau: '',
+              hauteur: 0,
+              largeur: 0,
+            });
+          }}
+        >
+          Ajouter
+        </Button>
+      </Box>
+      {/* {JSON.stringify(steps[_this].payload)} */}
+      {/* {JSON.stringify(dataGraph)} */}
+      <Box
+        mt={5}
+        style={{
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'center',
+        }}
+      >
+        <TableContainer width={'90%'}>
+          <Table variant="simple" size={'sm'}>
+            <TableCaption>{t('steper-2-2.tableau-titre')}</TableCaption>
+            <Thead>
+              <Tr>
+                <Th>{t('steper-2-2.type')}</Th>
+                <Th>{t('steper-2-2.materiaux')}</Th>
+                <Th>{t('steper-2-2.hauteur')}</Th>
+                <Th>{t('steper-2-2.largeur')}</Th>
+              </Tr>
+              {Object.keys(steps[_this].payload[_subThis]).map(
+                (key) =>
+                  key.indexOf('ouverture-') !== -1 && (
+                    <Tr key={key}>
+                      <Td>
+                        {steps[_this].payload[_subThis][key].type_ouverture}
+                      </Td>
+                      <Td>{steps[_this].payload[_subThis][key].materiau}</Td>
+                      <Td>{steps[_this].payload[_subThis][key].hauteur}</Td>
+                      <Td>{steps[_this].payload[_subThis][key].largeur}</Td>
+                    </Tr>
+                  )
+              )}
+            </Thead>
+            <Tbody></Tbody>
+          </Table>
+        </TableContainer>
+      </Box>
+    </Box>
+  );
+};
+
+export default OuverturesForm;

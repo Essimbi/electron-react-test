@@ -4,22 +4,25 @@ const path = require('node:path')
 
 const createWindow = () => {
   const win = new BrowserWindow({
-    title: "Test 0",
-    width: 800,
-    height: 600,
+    title: "LOBATIN",
+    width: 1100,
+    height: 700,
     webPreferences: {
-      preload: path.join(__dirname, 'preload.js')
+      preload: path.join(__dirname, 'preload.js'),
     }
-  }) ;
+  });
+
+ //win.setMenu(null)
+
 
   const startUrl = url.format({
     pathname: path.join(__dirname, 'index.html'),
     protocol: 'file'
-  }) ;
+  });
 
   // win.loadFile('index.html')
 
-  win.loadURL("http://localhost:3000") ;
+  win.loadURL('http://localhost:3000')
 }
 
 app.whenReady().then(() => {

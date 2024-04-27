@@ -11,3 +11,79 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.css-kq5oaw[data-status='complete'] {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(to right, #09AFAF, #09AFAF) !important;
+  color: var(--chakra-colors-chakra-inverse-text);
+  width: 50px;
+  height: 50px;
+}
+
+.css-kq5oaw[data-status=active] {
+  border-width: 2px;
+  border-color: #09AFAF !important;
+  width: 50px;
+  height: 50px;
+
+}
+
+.css-kq5oaw[data-status=incomplete] {
+  border-width: 2px;
+  width: 50px;
+  height: 50px;
+}
+
+.css-kq5oaw[data-status=active] {
+  border-width: 2px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.css-vg1je[data-orientation=horizontal] {
+  width: 100%;
+  height: 2px;
+  -webkit-margin-start: var(--chakra-space-2);
+  margin-inline-start: var(--chakra-space-2);
+  margin-left: 0px;
+  height: 8px;
+}
+
+.css-vg1je[data-status=complete] {
+  background:  #09AFAF !important;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  /* height: 10px; */
+}
+
+.css-1k81p16{
+  --stepper-accent-color: #09AFAF !important;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-out {
+  animation: fadeOut 0.5s ease forwards;
+}
+
+
+::-webkit-scrollbar {
+  width: 0.2em !important;
+}
+
+::-webkit-scrollbar-track {
+  background: #ffff
+}
+
+::-webkit-scrollbar-thumb {
+  background: #09AFAF
+}
+
+:host, :root, [data-theme] {
+  --chakra-ui-focus-ring-color: #09AFAF !important;
+}
