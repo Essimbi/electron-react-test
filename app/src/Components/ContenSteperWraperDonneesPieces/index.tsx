@@ -3,6 +3,7 @@ import { Box, FormControl, FormLabel, Select, Text } from '@chakra-ui/react';
 import { useSettingsContext } from '../../Hooks/useSettings';
 import { useStepContext } from '../../Hooks/useStep';
 import { initialStepType } from '../../contexts/StepContext';
+import { useTranslation } from "react-i18next";
 
 const _this = 'STEP-1';
 const _subThis = 'STEP-1-0';
@@ -10,6 +11,7 @@ const _subThis = 'STEP-1-0';
 export const DonneesPiecesForm = () => {
   const { settings } = useSettingsContext();
   const { setActiveStep, steps, setStep } = useStepContext();
+  const { t } = useTranslation();
 
   return (
     <Box
@@ -20,7 +22,7 @@ export const DonneesPiecesForm = () => {
     >
       {/* {JSON.stringify(steps)} */}
       <Text fontSize="lg" ml={10} mt={-20}>
-        Matériaux de la pièce
+        {t('steper-2-0.titre')}
       </Text>
       <Box
         style={{
@@ -30,7 +32,7 @@ export const DonneesPiecesForm = () => {
         }}
       >
         <FormControl width={'45%'} mt={10}>
-          <FormLabel>Matériaux du plafond</FormLabel>
+          <FormLabel>{t('steper-2-0.materiaux-plafond')}</FormLabel>
           <Select
             value={steps[_this].payload[_subThis]['materiaux_plafond']}
             onChange={(e) => {
@@ -40,17 +42,17 @@ export const DonneesPiecesForm = () => {
               setStep({ ...ancian });
             }}
           >
-            <option value="Toiture en tuiles romane 1 & 2">Toitures en tuiles romane 1 & 2</option>
-            <option value="Toiture en tôles d'aluminium">Toiture en tôles d'aluminium</option>
-            <option value="Toiture en dalle de beton">Toiture en dalle de béton</option>
-            <option value="Toiture en paille">Toitures en paille</option>
-            <option value="Dalle en Hourdis">Dalle en Hourdis</option>
-            <option value="Couche d'air intra-plafond">Couche d'air intra-plafond</option>
+            <option value="Toiture en tuiles romane 1 & 2" defaultChecked>{t('steper-1.section-materiaux-toit.val-1')}</option>
+            <option value="Toiture en tôles d'aluminium">{t('steper-1.section-materiaux-toit.val-2')}</option>
+            <option value="Toiture en dalle de beton">{t('steper-1.section-materiaux-toit.val-3')}</option>
+            <option value="Toiture en paille">{t('steper-1.section-materiaux-toit.val-4')}</option>
+            <option value="Dalle en Hourdis">{t('steper-1.section-materiaux-toit.val-5')}</option>
+            <option value="Couche d'air intra-plafond">{t('steper-1.section-materiaux-toit.val-6')}</option>
           </Select>
         </FormControl>
 
         <FormControl ml={'3%'} width={'45%'} mt={10}>
-          <FormLabel>Revêtement intérieur du mur</FormLabel>
+          <FormLabel>{t('steper-2-0.revetement-int')}</FormLabel>
           <Select
             value={steps[_this].payload[_subThis]['revetement_interieur_mur']}
             onChange={(e) => {
@@ -60,11 +62,11 @@ export const DonneesPiecesForm = () => {
               setStep({ ...ancian });
             }}
           >
-            <option value="Peinture blanche">Peinture blanche</option>
-            <option value="Peinture claire">Peinture claire</option>
-            <option value="Peinture foncée">Peinture foncée</option>
-            <option value="Peinture mate">Peinture mate</option>
-            <option value="Peinture en aluminium">Peinture en aluminium</option>
+            <option value="Peinture blanche" defaultChecked>{t('steper-2-0.section-revetement.val-1')}</option>
+            <option value="Peinture claire">{t('steper-2-0.section-revetement.val-2')}</option>
+            <option value="Peinture foncée">{t('steper-2-0.section-revetement.val-3')}</option>
+            <option value="Peinture mate">{t('steper-2-0.section-revetement.val-4')}</option>
+            <option value="Peinture en aluminium">{t('steper-2-0.section-revetement.val-5')}</option>
           </Select>
         </FormControl>
       </Box>
@@ -76,7 +78,7 @@ export const DonneesPiecesForm = () => {
         }}
       >
         <FormControl width={'45%'} mt={10}>
-          <FormLabel>Revêtement du sol </FormLabel>
+          <FormLabel>{t('steper-2-0.revetement-sol')} </FormLabel>
           <Select
             value={steps[_this].payload[_subThis]['revetement_sol']}
             onChange={(e) => {
@@ -86,14 +88,14 @@ export const DonneesPiecesForm = () => {
               setStep({ ...ancian });
             }}
           >
-            <option value="Dalle de beton + carreaux">Dalle de béton + carreaux</option>
-            <option value="Sol cimente simple">Sol cimenté simple</option>
-            <option value="Sol en terre simple">Sol en terre simple</option>
+            <option value="Dalle de beton + carreaux" defaultChecked>{t('steper-1.section-materiaux-sol.val-1')}</option>
+            <option value="Sol cimente simple">{t('steper-1.section-materiaux-sol.val-2')}</option>
+            <option value="Sol en terre simple">{t('steper-1.section-materiaux-sol.val-3')}</option>
           </Select>
         </FormControl>
 
         <FormControl ml={'3%'} width={'45%'} mt={10}>
-          <FormLabel>Revêtement extérieur du mur</FormLabel>
+          <FormLabel>{t('steper-2-0.revetement-ext')}</FormLabel>
           <Select
             value={steps[_this].payload[_subThis]['revetement_exterieur_mur']}
             onChange={(e) => {
@@ -103,11 +105,11 @@ export const DonneesPiecesForm = () => {
               setStep({ ...ancian });
             }}
           >
-            <option value="Peinture blanche">Peinture blanche</option>
-            <option value="Peinture claire">Peinture claire</option>
-            <option value="Peinture foncée">Peinture foncée</option>
-            <option value="Peinture mate">Peinture mate</option>
-            <option value="Peinture en aluminium">Peinture en aluminium</option>
+            <option value="Peinture blanche" defaultChecked>{t('steper-2-0.section-revetement.val-1')}</option>
+            <option value="Peinture claire">{t('steper-2-0.section-revetement.val-2')}</option>
+            <option value="Peinture foncée">{t('steper-2-0.section-revetement.val-3')}</option>
+            <option value="Peinture mate">{t('steper-2-0.section-revetement.val-4')}</option>
+            <option value="Peinture en aluminium">{t('steper-2-0.section-revetement.val-5')}</option>
           </Select>
         </FormControl>
       </Box>

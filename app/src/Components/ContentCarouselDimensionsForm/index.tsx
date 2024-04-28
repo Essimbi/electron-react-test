@@ -1,11 +1,13 @@
 import { Box, FormControl, FormLabel, Input, Text } from '@chakra-ui/react';
 import { useStepContext } from '../../Hooks/useStep';
+import { useTranslation } from "react-i18next";
 
 const _this = 'STEP-1';
 const _subThis = 'STEP-1-0';
 
 const DimensionsForm = () => {
   const { setActiveStep, steps, setStep } = useStepContext();
+  const { t } = useTranslation();
   return (
     <Box
       display={'flex'}
@@ -14,7 +16,7 @@ const DimensionsForm = () => {
       width={'100%'}
     >
       <Text fontSize="lg" ml={10} mt={-20}>
-        Dimensions de la pièce
+        {t('steper-2-1.titre')}
       </Text>
       <Box
         style={{
@@ -24,7 +26,7 @@ const DimensionsForm = () => {
         }}
       >
         <FormControl width={'45%'} mt={10}>
-          <FormLabel>Nom de la pièce</FormLabel>
+          <FormLabel>{t('steper-2-1.nom')}</FormLabel>
           <Input
             value={steps[_this].payload[_subThis]['nom_piece']}
             onChange={(e) => {
@@ -33,12 +35,12 @@ const DimensionsForm = () => {
               setStep({ ...ancian });
             }}
             type={'text'}
-            placeholder="Entrer le nom de la pièce"
+            placeholder={t('steper-2-1.placeholder-nom')}
           />
         </FormControl>
 
         <FormControl ml={'3%'} width={'45%'} mt={10}>
-          <FormLabel>Hauteur sous plafond</FormLabel>
+          <FormLabel>{t('steper-2-1.hateur')}</FormLabel>
           <Input
             value={steps[_this].payload[_subThis]['hauteur_sous_plafond']}
             onChange={(e) => {
@@ -48,7 +50,7 @@ const DimensionsForm = () => {
               setStep({ ...ancian });
             }}
             type={'number'}
-            placeholder="En mètre"
+            placeholder={t('steper-2-1.placeholder-metre')}
           />
         </FormControl>
       </Box>
@@ -60,7 +62,7 @@ const DimensionsForm = () => {
         }}
       >
         <FormControl width={'45%'} mt={10}>
-          <FormLabel>Longueur </FormLabel>
+          <FormLabel>{t('steper-2-1.longueur')} </FormLabel>
           <Input
             value={steps[_this].payload[_subThis]['longueur']}
             onChange={(e) => {
@@ -69,12 +71,12 @@ const DimensionsForm = () => {
               setStep({ ...ancian });
             }}
             type={'number'}
-            placeholder="En mètre"
+            placeholder={t('steper-2-1.placeholder-metre')}
           />
         </FormControl>
 
         <FormControl ml={'3%'} width={'45%'} mt={10}>
-          <FormLabel>Largeur</FormLabel>
+          <FormLabel>{t('steper-2-1.largeur')}</FormLabel>
           <Input
             value={steps[_this].payload[_subThis]['largeur']}
             onChange={(e) => {
@@ -83,7 +85,7 @@ const DimensionsForm = () => {
               setStep({ ...ancian });
             }}
             type={'number'}
-            placeholder="En mètre"
+            placeholder={t('steper-2-1.placeholder-metre')}
           />
         </FormControl>
       </Box>

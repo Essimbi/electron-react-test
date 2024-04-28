@@ -1,7 +1,7 @@
 export const data = [
-    { label: "Donneés d'entrée", icon: 'home' },
-    { label: 'Résultats', icon: 'BarChartIcon' },
-    { label: 'Modèles prédéfinis', icon: 'FolderCopyIcon' },
-    { label: 'Aide', icon: 'help' },
-    { label: 'A propos', icon: 'InfoIcon' },
+    { label: "sidebar.donnes-entree", icon: 'home' },
+    { label: 'sidebar.resultats', icon: 'BarChartIcon' },
+    { label: 'sidebar.model-predefini', icon: 'FolderCopyIcon' },
+    { label: 'sidebar.aide', icon: 'help' },
+    { label: 'sidebar.apropos', icon: 'InfoIcon' },
   ]

@@ -1,0 +1,119 @@
+{
+  "common": {
+      "translate-button": "FR",
+      "translated-text": "C'est du français"
+  },
+  "sidebar": {
+    "donnes-entree": "Données d'entrée",
+    "resultats": "Résultats",
+    "model-predefini": "Modèles prédéfins",
+    "aide": "Aide",
+    "apropos": "A propos"
+  },
+  "steper": {
+    "batiment": "Bâtiment",
+    "piece": "Constitution de la pièce",
+    "donnees-meteorologique": "Données météorologiques"
+  },
+  "btn-suivant": "Suivant",
+  "btn-precedent": "Précédent",
+  "steper-1": {
+    "materiaux-toit": "Matériaux du toit",
+    "section-materiaux-toit": {
+      "val-1":"Toitures en tuiles romane 1 & 2",
+      "val-2":"Toiture en tôles d'aluminium",
+      "val-3":"Toiture en dalle de béton",
+      "val-4":"Toitures en paille",
+      "val-5":"Dalle en Hourdis",
+      "val-6":"Couche d'air intra-plafond"
+    },
+    "materiaux-mur": "Matériaux du mur",
+    "section-materiaux-mur": {
+      "val-1":"Parpaing standard",
+      "val-2":"Briques de terre cuites avec vide",
+      "val-3":"Briques de terre cuites pleines",
+      "val-4":"Briques de terre compressées",
+      "val-5":"Briques de terre stabilisées"
+    },
+    "materiaux-sol": "Matériaux du sol",
+    "section-materiaux-sol": {
+      "val-1": "Dalle de béton + carreaux",
+      "val-2": "Sol cimenté simple",
+      "val-3": "Sol en terre simple"
+    },
+    "nombre-piece": "Nombres de pièces",
+    "placeholder": "Entrer le nombre de pièces"
+  },
+  "steper-2-0": {
+    "titre": "Matériaux de la pièce",
+    "materiaux-plafond": "Matériaux du plafond",
+    "revetement-int": "Revêtement intérieur du mur",
+    "section-revetement": {
+      "val-1": "Peinture blanche",
+      "val-2": "Peinture claire",
+      "val-3": "Peinture foncée",
+      "val-4": "Peinture mate",
+      "val-5": "Peinture en aluminium"
+    },
+    "revetement-sol": "Revêtement du sol",
+    "revetement-ext": "Revêtement extérieur du mur"
+  },
+  "steper-2-1": {
+    "titre": "Dimensions de la pièce",
+    "nom": "Nom de la pièce",
+    "placeholder-nom": "Entrer le nom de la pièce",
+    "hateur": "Hauteur sous plafond",
+    "longueur": "Longueur",
+    "largeur": "Largeur",
+    "placeholder-metre": "En mètre"
+  },
+  "steper-2-2": {
+    "titre": "Ouvertures de la pièce",
+    "type-ouverture": "Type d'ouverture",
+    "section-ouverture": {
+      "val-1": "Porte",
+      "val-2": "Fenêtre"
+    },
+    "materiaux": "Matériaux",
+    "section-materiaux": {
+      "val-1": "Verre (simple vitrage)",
+      "val-2": "Verre (double vitrage)",
+      "val-3": "Bois",
+      "val-4": "Aluminium"
+    },
+    "hauteur": "Hauteur",
+    "largeur": "Largeur",
+    "tableau-titre": "Les ouvertures de la pièce",
+    "type": "Type",
+    "btn-ajouter": "Ajouter"
+  },
+  "steper-3": {
+    "alert": "Le calcul de la température de votre pièce a été effectué. Veuillez cliquer sur l'onglet Résultat pour consulter la température de votre pièce!",
+    "zone": "Sélectionnez une Zone geographique",
+    "section-zone": {
+      "val-1": "Littoral",
+      "val-2": "Centre",
+      "val-3": "Extreme Nord",
+      "val-4": "Nord",
+      "val-5": "Ouest"
+    },
+    "calculer": "Calculer"
+  },
+  "result": {
+    "plafond": "Matériel du plafond",
+    "toit": "Matériaux du toit",
+    "mur": "Matériau du mur",
+    "enrobage": "Enrobage",
+    "sol": "Matériaux du sol",
+    "region": "Région",
+    "dimension": "Dimensions de la pièce",
+    "h": "H",
+    "l": "L",
+    "largeur": "Largeur",
+    "temperature": "Température moyenne intérieure",
+    "btn-exporter": "Exporter",
+    "titre-courbe": "Courbe de la température",
+    "heure": "Heure",
+    "temp": "Température (en °C)"
+  }
+}
