@@ -1,7 +1,7 @@
-import React, { ChangeEvent, useState } from "react"
+import { Box, Select } from '@chakra-ui/react';
+import { ChangeEvent, useState } from "react";
 import { useTranslation } from 'react-i18next';
 import { Language } from '../../Helper/Language';
-import { Select, Box } from '@chakra-ui/react'
 
 const ChooseLang = () => {
     const { i18n } = useTranslation();
