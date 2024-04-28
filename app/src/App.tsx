@@ -36,8 +36,14 @@ function App() {
         return <RouterWrapper />;
       case 'STEP-3':
         return <Index />;
+      case 'STEP-4':
+        return 'component 4';
+      case 'STEP-5':
+        return 'component 5';
+      case 'STEP-6':
+        return 'component 6';
       default:
-        return 'a component here!';
+        return 'a default component here!';
     }
   };
 
