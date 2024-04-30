@@ -1,0 +1,43 @@
+{
+  "appId": "com.example.app",
+  "productName": "My Electron App",
+  "version": "1.0.0",
+  "description": "My awesome Electron app",
+  "license": "MIT",
+
+  "build": {
+    "appId": "com.example.app",
+    "productName": "My Electron App",
+    "version": "1.0.0",
+    "mac": {
+      "arch": [
+        "x64"
+      ],
+      "icon": "./build/icon.icns",
+      "bundleIdentifier": "com.example.app"
+    },
+    "win": {
+      "arch": [
+        "x64"
+      ],
+      "icon": "./build/icon.ico",
+      "publisherName": "Example Inc."
+    },
+    "linux": {
+      "arch": [
+        "x64"
+      ],
+      "icon": "./build/icon.png"
+    }
+  },
+
+  "publish": {
+    "publish": [
+      {
+        "provider": "generic",
+        "publishType": "directory",
+        "artifactName": "${productName}-${version}.zip"
+      }
+    ]
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "name": "testelectronreact",
+  "name": "lobatin",
   "version": "1.0.0",
   "description": "Trying to start a new project for desktop using electron and react",
   "main": "main.js",
@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron-forge start",
     "package": "electron-forge package",
-    "make": "electron-forge make"
+    "make": "electron-forge make",
+    "build": "cd ./app && yarn build && cd ../ && rm -rf ./builder && rm -rf ./dist && mkdir ./builder && cp -a ./app/build/. ./builder && electron-builder"
   },
   "keywords": [
     "electron",
@@ -21,6 +22,7 @@
     "@electron-forge/plugin-fuses": "^7.3.1",
     "@electron/fuses": "^1.8.0",
     "awesome-react-stepper": "^1.1.1",
+    "electron-is-dev": "^3.0.1",
     "electron-squirrel-startup": "^1.0.0",
     "react-form-stepper": "^2.0.3",
     "react-icons": "^5.0.1"
@@ -32,6 +34,7 @@
     "@electron-forge/maker-squirrel": "^7.3.1",
     "@electron-forge/maker-zip": "^7.3.1",
     "@electron-forge/plugin-auto-unpack-natives": "^7.3.1",
-    "electron": "^29.1.5"
+    "electron": "^29.1.5",
+    "electron-builder": "^24.13.3"
   }
 }
