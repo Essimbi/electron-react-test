@@ -5,16 +5,52 @@ import {
   FormLabel,
   Input,
   Select,
+  FormErrorMessage,
+  FormHelperText
 } from '@chakra-ui/react';
 import { useSettingsContext } from '../../Hooks/useSettings';
 import { useStepContext } from '../../Hooks/useStep';
 import { useTranslation } from "react-i18next";
-
+import * as React from 'react'
 const _this = 'STEP-0';
 export const InformForm = () => {
   const { settings } = useSettingsContext();
   const { setActiveStep, steps, setStep } = useStepContext();
   const { t } = useTranslation();
+  const [error, setError] = React.useState('')
+  const isError = error === ''
+
+  const handleSwitchStep1 = () => {
+    if (steps[_this].payload['materiaux_toit'] === undefined ||
+        steps[_this].payload['materiaux_mur'] === undefined ||
+        steps[_this].payload['materiaux_sol'] === undefined ||
+        steps[_this].payload['nombre_pieces'] === undefined) {
+
+          setError('Ce champ est required ✍️');
+
+      console.log(error);
+    } else  {
+      setActiveStep('STEP-1');
+      setStep({
+        ...steps,
+        'STEP-1': {
+          ...steps['STEP-1'],
+          activeSubstep: "STEP-1-0",
+          payload: (() => {
+            let result: any = {};
+            for (
+              let index = 0;
+              index < parseInt(steps[_this].payload.nombre_pieces);
+              index++
+            ) {
+              result['STEP-1-' + index] = {};
+            }
+            return result;
+          })(),
+        },
+      });
+    }
+  }
 
   return (
     <Box
@@ -30,8 +66,9 @@ export const InformForm = () => {
           justifyContent: 'center',
         }}
       >
-        <FormControl width={'45%'} mt={10}>
-          <FormLabel>{t('steper-1.materiaux-toit')}</FormLabel>
+        <FormControl width={'45%'} mt={10} isInvalid={isError ? false : !steps[_this].payload['materiaux_toit']}
+        >
+          <FormLabel>{t('steper-1.materiaux-toit')}<span style={{color:'red'}}>*</span></FormLabel>
           <Select
             value={steps[_this].payload['materiaux_toit']}
             onChange={(e) =>
@@ -54,10 +91,18 @@ export const InformForm = () => {
             <option value="Dalle en Hourdis">{t('steper-1.section-materiaux-toit.val-5')}</option>
             <option value="Couche d'air intra-plafond">{t('steper-1.section-materiaux-toit.val-6')}</option>
           </Select>
+          {isError ? (
+            <FormHelperText>
+            </FormHelperText>
+            ) : (
+              <FormErrorMessage>{error}</FormErrorMessage>
+            )
+          }
         </FormControl>
 
-        <FormControl ml={'3%'} width={'45%'} mt={10}>
-          <FormLabel>{t('steper-1.materiaux-mur')}</FormLabel>
+        <FormControl ml={'3%'} width={'45%'} mt={10} isInvalid={isError ? false : !steps[_this].payload['materiaux_mur']}
+        >
+          <FormLabel>{t('steper-1.materiaux-mur')}<span style={{color:'red'}}>*</span></FormLabel>
           <Select
             value={steps[_this].payload['materiaux_mur']}
             onChange={(e) =>
@@ -79,6 +124,13 @@ export const InformForm = () => {
             <option value="Briques de terre compressées">{t('steper-1.section-materiaux-mur.val-4')}</option>
             <option value="Briques de terre stabilisées">{t('steper-1.section-materiaux-mur.val-5')}</option>
           </Select>
+          {isError ? (
+            <FormHelperText>
+            </FormHelperText>
+            ) : (
+              <FormErrorMessage>{error}</FormErrorMessage>
+            )
+          }
         </FormControl>
       </Box>
 
@@ -89,8 +141,8 @@ export const InformForm = () => {
           justifyContent: 'center',
         }}
       >
-        <FormControl width={'45%'} mt={10}>
-          <FormLabel>{t('steper-1.materiaux-sol')} </FormLabel>
+        <FormControl width={'45%'} mt={10} isInvalid={isError ? false : !steps[_this].payload['materiaux_sol']}>
+          <FormLabel>{t('steper-1.materiaux-sol')}<span style={{color:'red'}}>*</span> </FormLabel>
           <Select
             value={steps[_this].payload['materiaux_sol']}
             onChange={(e) =>
@@ -110,10 +162,17 @@ export const InformForm = () => {
             <option value="Sol cimente simple">{t('steper-1.section-materiaux-sol.val-2')}</option>
             <option value="Sol en terre simple">{t('steper-1.section-materiaux-sol.val-3')}</option>
           </Select>
+          {isError ? (
+            <FormHelperText>
+            </FormHelperText>
+            ) : (
+              <FormErrorMessage>{error}</FormErrorMessage>
+            )
+          }
         </FormControl>
 
-        <FormControl ml={'3%'} width={'45%'} mt={10}>
-          <FormLabel>{t('steper-1.nombre-piece')}</FormLabel>
+        <FormControl ml={'3%'} width={'45%'} mt={10} isInvalid={isError ? false : !steps[_this].payload['nombre_pieces']}>
+          <FormLabel>{t('steper-1.nombre-piece')}<span style={{color:'red'}}>*</span></FormLabel>
           <Input
             type={'number'}
             value={steps[_this].payload['nombre_pieces']}
@@ -131,6 +190,13 @@ export const InformForm = () => {
             }
             placeholder={t('steper-1.placeholder')}
           />
+          {isError ? (
+            <FormHelperText>
+            </FormHelperText>
+            ) : (
+              <FormErrorMessage>{error}</FormErrorMessage>
+            )
+          }
         </FormControl>
       </Box>
 
@@ -143,27 +209,7 @@ export const InformForm = () => {
         }}
       >
         <Button
-          onClick={() => {
-            setActiveStep('STEP-1');
-            setStep({
-              ...steps,
-              'STEP-1': {
-                ...steps['STEP-1'],
-                activeSubstep: "STEP-1-0",
-                payload: (() => {
-                  let result: any = {};
-                  for (
-                    let index = 0;
-                    index < parseInt(steps[_this].payload.nombre_pieces);
-                    index++
-                  ) {
-                    result['STEP-1-' + index] = {};
-                  }
-                  return result;
-                })(),
-              },
-            });
-          }}
+          onClick={handleSwitchStep1}
           _hover={{
             backgroundColor: settings.globalColors.primary.main,
             opacity: 0.5,

@@ -1,5 +1,5 @@
 import { Box, Button } from '@chakra-ui/react';
-import { useState } from 'react';
+import { useState, useEffect  } from 'react';
 import { DonneesPiecesForm } from '../../Components/ContenSteperWraperDonneesPieces';
 import DimensionsForm from '../../Components/ContentCarouselDimensionsForm';
 import OuverturesForm from '../../Components/ContentCarouselOuverturesForm';
@@ -8,11 +8,14 @@ import { useSettingsContext } from '../../Hooks/useSettings';
 import { useStepContext } from '../../Hooks/useStep';
 import { useTranslation } from "react-i18next";
 
+const _this = 'STEP-1';
+const _subThis = 'STEP-1-0';
+
 export const DonneesPiecesCategoryWrapper = () => {
   const { settings } = useSettingsContext();
   const [selectedIndex, setSelectedIndex] = useState<CategoryValueType>(1);
 
-  const { setActiveStep } = useStepContext();
+  const { setActiveStep, steps } = useStepContext();
   const { t } = useTranslation();
 
   const renderCategory = (): any => {
@@ -38,6 +41,41 @@ export const DonneesPiecesCategoryWrapper = () => {
     }
     return result;
   };
+  const [Valid, setIsValid] = useState(false);
+
+    useEffect(() => {
+      const values =
+        steps[_this].payload[_subThis]['materiaux_plafond'] === undefined ||
+        steps[_this].payload[_subThis]['revetement_interieur_mur'] === undefined ||
+        steps[_this].payload[_subThis]['revetement_sol'] === undefined ||
+        steps[_this].payload[_subThis]['revetement_exterieur_mur'] === undefined ||
+        steps[_this].payload[_subThis]['nom_piece'] === undefined ||
+        steps[_this].payload[_subThis]['hauteur_sous_plafond'] === undefined ||
+        steps[_this].payload[_subThis]['longueur'] === undefined ||
+        steps[_this].payload[_subThis]['largeur'] === undefined ||
+        steps['STEP-1']?.payload?.['STEP-1-0']?.['ouverture-1']?.type_ouverture === undefined ||
+        steps['STEP-1']?.payload?.['STEP-1-0']?.['ouverture-1']?.materiau === undefined ||
+        steps['STEP-1']?.payload?.['STEP-1-0']?.['ouverture-1']?.hauteur === undefined ||
+        steps['STEP-1']?.payload?.['STEP-1-0']?.['ouverture-1']?.largeur === undefined ;
+        if (values) {
+          setIsValid(true);
+        }else{
+          setIsValid(false);
+        }
+  
+    }, );
+
+  const handleSwitchStep1 = () => {
+    if (Valid) {
+      setIsValid(true)
+      // setErreur("Ce champ est required ✍️");
+      
+      console.log('toto');
+    } else  {
+      setActiveStep('STEP-2')
+      setIsValid(false)
+    }
+  }
 
   return (
     <Box width={'100%'} height={'100%'}>
@@ -152,7 +190,7 @@ export const DonneesPiecesCategoryWrapper = () => {
           alignItems={'center'}
         >
           <Button
-            onClick={() => null}
+            onClick={() => setActiveStep('STEP-0')}
             _hover={{
               backgroundColor: settings.globalColors.pureWhite.main,
               opacity: 0.5,
@@ -169,7 +207,8 @@ export const DonneesPiecesCategoryWrapper = () => {
             {t('btn-precedent')}
           </Button>
           <Button
-            onClick={() => setActiveStep('STEP-2')}
+            onClick={handleSwitchStep1}
+            isDisabled={Valid}
             _hover={{
               backgroundColor: settings.globalColors.primary.main,
               opacity: 0.5,

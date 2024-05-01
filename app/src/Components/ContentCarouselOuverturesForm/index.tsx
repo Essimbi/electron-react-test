@@ -6,6 +6,8 @@ import {
   Input,
   Select,
   Text,
+  FormErrorMessage,
+  FormHelperText
 } from '@chakra-ui/react';
 import {
   Table,
@@ -40,6 +42,9 @@ const OuverturesForm = () => {
     hauteur: 0,
     largeur: 0,
   });
+
+  const isError = true
+
   return (
     <Box
       display={'flex'}
@@ -57,8 +62,8 @@ const OuverturesForm = () => {
           justifyContent: 'center',
         }}
       >
-        <FormControl width={'45%'} mt={5}>
-          <FormLabel>{t('steper-2-2.type-ouverture')}</FormLabel>
+        <FormControl width={'45%'} mt={5} isInvalid={isError ? false : !openState['type_ouverture']}>
+          <FormLabel>{t('steper-2-2.type-ouverture')}<span style={{color:'red'}}>*</span></FormLabel>
           <Select
             value={openState['type_ouverture']}
             onChange={(e) => {
@@ -73,10 +78,17 @@ const OuverturesForm = () => {
             </option>
             <option value="Fenetre">{t('steper-2-2.section-ouverture.val-2')}</option>
           </Select>
+          {isError ? (
+            <FormHelperText>
+            </FormHelperText>
+            ) : (
+              <FormErrorMessage>Ce champ est required ✍️</FormErrorMessage>
+            )
+          }
         </FormControl>
 
-        <FormControl ml={'3%'} width={'45%'} mt={5}>
-          <FormLabel>{t('steper-2-2.materiaux')}</FormLabel>
+        <FormControl ml={'3%'} width={'45%'} mt={5} isInvalid={isError ? false : !openState['materiau']}>
+          <FormLabel>{t('steper-2-2.materiaux')}<span style={{color:'red'}}>*</span></FormLabel>
           <Select
             value={openState['materiau']}
             onChange={(e) => {
@@ -91,6 +103,13 @@ const OuverturesForm = () => {
             <option value="Bois">{t('steper-2-2.section-materiaux.val-3')}</option>
             <option value="Aluminium">{t('steper-2-2.section-materiaux.val-4')}</option>
           </Select>
+          {isError ? (
+            <FormHelperText>
+            </FormHelperText>
+            ) : (
+              <FormErrorMessage>Ce champ est required ✍️</FormErrorMessage>
+            )
+          }
         </FormControl>
       </Box>
       <Box
@@ -100,8 +119,8 @@ const OuverturesForm = () => {
           justifyContent: 'center',
         }}
       >
-        <FormControl width={'45%'} mt={5}>
-          <FormLabel>{t('steper-2-2.hauteur')} </FormLabel>
+        <FormControl width={'45%'} mt={5} isInvalid={isError ? false : !openState['hauteur']}>
+          <FormLabel>{t('steper-2-2.hauteur')} <span style={{color:'red'}}>*</span></FormLabel>
           <Input
             value={openState['hauteur']}
             onChange={(e) => {
@@ -113,10 +132,17 @@ const OuverturesForm = () => {
             placeholder="En mètre"
             size={'sm'}
           />
+          {isError ? (
+            <FormHelperText>
+            </FormHelperText>
+            ) : (
+              <FormErrorMessage>Ce champ est required ✍️</FormErrorMessage>
+            )
+          }
         </FormControl>
 
-        <FormControl ml={'3%'} width={'45%'} mt={5}>
-          <FormLabel>{t('steper-2-2.largeur')}</FormLabel>
+        <FormControl ml={'3%'} width={'45%'} mt={5} isInvalid={isError ? false : !openState['largeur']}>
+          <FormLabel>{t('steper-2-2.largeur')}<span style={{color:'red'}}>*</span></FormLabel>
           <Input
             value={openState['largeur']}
             onChange={(e) => {
@@ -128,6 +154,13 @@ const OuverturesForm = () => {
             placeholder="En mètre"
             size={'sm'}
           />
+          {isError ? (
+            <FormHelperText>
+            </FormHelperText>
+            ) : (
+              <FormErrorMessage>Ce champ est required ✍️</FormErrorMessage>
+            )
+          }
         </FormControl>
       </Box>
       <Box
