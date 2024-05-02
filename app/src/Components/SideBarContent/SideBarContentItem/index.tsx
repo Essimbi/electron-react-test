@@ -52,17 +52,24 @@ export const SideBarContentItem = ({
         activeStep === 'STEP-1' ||
         activeStep === 'STEP-2')) ||
     (step === 1 && activeStep === 'STEP-3') ||
-    (step === 2 && activeStep === 'STEP-4');
+    (step === 2 && activeStep === 'STEP-4') ||
+    (step === 3 && activeStep === 'STEP-5') ||
+    (step === 4 && activeStep === 'STEP-6');
+    
   return (
     <AnimatedBox borderRadius={5}>
       <Box
         onClick={() => {
-          if(step === 1){
-            setActiveStep("STEP-3")
-          }else if(step === 2){
-            setActiveStep("STEP-4")
-          }else if(step === 0){
-            setActiveStep("STEP-0")
+          if (step === 1) {
+            setActiveStep('STEP-3');
+          } else if (step === 2) {
+            setActiveStep('STEP-4');
+          } else if (step === 0) {
+            setActiveStep('STEP-0');
+          } else if (step === 3) {
+            setActiveStep('STEP-5');
+          } else {
+            setActiveStep('STEP-6');
           }
         }}
         className="item"

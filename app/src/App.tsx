@@ -5,15 +5,17 @@ import '@fontsource/roboto/700.css';
 import './App.css';
 
 import Box from '@mui/material/Box';
+import { About } from './Components/ContentForAbout';
+import { Help } from './Components/ContentForHelp';
+import Index from './Components/ContentResult';
 import { SideBarContent } from './Components/SideBarContent';
-import { useDimensions } from './Hooks/useDimensions';
-import { useSettingsContext } from './Hooks/useSettings';
-import { RouterWrapper } from './RouterWrapper';
 import { SideBarStyleType } from './configs/types';
 import { GlobalStyles, useStyles } from './constants/GlobalStyles';
 import { TintProvider } from './contexts/GraphContext';
+import { useDimensions } from './Hooks/useDimensions';
+import { useSettingsContext } from './Hooks/useSettings';
 import { useStepContext } from './Hooks/useStep';
-import Index from './Components/ContentResult';
+import { RouterWrapper } from './RouterWrapper';
 
 function App() {
   const classes = useStyles();
@@ -36,8 +38,14 @@ function App() {
         return <RouterWrapper />;
       case 'STEP-3':
         return <Index />;
+      case 'STEP-4':
+        return 'component 4';
+      case 'STEP-5':
+        return <Help/>;
+      case 'STEP-6':
+        return <About/>;
       default:
-        return 'a component here!';
+        return 'a default component here!';
     }
   };
 

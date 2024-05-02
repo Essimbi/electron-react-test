@@ -1,6 +1,13 @@
 import { ReactNode, createContext, useState } from 'react';
 
-export type StepType = 'STEP-0' | 'STEP-1' | 'STEP-2' | 'STEP-3' | 'STEP-4';
+export type StepType =
+  | 'STEP-0'
+  | 'STEP-1'
+  | 'STEP-2'
+  | 'STEP-3'
+  | 'STEP-4'
+  | 'STEP-5'
+  | 'STEP-6';
 export type subStepType =
   | 'STEP-1-0'
   | 'STEP-1-1'
@@ -42,6 +49,16 @@ const initialStep: initialStepType = {
     payload: {},
   },
   'STEP-4': {
+    previewStep: 'STEP-3',
+    activeSubstep: undefined,
+    payload: {},
+  },
+  'STEP-5': {
+    previewStep: 'STEP-3',
+    activeSubstep: undefined,
+    payload: {},
+  },
+  'STEP-6': {
     previewStep: 'STEP-3',
     activeSubstep: undefined,
     payload: {},

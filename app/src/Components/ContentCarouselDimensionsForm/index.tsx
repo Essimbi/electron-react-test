@@ -1,4 +1,4 @@
-import { Box, FormControl, FormLabel, Input, Text } from '@chakra-ui/react';
+import { Box, FormControl, FormLabel, Input, Text, FormErrorMessage, FormHelperText } from '@chakra-ui/react';
 import { useStepContext } from '../../Hooks/useStep';
 import { useTranslation } from "react-i18next";
 
@@ -8,6 +8,8 @@ const _subThis = 'STEP-1-0';
 const DimensionsForm = () => {
   const { setActiveStep, steps, setStep } = useStepContext();
   const { t } = useTranslation();
+  const isError = true
+
   return (
     <Box
       display={'flex'}
@@ -25,8 +27,8 @@ const DimensionsForm = () => {
           justifyContent: 'center',
         }}
       >
-        <FormControl width={'45%'} mt={10}>
-          <FormLabel>{t('steper-2-1.nom')}</FormLabel>
+        <FormControl width={'45%'} mt={10} isInvalid={isError ? false : !steps[_this].payload[_subThis]['nom_piece']}>
+          <FormLabel>{t('steper-2-1.nom')}<span style={{color:'red'}}>*</span></FormLabel>
           <Input
             value={steps[_this].payload[_subThis]['nom_piece']}
             onChange={(e) => {
@@ -39,8 +41,8 @@ const DimensionsForm = () => {
           />
         </FormControl>
 
-        <FormControl ml={'3%'} width={'45%'} mt={10}>
-          <FormLabel>{t('steper-2-1.hateur')}</FormLabel>
+        <FormControl ml={'3%'} width={'45%'} mt={10} isInvalid={isError ? false : !steps[_this].payload[_subThis]['hauteur_sous_plafond']}>
+          <FormLabel>{t('steper-2-1.hateur')}<span style={{color:'red'}}>*</span></FormLabel>
           <Input
             value={steps[_this].payload[_subThis]['hauteur_sous_plafond']}
             onChange={(e) => {
@@ -61,8 +63,8 @@ const DimensionsForm = () => {
           justifyContent: 'center',
         }}
       >
-        <FormControl width={'45%'} mt={10}>
-          <FormLabel>{t('steper-2-1.longueur')} </FormLabel>
+        <FormControl width={'45%'} mt={10} isInvalid={isError ? false : !steps[_this].payload[_subThis]['longueur']}>
+          <FormLabel>{t('steper-2-1.longueur')} <span style={{color:'red'}}>*</span></FormLabel>
           <Input
             value={steps[_this].payload[_subThis]['longueur']}
             onChange={(e) => {
@@ -75,8 +77,8 @@ const DimensionsForm = () => {
           />
         </FormControl>
 
-        <FormControl ml={'3%'} width={'45%'} mt={10}>
-          <FormLabel>{t('steper-2-1.largeur')}</FormLabel>
+        <FormControl ml={'3%'} width={'45%'} mt={10} isInvalid={isError ? false : !steps[_this].payload[_subThis]['largeur']}>
+          <FormLabel>{t('steper-2-1.largeur')}<span style={{color:'red'}}>*</span></FormLabel>
           <Input
             value={steps[_this].payload[_subThis]['largeur']}
             onChange={(e) => {
