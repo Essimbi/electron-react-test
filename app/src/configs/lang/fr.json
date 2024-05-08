@@ -115,5 +115,32 @@
     "titre-courbe": "Courbe de la température",
     "heure": "Heure",
     "temp": "Température (en °C)"
+  },
+  "help": {
+    "title":"Comment pouvons-nous vous aider ?",
+    "guide":"Guide",
+    "text_guide": "Pour utiliser l'application afin de faire une prédiction, vous devez suivre les étapes suivantes (les étapes sont expliquées plus en détail dans le guide d'utilisation de l'application)",
+    "etape_1":"Étape 1",
+    "text_1": "Choisissez les matériaux de construction par défaut (matériau du toit, matériau du plafond, matériau du mur, matériau du sol, revêtement).",
+    "etape_2": "Étape 2",
+    "text_2": "Ajouter les différents étages du bâtiment",
+    "etape_3": "Étape 3",
+    "text_3" : "Pour chaque étage, ajouter les pièces de l'étage avec leurs dimensions",
+    "etape_4" : "Étape 4",
+    "text_4" : "Ajouter les ouvertures pour chaque pièce",
+    "etape_5": "Étape 5",
+    "text_5": "Cliquez sur le bouton 'Calculer' pour calculer la température intérieure du bâtiment.",
+    "etape_6": "Étape 6",
+    "text_6" : "Le résultat est affiché dans la section de sortie, avec un aperçu des différentes caractéristiques du bâtiment."
+  },
+  "about":{
+    "title":"A propos de HTSLM",
+    "version": "Version de l’application HTSLM 2.0",
+    "objectif": "Objectif de l’application : Détermination de la température intérieure dans une pièce d’un bâtiment construit au Cameroun à base de matériaux locaux produits par la Mission de Promotion des Matériaux Locaux du Cameroun (MIPROMALO)",
+    "type": "Type de logiciel :",
+    "type_text": "Offline & propriétaire, Licence octroyée par la MIPROMALO",
+    "construction": "Informations sur la construction :",
+    "construction_text": "Reactjs et electronjs",
+    "systeme": "Système d’exploitation supporté :"
   }
 }

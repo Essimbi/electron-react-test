@@ -115,5 +115,32 @@
     "titre-courbe": "Temperature curve",
     "heure": "Hour",
     "temp": "Temperature (in °C)"
+  },
+  "help": {
+    "title":"How can we help you ?",
+    "guide":"Guide",
+    "text_guide": "To use the application to make a prediction, you need to follow these steps (the steps are explained in more detail in the application user guide)",
+    "etape_1":"Step 1",
+    "text_1": "Select default building materials (roof material, ceiling material, wall material, floor material, cladding).",
+    "etape_2": "Step 2",
+    "text_2": "Add the different floors of the building",
+    "etape_3": "Step 3",
+    "text_3" : "For each floor, add the floor rooms and their dimensions",
+    "etape_4" : "Step 4",
+    "text_4" : "Add openings for each room",
+    "etape_5": "Step 5",
+    "text_5": "Click on the 'Calculate' button to calculate the building's indoor temperature.",
+    "etape_6": "Step 6",
+    "text_6" : "The result is displayed in the output section, with an overview of the building's various features."
+  },
+  "about":{
+    "title":"About HTSLM",
+    "version": "Application version HTSLM 2.0",
+    "objectif": "Application objective: Determination of the indoor temperature in a room of a building constructed in Cameroon using local materials produced by the Mission de Promotion des Matériaux Locaux du Cameroun (MIPROMALO).",
+    "type": "Type of software :",
+    "type_text": "Offline & proprietary, licensed by MIPROMALO",
+    "construction": "Construction information :",
+    "construction_text": "Reactjs and electronjs",
+    "systeme": "Supported operating system :"
   }
 }

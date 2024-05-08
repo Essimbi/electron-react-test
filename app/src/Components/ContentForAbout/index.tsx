@@ -10,8 +10,10 @@ import {
   StackDivider,
 } from '@chakra-ui/react';
 import ChooseLang from '../ChooseLang';
+import { useTranslation } from "react-i18next";
 
 export const About = () => {
+  const { t } = useTranslation();
   return (
     <Box padding={5}>
       <Card
@@ -32,7 +34,7 @@ export const About = () => {
           <Card>
             <CardHeader>
               <Text fontSize="3xl" style={{ fontWeight: 'bold' }}>
-                A propos de HTSLM
+              { t('about.title') }
               </Text>
             </CardHeader>
 
@@ -44,13 +46,10 @@ export const About = () => {
                     textTransform="uppercase"
                     style={{ fontWeight: 'bold' }}
                   >
-                    Version de l’application HTSLM 2.0
+                   { t('about.version') }
                   </Text>
                   <Text pt="2" fontSize="sm">
-                    Objectif de l’application : Détermination de la température
-                    intérieure dans une pièce d’un bâtiment construit au
-                    Cameroun à base de matériaux locaux produits par la Mission
-                    de Promotion des Matériaux Locaux du Cameroun (MIPROMALO)
+                  { t('about.objectif') }
                   </Text>
                 </Box>
                 <Box>
@@ -59,10 +58,10 @@ export const About = () => {
                     textTransform="uppercase"
                     style={{ fontWeight: 'bold' }}
                   >
-                    Type de logiciel:
+                    { t('about.type') }
                   </Text>
                   <Text pt="2" fontSize="sm">
-                    Offline & propriétaire, Licence octroyée par la MIPROMALO
+                  { t('about.type_text') }
                   </Text>
                 </Box>
                 <Box>
@@ -71,10 +70,10 @@ export const About = () => {
                     textTransform="uppercase"
                     style={{ fontWeight: 'bold' }}
                   >
-                    Informations sur la construction:
+                    { t('about.construction') }
                   </Text>
                   <Text pt="2" fontSize="sm">
-                    Reactjs et electronjs
+                  { t('about.construction_text') }
                   </Text>
                 </Box>
                 <Box>
@@ -83,7 +82,7 @@ export const About = () => {
                     textTransform="uppercase"
                     style={{ fontWeight: 'bold' }}
                   >
-                    Système d’exploitation supporté :
+                    { t('about.systeme') }
                   </Text>
                   <Text pt="2" fontSize="sm">
                     Windows
