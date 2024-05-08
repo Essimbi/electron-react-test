@@ -12,8 +12,10 @@ import {
   StackDivider,
 } from '@chakra-ui/react';
 import ChooseLang from '../ChooseLang';
+import { useTranslation } from "react-i18next";
 
 export const Help = () => {
+  const { t } = useTranslation();
   return (
     <Box padding={5}>
       <Card
@@ -29,21 +31,13 @@ export const Help = () => {
         }}
         style={{ overflowX: 'scroll', overflowY: 'scroll' }}
       >
-        <Flex>
-          <Box flex="2" padding={3}>
-            {/* <Center>
-                            <Text fontSize='2xl'>Aide</Text>
-                        </Center> */}
-          </Box>
-          <Square flex="1">
+        
             <ChooseLang />
-          </Square>
-        </Flex>
         <Container maxW="2xl" centerContent>
           <Card>
             <CardHeader>
               <Text fontSize="3xl" style={{ fontWeight: 'bold' }}>
-                Comment pouvons-nous vous aider ?
+                { t('help.title') }
               </Text>
             </CardHeader>
 
@@ -55,13 +49,10 @@ export const Help = () => {
                     textTransform="uppercase"
                     style={{ fontWeight: 'bold' }}
                   >
-                    Guide
+                     { t('help.guide') }
                   </Text>
                   <Text pt="2" fontSize="sm">
-                    Pour utiliser l'application afin de faire une prédiction,
-                    vous devez suivre les étapes suivantes (les étapes sont
-                    expliquées plus en détail dans le guide d'utilisation de
-                    l'application) :
+                  { t('help.text_guide') } :
                   </Text>
                 </Box>
                 <Box>
@@ -70,15 +61,13 @@ export const Help = () => {
                     textTransform="uppercase"
                     style={{ fontWeight: 'bold' }}
                   >
-                    étape 1:
+                     { t('help.etape_1') } :
                   </Text>
                   <Text pt="2" fontSize="sm">
-                    1. Choisissez les matériaux de construction par défaut
-                    (matériau du toit, matériau du plafond, matériau du mur,
-                    matériau du sol, revêtement).
+                    1.  { t('help.text_1') }
                   </Text>
                 </Box>
-                <Box>
+                {/* <Box>
                   <Text
                     size="xs"
                     textTransform="uppercase"
@@ -89,6 +78,18 @@ export const Help = () => {
                   <Text pt="2" fontSize="sm">
                     Reactjs et electronjs
                   </Text>
+                </Box> */}
+                <Box>
+                  <Text
+                    size="xs"
+                    textTransform="uppercase"
+                    style={{ fontWeight: 'bold' }}
+                  >
+                     { t('help.etape_2') } :
+                  </Text>
+                  <Text pt="2" fontSize="sm">
+                    2.  { t('help.text_2') }
+                  </Text>
                 </Box>
                 <Box>
                   <Text
@@ -96,49 +97,34 @@ export const Help = () => {
                     textTransform="uppercase"
                     style={{ fontWeight: 'bold' }}
                   >
-                    étape 2:
+                     { t('help.etape_3') } :
                   </Text>
                   <Text pt="2" fontSize="sm">
-                    2. Ajouter les différents étages du bâtiment
-                  </Text>
-                </Box>
-                <Box>
-                  <Text
-                    size="xs"
-                    textTransform="uppercase"
-                    style={{ fontWeight: 'bold' }}
-                  >
-                    étape 3:
-                  </Text>
-                  <Text pt="2" fontSize="sm">
-                    3. Pour chaque étage, ajouter les pièces de l'étage avec
-                    leurs dimensions
+                    3.  { t('help.text_3') }
                   </Text>
                 </Box>
                 <Box>
                   <Text size="xs"  style={{ fontWeight: 'bold' }} textTransform="uppercase">
-                    étape 4:
+                  { t('help.etape_4') } :
                   </Text>
                   <Text pt="2" fontSize="sm">
-                    4. Ajouter les ouvertures pour chaque pièce
+                    4.  { t('help.text_4') }
                   </Text>
                 </Box>
                 <Box>
                   <Text size="xs"  style={{ fontWeight: 'bold' }}textTransform="uppercase">
-                    étape 5:
+                  { t('help.etape_5') } :
                   </Text>
                   <Text pt="2" fontSize="sm" >
-                    5. Cliquez sur le bouton "process" pour calculer la
-                    température intérieure du bâtiment.
+                    5.  { t('help.text_5') }
                   </Text>
                 </Box>
                 <Box>
                   <Text size="xs"  style={{ fontWeight: 'bold' }}textTransform="uppercase">
-                    étape 6:
+                  { t('help.etape_6') } :
                   </Text>
                   <Text pt="2" fontSize="sm" >
-                    6. Le résultat est affiché dans la section de sortie, avec
-                    un aperçu des différentes caractéristiques du bâtiment.
+                    6.  { t('help.text_6') }
                   </Text>
                 </Box>
               </Stack>
