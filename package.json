@@ -1,0 +1,37 @@
+{
+  "name": "lobatin",
+  "version": "1.0.0",
+  "description": "Desktop application for determining the internal temperature of a building as a function of external parameters.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
+  },
+  "keywords": [
+    "electron",
+    "reactjs",
+    "typesript"
+  ],
+  "author": "Default name",
+  "license": "ISC",
+  "dependencies": {
+    "@chakra-ui/icons": "^2.1.1",
+    "@electron-forge/plugin-fuses": "^7.3.1",
+    "@electron/fuses": "^1.8.0",
+    "awesome-react-stepper": "^1.1.1",
+    "electron-squirrel-startup": "^1.0.0",
+    "react-form-stepper": "^2.0.3",
+    "react-icons": "^5.0.1"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^7.3.1",
+    "@electron-forge/maker-deb": "^7.3.1",
+    "@electron-forge/maker-rpm": "^7.3.1",
+    "@electron-forge/maker-squirrel": "^7.3.1",
+    "@electron-forge/maker-zip": "^7.3.1",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.3.1",
+    "electron": "^29.1.5"
+  }
+}
