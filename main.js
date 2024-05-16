@@ -12,7 +12,7 @@ const createWindow = () => {
     }
   });
 
- //win.setMenu(null)
+ win.setMenu(null)
 
 
   const startUrl = url.format({
@@ -20,9 +20,9 @@ const createWindow = () => {
     protocol: 'file'
   });
 
-  // win.loadFile('index.html')
+  win.loadFile('./app/build/index.html')
 
-  win.loadURL('http://localhost:3000')
+  // win.loadURL('http://localhost:3000')
 }
 
 app.whenReady().then(() => {
