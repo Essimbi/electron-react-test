@@ -15,7 +15,7 @@ import { TintProvider } from './contexts/GraphContext';
 import { useDimensions } from './Hooks/useDimensions';
 import { useSettingsContext } from './Hooks/useSettings';
 import { useStepContext } from './Hooks/useStep';
-import { RouterWrapper } from './RouterWrapper';
+import { MainComponent } from './Layouts/MainComponent';
 
 function App() {
   const classes = useStyles();
@@ -31,11 +31,11 @@ function App() {
   const renderMainContent = () => {
     switch (activeStep) {
       case 'STEP-0':
-        return <RouterWrapper />;
+        return <MainComponent />;
       case 'STEP-1':
-        return <RouterWrapper />;
+        return <MainComponent />;
       case 'STEP-2':
-        return <RouterWrapper />;
+        return <MainComponent />;
       case 'STEP-3':
         return <Index />;
       case 'STEP-4':
