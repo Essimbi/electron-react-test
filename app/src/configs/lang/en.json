@@ -136,11 +136,11 @@
   "about":{
     "title":"About HTSLM",
     "version": "Application version HTSLM 2.0",
-    "objectif": "Application objective: Determination of the indoor temperature in a room of a building constructed in Cameroon using local materials produced by the Mission de Promotion des Matériaux Locaux du Cameroun (MIPROMALO).",
+    "objectif": "Application objective: Determination of the indoor temperature in a room of a building constructed in Cameroon using local materials produced by the Local Materials Promotion Authority of Cameroon (MIPROMALO).",
     "type": "Type of software :",
     "type_text": "Offline & proprietary, licensed by MIPROMALO",
     "construction": "Construction information :",
-    "construction_text": "Reactjs and electronjs",
+    "construction_text": "Software application developed with the programming language JAVASCRIPT",
     "systeme": "Supported operating system :"
   }
 }

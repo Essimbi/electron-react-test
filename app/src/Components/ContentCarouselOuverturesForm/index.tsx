@@ -177,6 +177,7 @@ const OuverturesForm = () => {
           ml={'auto'}
           mr={10}
           onClick={() => {
+            console.log(true)
             let concernedTab = [];
             Object.keys(steps[_this].payload[_subThis]).forEach((v) => {
               if (v.indexOf('ouverture-') !== -1) {
