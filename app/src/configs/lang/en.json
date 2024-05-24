@@ -49,11 +49,14 @@
     "materiaux-plafond": "Ceiling materials",
     "revetement-int": "Interior wall cladding",
     "section-revetement": {
-      "val-1": "White paint",
-      "val-2": "Clear paint",
-      "val-3": "Dark paint",
-      "val-4": "Matt paint",
-      "val-5": "Aluminum paint"
+      "val-1": "Compressed earth blocks",
+      "val-2": "Stabilized earth block",
+      "val-3": "Black paint",
+      "val-4": "White paint",
+      "val-5": "Blue paint",
+      "val-6": "Gray metallic paint (metals: iron, aluminum, etc.)",
+      "val-7": "Glass",
+      "val-8": "Green paint"
     },
     "revetement-sol": "Floor covering",
     "revetement-ext": "Exterior wall cladding"

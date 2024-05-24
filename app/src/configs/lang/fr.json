@@ -49,11 +49,14 @@
     "materiaux-plafond": "Matériaux du plafond",
     "revetement-int": "Revêtement intérieur du mur",
     "section-revetement": {
-      "val-1": "Peinture blanche",
-      "val-2": "Peinture claire",
-      "val-3": "Peinture foncée",
-      "val-4": "Peinture mate",
-      "val-5": "Peinture en aluminium"
+      "val-1": "Bloc de terre comprimée (ou compressée)",
+      "val-2": "Bloc de terre stabilisée",
+      "val-3": "Peinture noire",
+      "val-4": "Peinture blanche",
+      "val-5": "Peinture bleue",
+      "val-6": "Peinture grise métallisée (métaux : fer,aluminium…)",
+      "val-7": "Verre",
+      "val-8": "Peinture verte"
     },
     "revetement-sol": "Revêtement du sol",
     "revetement-ext": "Revêtement extérieur du mur"

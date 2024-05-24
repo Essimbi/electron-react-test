@@ -226,11 +226,11 @@ export const DonneMetheo = () => {
           awalle = 0.6 / 100;
           epsilon = 0.4 / 100;
           break;
-        case 'Bloc de terre stabilisée ':
+        case 'Bloc de terre stabilisée':
           awalle = 0.6 / 100;
           epsilon = 0.4 / 100;
           break;
-        case 'Peinture noire ':
+        case 'Peinture noire':
           awalle = 1 / 100;
           epsilon = 0 ;
           break;
