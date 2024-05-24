@@ -7,6 +7,7 @@ import './App.css';
 import Box from '@mui/material/Box';
 import { About } from './Components/ContentForAbout';
 import { Help } from './Components/ContentForHelp';
+import { ModelPrefinis } from './Components/ContentForModelPredefini/index';
 import Index from './Components/ContentResult';
 import { SideBarContent } from './Components/SideBarContent';
 import { SideBarStyleType } from './configs/types';
@@ -39,7 +40,7 @@ function App() {
       case 'STEP-3':
         return <Index />;
       case 'STEP-4':
-        return 'component 4';
+        return <ModelPrefinis />;
       case 'STEP-5':
         return <Help/>;
       case 'STEP-6':

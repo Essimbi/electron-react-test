@@ -112,6 +112,7 @@
     "calculer": "Calculer"
   },
   "result": {
+    "date": "Date choisie",
     "plafond": "Matériel du plafond",
     "toit": "Matériaux du toit",
     "mur": "Matériau du mur",

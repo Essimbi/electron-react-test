@@ -46,6 +46,7 @@ const Index: React.FC = () => {
     const revetementSol = steps['STEP-1']?.payload?.['STEP-1-0']?.revetement_sol;
     const revetementExterieurMur = steps['STEP-1']?.payload?.['STEP-1-0']?.revetement_exterieur_mur;
     const zoneGeographique = steps['STEP-2']?.payload?.Zone_geographique;
+    const dateSelected = steps['STEP-2']?.payload?.date;
     const hauteurSousPlafond = steps['STEP-1']?.payload?.['STEP-1-0']?.hauteur_sous_plafond;
     const longueur = steps['STEP-1']?.payload?.['STEP-1-0']?.longueur;
     const largeur = steps['STEP-1']?.payload?.['STEP-1-0']?.largeur;
@@ -96,6 +97,8 @@ const Index: React.FC = () => {
                                         height={'auto'}
                                     >
                                         <Grid templateColumns='repeat(2, 1fr)' gap={0} padding={2}>
+                                            <GridItem w='100%' h='10' ><Text>{t('result.date')} :</Text></GridItem>
+                                            <GridItem w='100%' h='10' ><Text>{dateSelected}</Text></GridItem>
                                             <GridItem w='100%' h='10' ><Text>{t('result.plafond')} :</Text></GridItem>
                                             <GridItem w='100%' h='10' ><Text>{materiauxPlafond}</Text></GridItem>
 

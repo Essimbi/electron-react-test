@@ -112,6 +112,7 @@
     "calculer": "Calculate"
   },
   "result": {
+    "date": "Selected date",
     "plafond": "Ceiling material",
     "toit": "Roof materials",
     "mur": "Hard material",

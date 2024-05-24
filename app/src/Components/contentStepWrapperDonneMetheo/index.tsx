@@ -39,11 +39,6 @@ export const DonneMetheo = () => {
   const Rsir = 0.1;
   const Rsig = 0.17;
 
-  var awalle = 0.006;
-  var awind = 0.008;
-  var adoor = 0.007;
-  var aroof = 0.006;
-
   var eair = 0.0032;
   var lair = 0.024;
 
@@ -79,6 +74,45 @@ export const DonneMetheo = () => {
 
   const calculateSurface = (L: number, l: number) => {
     return L * l
+  }
+
+  const setAlphaAndEpsilon = (coating: string) => {
+    let alpha = 0; let epsilon = 0;
+    switch (coating) {
+      case 'Bloc de terre comprimée (ou compressée)':
+        alpha = 0.6 / 100;
+        epsilon = 0.4 / 100;
+        break;
+      case 'Bloc de terre stabilisée':
+        alpha = 0.6 / 100;
+        epsilon = 0.4 / 100;
+        break;
+      case 'Peinture noire':
+        alpha = 1 / 100;
+        epsilon = 0 ;
+        break;
+      case 'Peinture blanche':
+        alpha = 0.28 / 100;
+        epsilon = 0.72 / 100;
+        break;
+      case 'Peinture bleue':
+        alpha = 0.9 / 100;
+        epsilon = 0.1 / 100;
+        break;
+      case 'Peinture grise métallisée (métaux : fer,aluminium…)':
+        alpha = 0.89 / 100;
+        epsilon = 0.11 / 100;
+        break;
+      case 'Verre':
+        alpha = 0.1 / 100;
+        epsilon = 0.9 / 100;
+        break;
+      case 'Peinture verte':
+        alpha = 0.8 / 100;
+        epsilon = 0.2 / 100;
+        break;
+    }
+    return alpha ;
   }
 
 
@@ -124,17 +158,21 @@ export const DonneMetheo = () => {
       var uwind = 0;
       var Sdoor = 0; var Swind = 0;
 
+      var awind = 0 ; var adoor = 0 ;
+
       for (let i = 0; i < openings.length; i++) {
         const opening = openings[i];
         if (opening.type_ouverture === "Fenetre") {
           uwind = calculateU(opening.materiau);
           Swind = calculateSurface(Number(opening.largeur), Number(opening.hauteur))
           Swalle -= Swind
+          awind = setAlphaAndEpsilon(opening.couleur_ouverture);
         }
         else {
           udoor = calculateU(opening.materiau);
           Sdoor = calculateSurface(Number(opening.largeur), Number(opening.hauteur))
           Swalle -= Sdoor
+          adoor = setAlphaAndEpsilon(opening.couleur_ouverture);
         }
       }
 
@@ -221,42 +259,11 @@ export const DonneMetheo = () => {
       const revetement_interieur_mur = dataRoomMaterial.revetement_interieur_mur ;
       var epsilon = 0;
 
-      switch (revetement_exterieur_mur) {
-        case 'Bloc de terre comprimée (ou compressée)':
-          awalle = 0.6 / 100;
-          epsilon = 0.4 / 100;
-          break;
-        case 'Bloc de terre stabilisée':
-          awalle = 0.6 / 100;
-          epsilon = 0.4 / 100;
-          break;
-        case 'Peinture noire':
-          awalle = 1 / 100;
-          epsilon = 0 ;
-          break;
-        case 'Peinture blanche':
-          awalle = 0.28 / 100;
-          epsilon = 0.72 / 100;
-          break;
-        case 'Peinture bleue':
-          awalle = 0.9 / 100;
-          epsilon = 0.1 / 100;
-          break;
-        case 'Peinture grise métallisée (métaux : fer,aluminium…)':
-          awalle = 0.89 / 100;
-          epsilon = 0.11 / 100;
-          break;
-        case 'Verre':
-          awalle = 0.1 / 100;
-          epsilon = 0.9 / 100;
-          break;
-        case 'Peinture verte':
-          awalle = 0.8 / 100;
-          epsilon = 0.2 / 100;
-          break;
-      }
 
+      var awalle = setAlphaAndEpsilon(revetement_exterieur_mur);
 
+      // var adoor = 0.007;
+      var aroof = setAlphaAndEpsilon(revetement_interieur_mur);
 
 
 
