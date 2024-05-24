@@ -62,14 +62,14 @@ export const DonneesPiecesCategoryWrapper = () => {
         }else{
           setIsValid(false);
         }
-  
+
     }, );
 
   const handleSwitchStep1 = () => {
     if (Valid) {
       setIsValid(true)
       // setErreur("Ce champ est required ✍️");
-      
+
       console.log('toto');
     } else  {
       setActiveStep('STEP-2')
