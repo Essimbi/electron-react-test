@@ -64,11 +64,14 @@ export const DonneesPiecesForm = () => {
                 setStep({ ...ancian });
               }}
             >
-              <option value="Peinture blanche" defaultChecked>{t('steper-2-0.section-revetement.val-1')}</option>
-              <option value="Peinture claire">{t('steper-2-0.section-revetement.val-2')}</option>
-              <option value="Peinture foncée">{t('steper-2-0.section-revetement.val-3')}</option>
-              <option value="Peinture mate">{t('steper-2-0.section-revetement.val-4')}</option>
-              <option value="Peinture en aluminium">{t('steper-2-0.section-revetement.val-5')}</option>
+              <option value="Bloc de terre comprimée (ou compressée)" defaultChecked>{t('steper-2-0.section-revetement.val-1')}</option>
+              <option value="Bloc de terre stabilisée">{t('steper-2-0.section-revetement.val-2')}</option>
+              <option value="Peinture noire">{t('steper-2-0.section-revetement.val-3')}</option>
+              <option value="Peinture blanche">{t('steper-2-0.section-revetement.val-4')}</option>
+              <option value="Peinture bleue">{t('steper-2-0.section-revetement.val-5')}</option>
+              <option value="Peinture grise métallisée (métaux : fer,aluminium…)">{t('steper-2-0.section-revetement.val-6')}</option>
+              <option value="Verre">{t('steper-2-0.section-revetement.val-7')}</option>
+              <option value="Peinture verte">{t('steper-2-0.section-revetement.val-8')}</option>
             </Select>
 
           </FormControl>
@@ -109,14 +112,14 @@ export const DonneesPiecesForm = () => {
                 setStep({ ...ancian });
               }}
             >
-              <option value="Bloc de terre comprimée (ou compressée)" defaultChecked>{t('steper-2-0.section-revetement.val-1')}</option>
-              <option value="Bloc de terre stabilisée">{t('steper-2-0.section-revetement.val-2')}</option>
-              <option value="Peinture noire">{t('steper-2-0.section-revetement.val-3')}</option>
-              <option value="Peinture blanche">{t('steper-2-0.section-revetement.val-4')}</option>
-              <option value="Peinture bleue">{t('steper-2-0.section-revetement.val-5')}</option>
-              <option value="Peinture grise métallisée (métaux : fer,aluminium…)">{t('steper-2-0.section-revetement.val-5')}</option>
-              <option value="Verre">{t('steper-2-0.section-revetement.val-5')}</option>
-              <option value="Peinture verte">{t('steper-2-0.section-revetement.val-5')}</option>
+              <option value="Peinture noire" defaultChecked>
+            {t('steper-2-2.couleur_text.val-1')}
+            </option>
+            <option value="Peinture blanche">{t('steper-2-2.couleur_text.val-2')}</option>
+            <option value="Peinture bleue">{t('steper-2-2.couleur_text.val-3')}</option>
+            <option value="Peinture grise métallisée (métaux : fer,aluminium…)">{t('steper-2-2.couleur_text.val-4')}</option>
+            <option value="Verre">{t('steper-2-2.couleur_text.val-5')}</option>
+            <option value="Peinture verte">{t('steper-2-2.couleur_text.val-6')}</option>
             </Select>
 
           </FormControl>

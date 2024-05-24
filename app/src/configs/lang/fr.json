@@ -47,7 +47,7 @@
   "steper-2-0": {
     "titre": "Matériaux de la pièce",
     "materiaux-plafond": "Matériaux du plafond",
-    "revetement-int": "Revêtement intérieur du mur",
+    "revetement-int": "Revêtement du mur",
     "section-revetement": {
       "val-1": "Bloc de terre comprimée (ou compressée)",
       "val-2": "Bloc de terre stabilisée",
@@ -59,7 +59,7 @@
       "val-8": "Peinture verte"
     },
     "revetement-sol": "Revêtement du sol",
-    "revetement-ext": "Revêtement extérieur du mur"
+    "revetement-ext": "Revêtement du toit"
   },
   "steper-2-1": {
     "titre": "Dimensions de la pièce",
@@ -88,6 +88,15 @@
     "largeur": "Largeur",
     "tableau-titre": "Les ouvertures de la pièce",
     "type": "Type",
+    "couleur": "Enrobage",
+    "couleur_text": {
+      "val-1": "Peinture noire",
+      "val-2": "Peinture blanche",
+      "val-3": "Peinture bleue",
+      "val-4": "Peinture grise métallisée (métaux : fer,aluminium…)",
+      "val-5": "Verre",
+      "val-6": "Peinture verte"
+    },
     "btn-ajouter": "Ajouter"
   },
   "steper-3": {
