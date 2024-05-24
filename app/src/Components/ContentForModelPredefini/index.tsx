@@ -229,7 +229,7 @@ export const ModelPrefinis: React.FC = () => {
                         className="cards"
                         padding={8}
                     >
-                        <Card bg={'#e6f7f7'} style={{width:'20%'}}>
+                        <Card bg={'#e6f7f7'} style={{width:'30%'}}>
                             <CardHeader>
                                 <Heading size="sm" color={'#008080'}>
                                     {renderCardContentTitle()}
