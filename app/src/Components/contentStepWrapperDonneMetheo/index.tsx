@@ -112,7 +112,10 @@ export const DonneMetheo = () => {
         epsilon = 0.2 / 100;
         break;
     }
-    return alpha ;
+    return {
+      "alpha": alpha,
+      "epsilon": epsilon
+    } ;
   }
 
 
@@ -122,19 +125,15 @@ export const DonneMetheo = () => {
   const calculate = () => {
 
     if (steps[_this].payload['Zone_geographique'] === undefined ||
-      steps[_this].payload['date'] === undefined) {
-
-        setError('Ce champ est required ✍️');
-
-      console.log(error);
+      steps[_this].payload['date'] === undefined)
+    {
+      setError('Ce champ est required ✍️');
     }
     else  {
       setShowAlert(true)
       const dataBuilding = steps['STEP-0'].payload;
       const dataRoomMaterial = steps['STEP-1'].payload['STEP-1-0'];
       const meteoData = steps['STEP-2'].payload;
-
-      console.log(dataRoomMaterial)
 
       // var eFT=0.009; var lFT=5.077;
       var eS = 0.15; var lS = 1.75;
@@ -159,6 +158,7 @@ export const DonneMetheo = () => {
       var Sdoor = 0; var Swind = 0;
 
       var awind = 0 ; var adoor = 0 ;
+      var epsilonDoor = 0; var epsilonWind = 0;
 
       for (let i = 0; i < openings.length; i++) {
         const opening = openings[i];
@@ -166,13 +166,15 @@ export const DonneMetheo = () => {
           uwind = calculateU(opening.materiau);
           Swind = calculateSurface(Number(opening.largeur), Number(opening.hauteur))
           Swalle -= Swind
-          awind = setAlphaAndEpsilon(opening.couleur_ouverture);
+          awind = setAlphaAndEpsilon(opening.couleur_ouverture).alpha;
+          epsilonWind = setAlphaAndEpsilon(opening.couleur_ouverture).epsilon;
         }
         else {
           udoor = calculateU(opening.materiau);
           Sdoor = calculateSurface(Number(opening.largeur), Number(opening.hauteur))
           Swalle -= Sdoor
-          adoor = setAlphaAndEpsilon(opening.couleur_ouverture);
+          adoor = setAlphaAndEpsilon(opening.couleur_ouverture).alpha;
+          epsilonDoor = setAlphaAndEpsilon(opening.couleur_ouverture).epsilon;
         }
       }
 
@@ -257,13 +259,13 @@ export const DonneMetheo = () => {
 
       const revetement_exterieur_mur = dataRoomMaterial.revetement_exterieur_mur ;
       const revetement_interieur_mur = dataRoomMaterial.revetement_interieur_mur ;
-      var epsilon = 0;
 
-
-      var awalle = setAlphaAndEpsilon(revetement_exterieur_mur);
+      var awalle = setAlphaAndEpsilon(revetement_exterieur_mur).alpha;
+      var epsilonWalle = setAlphaAndEpsilon(revetement_exterieur_mur).epsilon;
 
       // var adoor = 0.007;
-      var aroof = setAlphaAndEpsilon(revetement_interieur_mur);
+      var aroof = setAlphaAndEpsilon(revetement_interieur_mur).alpha;
+      var epsilonRoof = setAlphaAndEpsilon(revetement_interieur_mur).epsilon;
 
 
 
@@ -364,7 +366,7 @@ export const DonneMetheo = () => {
         phiwall[k] = uenv * Swall * Tv[k];
         phifloor[k] = ufloor * Sfloor * Tv[k];
         T1[k] = (awind * phiwind[k]) + (awalle * phiwalle[k]) + (adoor * phidoor[k]) + (aroof * phiroof[k]);
-        T2[k] = awind * ((Tvwind[k] ^ 4) - (Tsky ^ 4)) + adoor * ((Tvdoor[k] ^ 4) - (Tsky ^ 4)) + aroof * ((Tvroof[k] ^ 4) - (Tsky ^ 4)) + awalle * ((Tvwalle[k] ^ 4) - (Tsky ^ 4));
+        T2[k] = epsilonWind * ((Tvwind[k] ^ 4) - (Tsky ^ 4)) + epsilonDoor * ((Tvdoor[k] ^ 4) - (Tsky ^ 4)) + epsilonRoof * ((Tvroof[k] ^ 4) - (Tsky ^ 4)) + epsilonWalle * ((Tvwalle[k] ^ 4) - (Tsky ^ 4));
         T3[k] = sigma * T2[k];
         phitotal[k] = phi[k] * ((awalle * Swalle) + (awind * Swind) + (adoor * Sdoor) + (aroof * Sroof));
         T4 = uenv * (Swall + Swalle) + (uroof * Sroof) + (ufloor * Sfloor) + (uwind * Swind) + (udoor * Sdoor);
