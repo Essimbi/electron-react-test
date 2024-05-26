@@ -20,10 +20,11 @@ const createWindow = () => {
     protocol: 'file'
   });
 
-  //win.loadFile('./app/build/index.html')
+  // win.loadFile('./app/build/index.html')
 
-   win.loadURL('http://localhost:3000')
+  win.loadURL('http://localhost:3000')
 }
+
 
 app.whenReady().then(() => {
   ipcMain.handle('ping', () => 'pong')

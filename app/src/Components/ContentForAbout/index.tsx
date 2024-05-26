@@ -101,7 +101,7 @@ export const About = () => {
                     (mandengl@yahoo.fr),
                     <br /> J. D. T. Tchameu, <br />
                     R. T. Menkem, F. K. Kom, J. L. Ntamag, J. Pondi, <br /> J .
-                    F. Wanga & C. T. Hapi
+                    F. Wanga, C. T. Hapi &  <br /> L. J. D. Essimbi
                   </Text>
                 </Box>
                 <Box>

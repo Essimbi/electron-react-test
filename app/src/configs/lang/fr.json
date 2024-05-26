@@ -47,16 +47,19 @@
   "steper-2-0": {
     "titre": "Matériaux de la pièce",
     "materiaux-plafond": "Matériaux du plafond",
-    "revetement-int": "Revêtement intérieur du mur",
+    "revetement-int": "Revêtement du mur",
     "section-revetement": {
-      "val-1": "Peinture blanche",
-      "val-2": "Peinture claire",
-      "val-3": "Peinture foncée",
-      "val-4": "Peinture mate",
-      "val-5": "Peinture en aluminium"
+      "val-1": "Bloc de terre comprimée (ou compressée)",
+      "val-2": "Bloc de terre stabilisée",
+      "val-3": "Peinture noire",
+      "val-4": "Peinture blanche",
+      "val-5": "Peinture bleue",
+      "val-6": "Peinture grise métallisée (métaux : fer,aluminium…)",
+      "val-7": "Verre",
+      "val-8": "Peinture verte"
     },
     "revetement-sol": "Revêtement du sol",
-    "revetement-ext": "Revêtement extérieur du mur"
+    "revetement-ext": "Revêtement du toit"
   },
   "steper-2-1": {
     "titre": "Dimensions de la pièce",
@@ -85,6 +88,15 @@
     "largeur": "Largeur",
     "tableau-titre": "Les ouvertures de la pièce",
     "type": "Type",
+    "couleur": "Enrobage",
+    "couleur_text": {
+      "val-1": "Peinture noire",
+      "val-2": "Peinture blanche",
+      "val-3": "Peinture bleue",
+      "val-4": "Peinture grise métallisée (métaux : fer,aluminium…)",
+      "val-5": "Verre",
+      "val-6": "Peinture verte"
+    },
     "btn-ajouter": "Ajouter"
   },
   "steper-3": {
@@ -100,6 +112,7 @@
     "calculer": "Calculer"
   },
   "result": {
+    "date": "Date choisie",
     "plafond": "Matériel du plafond",
     "toit": "Matériaux du toit",
     "mur": "Matériau du mur",
@@ -140,7 +153,7 @@
     "type": "Type de logiciel :",
     "type_text": "Offline & propriétaire, Licence octroyée par la MIPROMALO",
     "construction": "Informations sur la construction :",
-    "construction_text": "Reactjs et electronjs",
+    "construction_text": "Application logicielle développée avec le langage de programmation JAVASCRIPT",
     "systeme": "Système d’exploitation supporté :"
   }
 }

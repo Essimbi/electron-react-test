@@ -47,16 +47,19 @@
   "steper-2-0": {
     "titre": "Part materials",
     "materiaux-plafond": "Ceiling materials",
-    "revetement-int": "Interior wall cladding",
+    "revetement-int": "Wall cladding",
     "section-revetement": {
-      "val-1": "White paint",
-      "val-2": "Clear paint",
-      "val-3": "Dark paint",
-      "val-4": "Matt paint",
-      "val-5": "Aluminum paint"
+      "val-1": "Compressed earth blocks",
+      "val-2": "Stabilized earth block",
+      "val-3": "Black paint",
+      "val-4": "White paint",
+      "val-5": "Blue paint",
+      "val-6": "Gray metallic paint (metals: iron, aluminum, etc.)",
+      "val-7": "Glass",
+      "val-8": "Green paint"
     },
     "revetement-sol": "Floor covering",
-    "revetement-ext": "Exterior wall cladding"
+    "revetement-ext": "Roof sheathing"
   },
   "steper-2-1": {
     "titre": "Part dimensions",
@@ -85,6 +88,15 @@
     "largeur": "Width",
     "tableau-titre": "Room openings",
     "type": "Type",
+    "couleur": "Coating",
+    "couleur_text": {
+      "val-1": "Black paint",
+      "val-2": "White paint",
+      "val-3": "Blue paint",
+      "val-4": "Gray metallic paint (metals: iron, aluminum, etc.)",
+      "val-5": "Glass",
+      "val-6": "Green paint"
+    },
     "btn-ajouter": "Add"
   },
   "steper-3": {
@@ -100,6 +112,7 @@
     "calculer": "Calculate"
   },
   "result": {
+    "date": "Selected date",
     "plafond": "Ceiling material",
     "toit": "Roof materials",
     "mur": "Hard material",
@@ -136,11 +149,11 @@
   "about":{
     "title":"About HTSLM",
     "version": "Application version HTSLM 2.0",
-    "objectif": "Application objective: Determination of the indoor temperature in a room of a building constructed in Cameroon using local materials produced by the Mission de Promotion des Matériaux Locaux du Cameroun (MIPROMALO).",
+    "objectif": "Application objective: Determination of the indoor temperature in a room of a building constructed in Cameroon using local materials produced by the Local Materials Promotion Authority of Cameroon (MIPROMALO).",
     "type": "Type of software :",
     "type_text": "Offline & proprietary, licensed by MIPROMALO",
     "construction": "Construction information :",
-    "construction_text": "Reactjs and electronjs",
+    "construction_text": "Software application developed with the programming language JAVASCRIPT",
     "systeme": "Supported operating system :"
   }
 }
