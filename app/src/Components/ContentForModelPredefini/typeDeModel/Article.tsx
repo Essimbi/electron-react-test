@@ -1,4 +1,4 @@
-import { Button } from '@chakra-ui/react';
+import { Button, Text } from '@chakra-ui/react';
 import React from 'react';
 import { CardImg } from '../../../Layouts/modelpredefinisImg/modelImg';
 import './style.css';
@@ -13,7 +13,7 @@ const Article: React.FC<ArticleProps> = ({ data }) => {
         <figure className="snip1584">
             <img src={image} alt={title} />
             <figcaption>
-                <h5 style={{ fontSize: '90%' }}>{description}</h5>
+                <Text className='h5' fontSize={{base: '40%',md: '60%',xl: '85%',}}  width={{base: '100%',md: '90%',xl: '85%',}}>{description}</Text>
                 {/* <h5>{subtitle}</h5> */}
                 <Button colorScheme='teal' size='sm' borderRadius={15}>
                     calculer
