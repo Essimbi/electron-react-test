@@ -144,7 +144,9 @@
     "etape_5": "Étape 5",
     "text_5": "Cliquez sur le bouton 'Calculer' pour calculer la température intérieure du bâtiment.",
     "etape_6": "Étape 6",
-    "text_6" : "Le résultat est affiché dans la section de sortie, avec un aperçu des différentes caractéristiques du bâtiment."
+    "etape_7": "Étape 7",
+    "text_6" : "Le résultat est affiché dans la section de sortie, avec un aperçu des différentes caractéristiques du bâtiment.",
+    "text_7" : "Il est possible d'exporter vos résultats dans un fichier Microsoft Office Excel contenant lesdites températures intérieures de la date indiquée. Il suffit à cet effet, de cliquer sur le *'bouton : exporter'* situé à haut à droite de votre interface résultats. Vous pourrez alors enregistrer le fichier dans votre machine, le renommer et  le modifier à votre guise."
   },
   "about":{
     "title":"A propos de HTSLM",

@@ -31,7 +31,7 @@ export const Help = () => {
         }}
         style={{ overflowX: 'scroll', overflowY: 'scroll' }}
       >
-        
+
             <ChooseLang />
         <Container maxW="2xl" centerContent>
           <Card>
@@ -125,6 +125,14 @@ export const Help = () => {
                   </Text>
                   <Text pt="2" fontSize="sm" >
                     6.  { t('help.text_6') }
+                  </Text>
+                </Box>
+                <Box>
+                  <Text size="xs"  style={{ fontWeight: 'bold' }}textTransform="uppercase">
+                  { t('help.etape_7') } :
+                  </Text>
+                  <Text pt="2" fontSize="sm" >
+                    7.  { t('help.text_7') }
                   </Text>
                 </Box>
               </Stack>
