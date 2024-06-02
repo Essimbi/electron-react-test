@@ -6,14 +6,15 @@ import {
     GridItem,
     Text
 } from '@chakra-ui/react';
+import { useTranslation } from "react-i18next";
 import Plot from 'react-plotly.js';
 import { TintProvider, useTintContext } from '../../contexts/GraphContext';
 import { useSettingsContext } from '../../Hooks/useSettings';
 import { useStepContext } from '../../Hooks/useStep';
-import { useTranslation } from "react-i18next";
 
 import { saveAs } from 'file-saver';
 import * as XLSX from 'xlsx';
+import { useModelContext } from '../../contexts/ModelPredefiniContext';
 import ChooseLang from '../ChooseLang';
 
 const Index: React.FC = () => {
@@ -21,9 +22,11 @@ const Index: React.FC = () => {
     const { setActiveStep, steps, setStep } = useStepContext();
     const { settings } = useSettingsContext();
 
-    const { TintData } = useTintContext();
+    const { TintData } = useTintContext()
+    const { ModelData } = useModelContext();
     const { t } = useTranslation();
-
+    console.log('la valeur',ModelData);
+    
     const hours = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
 
 
@@ -50,6 +53,17 @@ const Index: React.FC = () => {
     const hauteurSousPlafond = steps['STEP-1']?.payload?.['STEP-1-0']?.hauteur_sous_plafond;
     const longueur = steps['STEP-1']?.payload?.['STEP-1-0']?.longueur;
     const largeur = steps['STEP-1']?.payload?.['STEP-1-0']?.largeur;
+
+    const materiauxToits = ModelData[0]?.materiauxToit;
+    const materiauxMurs =  ModelData[0]?.materiauxMur;
+    const materiauxPlafonds =  ModelData[0]?.materiauxPlafond;
+    const revetementSols = ModelData[0]?.revetementSol;
+    const revetementExterieurMurs =  ModelData[0]?.revetementExterieurMur;
+    const zoneGeographiques =  ModelData[0]?.zoneGeographique;
+    const dateSelecteds =  ModelData[0]?.dateSelected;
+    const hauteurSousPlafonds =  ModelData[0]?.hauteurSousPlafond;
+    const longueurs =  ModelData[0]?.longueur;
+    const largeurs =  ModelData[0]?.largeur;
 
     const dataExportation = () => {
         const worksheet = XLSX.utils.aoa_to_sheet([TintData]);
@@ -98,27 +112,27 @@ const Index: React.FC = () => {
                                     >
                                         <Grid templateColumns='repeat(2, 1fr)' gap={0} padding={2}>
                                             <GridItem w='100%' h='10' ><Text>{t('result.date')} :</Text></GridItem>
-                                            <GridItem w='100%' h='10' ><Text>{dateSelected}</Text></GridItem>
+                                            <GridItem w='100%' h='10' ><Text>{dateSelected ? dateSelected : dateSelecteds}</Text></GridItem>
                                             <GridItem w='100%' h='10' ><Text>{t('result.plafond')} :</Text></GridItem>
-                                            <GridItem w='100%' h='10' ><Text>{materiauxPlafond}</Text></GridItem>
+                                            <GridItem w='100%' h='10' ><Text>{materiauxPlafond ? materiauxPlafond : materiauxPlafonds}</Text></GridItem>
 
                                             <GridItem w='100%' h='10' ><Text>{t('result.toit')} :</Text></GridItem>
-                                            <GridItem w='100%' h='10' ><Text>{materiauxToit}</Text></GridItem>
+                                            <GridItem w='100%' h='10' ><Text>{materiauxToit ? materiauxToit : materiauxToits}</Text></GridItem>
 
                                             <GridItem w='100%' h='10' ><Text>{t('result.mur')} :</Text></GridItem>
-                                            <GridItem w='100%' h='10' ><Text>{materiauxMur}</Text></GridItem>
+                                            <GridItem w='100%' h='10' ><Text>{materiauxMur ? materiauxMur : materiauxMurs}</Text></GridItem>
 
                                             <GridItem w='100%' h='10' ><Text>{t('result.enrobage')} :</Text></GridItem>
-                                            <GridItem w='100%' h='10' ><Text>{revetementExterieurMur}</Text></GridItem>
+                                            <GridItem w='100%' h='10' ><Text>{revetementExterieurMur ? revetementExterieurMur : revetementExterieurMurs}</Text></GridItem>
 
                                             <GridItem w='100%' h='10' ><Text>{t('result.sol')} :</Text></GridItem>
-                                            <GridItem w='100%' h='10' ><Text>{revetementSol}</Text></GridItem>
+                                            <GridItem w='100%' h='10' ><Text>{revetementSol ? revetementSol : revetementSols}</Text></GridItem>
 
                                             <GridItem w='100%' h='10' ><Text>{t('result.region')} :</Text></GridItem>
-                                            <GridItem w='100%' h='10' ><Text>{zoneGeographique}</Text></GridItem>
+                                            <GridItem w='100%' h='10' ><Text>{zoneGeographique ? zoneGeographique : zoneGeographiques}</Text></GridItem>
 
                                             <GridItem w='100%' h='10' ><Text>{t('result.dimension')} : </Text></GridItem>
-                                            <GridItem w='100%' h='10' ><Text>{t('result.h')}: {hauteurSousPlafond}, {t('result.l')}: {longueur}, {t('result.largeur')}: {largeur}</Text></GridItem>
+                                            <GridItem w='100%' h='10' ><Text>{t('result.h')}:{hauteurSousPlafond ? hauteurSousPlafond : hauteurSousPlafonds}, {t('result.l')}: {longueur ? longueur : longueurs}, {t('result.largeur')}: {largeur ? largeur : largeurs}</Text></GridItem>
                                             <GridItem w='100%' h='10' ><Text>{t('result.temperature')} : </Text></GridItem>
                                             <GridItem w='100%' h='10' ><Text>{globalTemperature} °C</Text></GridItem>
 

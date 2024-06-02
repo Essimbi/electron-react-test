@@ -52,7 +52,7 @@
 }
 
 .snip1584 h3,
-.snip1584 h5 {
+.snip1584 .h5 {
   margin: 0;
   opacity: 0;
   letter-spacing: 1px;
@@ -66,12 +66,11 @@
   margin-bottom: 5px;
 }
 
-.snip1584 h5 {
+.snip1584 .h5 {
   font-weight: normal;
-  background-color: #ae895d;
   padding: 3px 10px;
   transform: translateY(-100%);
-  transition-delay: 0s;
+  transition-delay: 0.5s;
 }
 
 .snip1584 a {
@@ -91,8 +90,8 @@
 
 .snip1584:hover h3,
 .snip1584.hover h3,
-.snip1584:hover h5,
-.snip1584.hover h5 {
+.snip1584:hover .h5,
+.snip1584.hover .h5 {
   transform: translateY(0);
   opacity: 1;
 }
@@ -102,8 +101,8 @@
   transition-delay: 0.3s;
 }
 
-.snip1584:hover h5,
-.snip1584.hover h5 {
+.snip1584:hover .h5,
+.snip1584.hover .h5 {
   transition-delay: 0.2s;
 }
 
