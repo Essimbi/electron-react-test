@@ -1,5 +1,6 @@
 import {
     Box,
+    Button,
     Card,
     CardBody,
     CardFooter,
@@ -14,13 +15,17 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { useModelContext } from '../../contexts/ModelPredefiniContext';
 import { CardImg, t1, t2, t3, t4, t5, t6 } from '../../Layouts/modelpredefinisImg/modelImg';
+import { DonneGeographique } from './ContentForAddZoneGeographique';
 import './style.css';
 import Article from './typeDeModel/Article';
 
 export const ModelPrefinis: React.FC = () => {
     const [currentData, setCurrentData] = useState<CardImg[]>([]);
     const [showCarousel, setShowCarousel] = useState<boolean>(false);
+    const [ShowDonnee, setShowDonnee] = useState<boolean>(false);
+
     const handleClick = (data: CardImg[]) => {
         setCurrentData(data);
         setShowCarousel(true);
@@ -49,6 +54,12 @@ export const ModelPrefinis: React.FC = () => {
         }
         return null;
     };
+    const { updateModelData } = useModelContext();
+
+    const handleApplicate = (item: CardImg) => {
+        setShowDonnee(true);
+        updateModelData(item);
+    }
 
     return (
         <Box padding={5}>
@@ -56,7 +67,7 @@ export const ModelPrefinis: React.FC = () => {
                 height={{
                     base: '610px', // 0-48em
                     md: '605px', // 48em-80em,
-                    xl: '685px', // 80em+
+                    xl: '735px', // 80em+
                 }}
                 width={{
                     base: '100%', // 0-30em
@@ -71,11 +82,12 @@ export const ModelPrefinis: React.FC = () => {
                         templateColumns="repeat(3, minmax(10px, 1fr))"
                         padding={12}
                         marginTop={10}
+                        marginLeft={5}
                         className="card-grid"
                     >
                         {' '}
                         <div className="card">
-                            <Card bg={'#e6f7f7'} onClick={() => handleClick(t1)} style={{ cursor: 'pointer' }} className="card__bg">
+                            <Card bg={'#e6f7f7'} width={{ base: '100%', md: '85%', xl: '70%', }} onClick={() => handleClick(t1)} style={{ cursor: 'pointer' }} className="card__bg">
                                 <CardHeader>
                                     <Heading size="sm" color={'#008080'}>
                                         CASSIA
@@ -85,13 +97,13 @@ export const ModelPrefinis: React.FC = () => {
                                 <CardFooter>
                                     <SimpleGrid
                                         spacing={1}
-                                        templateColumns="repeat(3, minmax(100px, 1fr))"
+                                        templateColumns="repeat(2, minmax(auto, 1fr))"
                                         padding={0}
                                     >
                                         <Text fontSize={40} fontWeight={'bolder'} color={'#008080'}>
                                             |
                                         </Text>
-                                        <Text fontSize={40} fontWeight={'bolder'} color={'#008080'}>
+                                        <Text fontSize={40} fontWeight={'bolder'} color={'#008080'} marginLeft={5}>
                                             T1
                                         </Text>
                                     </SimpleGrid>
@@ -100,7 +112,7 @@ export const ModelPrefinis: React.FC = () => {
                         </div>
 
                         <div className="card">
-                            <Card bg={'#e6f7f7'} onClick={() => handleClick(t2)} style={{ cursor: 'pointer' }} className="card__bg">
+                            <Card bg={'#e6f7f7'} width={{ base: '100%', md: '85%', xl: '70%', }} onClick={() => handleClick(t2)} style={{ cursor: 'pointer' }} className="card__bg">
                                 <CardHeader>
                                     <Heading size="sm" color={'#008080'}>
                                         BISSAP
@@ -110,13 +122,13 @@ export const ModelPrefinis: React.FC = () => {
                                 <CardFooter>
                                     <SimpleGrid
                                         spacing={1}
-                                        templateColumns="repeat(3, minmax(100px, 1fr))"
+                                        templateColumns="repeat(3, minmax(auto, 1fr))"
                                         padding={0}
                                     >
                                         <Text fontSize={40} fontWeight={'bolder'} color={'#008080'}>
                                             |
                                         </Text>
-                                        <Text fontSize={40} fontWeight={'bolder'} color={'#008080'}>
+                                        <Text fontSize={40} marginLeft={5} fontWeight={'bolder'} color={'#008080'}>
                                             T2
                                         </Text>
                                     </SimpleGrid>
@@ -125,7 +137,7 @@ export const ModelPrefinis: React.FC = () => {
                         </div>
 
                         <div className="card">
-                            <Card bg={'#e6f7f7'} onClick={() => handleClick(t3)} style={{ cursor: 'pointer' }} className="card__bg">
+                            <Card bg={'#e6f7f7'} width={{ base: '100%', md: '85%', xl: '70%', }} onClick={() => handleClick(t3)} style={{ cursor: 'pointer' }} className="card__bg">
                                 <CardHeader>
                                     <Heading size="sm" color={'#008080'}>
                                         PLEIN TERRE (ACACIA)
@@ -135,13 +147,13 @@ export const ModelPrefinis: React.FC = () => {
                                 <CardFooter>
                                     <SimpleGrid
                                         spacing={1}
-                                        templateColumns="repeat(3, minmax(100px, 1fr))"
+                                        templateColumns="repeat(3, minmax(auto, 1fr))"
                                         padding={0}
                                     >
                                         <Text fontSize={40} fontWeight={'bolder'} color={'#008080'}>
                                             |
                                         </Text>
-                                        <Text fontSize={40} fontWeight={'bolder'} color={'#008080'}>
+                                        <Text fontSize={40} marginLeft={5} fontWeight={'bolder'} color={'#008080'}>
                                             T3
                                         </Text>
                                     </SimpleGrid>
@@ -150,7 +162,7 @@ export const ModelPrefinis: React.FC = () => {
                         </div>
 
                         <div className="card">
-                            <Card bg={'#e6f7f7'} onClick={() => handleClick(t4)} style={{ cursor: 'pointer' }} className="card__bg">
+                            <Card bg={'#e6f7f7'} width={{ base: '100%', md: '85%', xl: '70%', }} onClick={() => handleClick(t4)} style={{ cursor: 'pointer', marginTop: '3%' }} className="card__bg">
                                 <CardHeader>
                                     <Heading size="sm" color={'#008080'}>
                                         KOLA
@@ -160,13 +172,13 @@ export const ModelPrefinis: React.FC = () => {
                                 <CardFooter>
                                     <SimpleGrid
                                         spacing={1}
-                                        templateColumns="repeat(3, minmax(100px, 1fr))"
+                                        templateColumns="repeat(3, minmax(auto, 1fr))"
                                         padding={0}
                                     >
                                         <Text fontSize={40} fontWeight={'bolder'} color={'#008080'}>
                                             |
                                         </Text>
-                                        <Text fontSize={40} fontWeight={'bolder'} color={'#008080'}>
+                                        <Text fontSize={40} marginLeft={5} fontWeight={'bolder'} color={'#008080'}>
                                             T4
                                         </Text>
                                     </SimpleGrid>
@@ -175,7 +187,7 @@ export const ModelPrefinis: React.FC = () => {
                         </div>
 
                         <div className="card">
-                            <Card bg={'#e6f7f7'} onClick={() => handleClick(t5)} style={{ cursor: 'pointer' }} className="card__bg">
+                            <Card bg={'#e6f7f7'} width={{ base: '100%', md: '85%', xl: '70%', }} onClick={() => handleClick(t5)} style={{ cursor: 'pointer', marginTop: '3%' }} className="card__bg">
                                 <CardHeader>
                                     <Heading size="sm" color={'#008080'}>
                                         NEEM
@@ -185,13 +197,13 @@ export const ModelPrefinis: React.FC = () => {
                                 <CardFooter>
                                     <SimpleGrid
                                         spacing={1}
-                                        templateColumns="repeat(3, minmax(100px, 1fr))"
+                                        templateColumns="repeat(3, minmax(auto, 1fr))"
                                         padding={0}
                                     >
                                         <Text fontSize={40} fontWeight={'bolder'} color={'#008080'}>
                                             |
                                         </Text>
-                                        <Text fontSize={40} fontWeight={'bolder'} color={'#008080'}>
+                                        <Text fontSize={40} marginLeft={5} fontWeight={'bolder'} color={'#008080'}>
                                             T5
                                         </Text>
                                     </SimpleGrid>
@@ -200,7 +212,7 @@ export const ModelPrefinis: React.FC = () => {
                         </div>
 
                         <div className="card">
-                            <Card bg={'#e6f7f7'} onClick={() => handleClick(t6)} style={{ cursor: 'pointer' }} className="card__bg">
+                            <Card bg={'#e6f7f7'} width={{ base: '100%', md: '85%', xl: '70%', }} onClick={() => handleClick(t6)} style={{ cursor: 'pointer', marginTop: '3%' }} className="card__bg">
                                 <CardHeader>
                                     <Heading size="sm" color={'#008080'}>
                                         BAOBAB
@@ -210,13 +222,13 @@ export const ModelPrefinis: React.FC = () => {
                                 <CardFooter>
                                     <SimpleGrid
                                         spacing={1}
-                                        templateColumns="repeat(3, minmax(100px, 1fr))"
+                                        templateColumns="repeat(3, minmax(auto, 1fr))"
                                         padding={0}
                                     >
                                         <Text fontSize={40} fontWeight={'bolder'} color={'#008080'}>
                                             |
                                         </Text>
-                                        <Text fontSize={30} fontWeight={'bolder'} color={'#008080'}>
+                                        <Text fontSize={30} marginLeft={5} fontWeight={'bolder'} color={'#008080'}>
                                             Duplex
                                         </Text>
                                     </SimpleGrid>
@@ -224,12 +236,12 @@ export const ModelPrefinis: React.FC = () => {
                             </Card>
                         </div>
                     </SimpleGrid>
-                ) : (
+                ) : !ShowDonnee ? (
                     <Box
                         className="cards"
                         padding={8}
                     >
-                        <Card bg={'#e6f7f7'} style={{width:'30%'}}>
+                        <Card bg={'#e6f7f7'} width={{ base: '50%', md: '35%', xl: '20%', }}>
                             <CardHeader>
                                 <Heading size="sm" color={'#008080'}>
                                     {renderCardContentTitle()}
@@ -239,13 +251,13 @@ export const ModelPrefinis: React.FC = () => {
                             <CardFooter>
                                 <SimpleGrid
                                     spacing={1}
-                                    templateColumns="repeat(3, minmax(100px, 1fr))"
+                                    templateColumns="repeat(3, minmax(auto, 1fr))"
                                     padding={0}
                                 >
                                     <Text fontSize={30} fontWeight={'bolder'} color={'#008080'}>
                                         |
                                     </Text>
-                                    <Text fontSize={30} fontWeight={'bolder'} color={'#008080'}>
+                                    <Text fontSize={30} fontWeight={'bolder'} color={'#008080'} marginLeft={5}>
                                         {renderCardContentSubtitle()}
                                     </Text>
                                 </SimpleGrid>
@@ -267,10 +279,16 @@ export const ModelPrefinis: React.FC = () => {
                             {currentData.map((item, index) => (
                                 <SwiperSlide key={index}>
                                     <Article data={item} />
+                                    <Button colorScheme='teal' size='sm' borderRadius={15} onClick={() => handleApplicate(item)}> APPLIQUER </Button>
                                 </SwiperSlide>
                             ))}
                         </Swiper>
+                        <Button colorScheme='gray' size='md' borderRadius={15} marginTop={5} onClick={() => setShowCarousel(false)}>Precedent</Button>
                     </Box>
+                ) : showCarousel ? (
+                    <div> <DonneGeographique /></div>
+                ) : (
+                    <div>tyty</div>
                 )}
             </Card>
 
