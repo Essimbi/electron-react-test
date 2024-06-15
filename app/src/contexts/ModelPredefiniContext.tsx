@@ -1,23 +1,25 @@
 import React, { createContext, useContext, useState } from 'react';
-import { CardImg } from '../Layouts/modelpredefinisImg/modelImg';
+import { SingleModel } from '../Layouts/modelpredefinisImg/modelImg';
 
 interface ModelContextType {
-    ModelData: CardImg[];
-    updateModelData: (newData: CardImg) => void;
+    ModelData: SingleModel | undefined;
+    updateModelData: (newData: SingleModel | undefined) => void;
 }
 
 export const ModelContext = createContext<ModelContextType>({
-    ModelData: [],
+    ModelData: undefined,
     updateModelData: () => {},
 });
 
 export const useModelContext = () => useContext(ModelContext);
 
 export const ModelProvider: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
-    const [ModelData, setModelData] = useState<CardImg[]>([]);
+    const [ModelData, setModelData] = useState<SingleModel | undefined>();
 
-    const updateModelData = (newData: CardImg) => {
-        setModelData(prevData => [...prevData, newData]); // Ajouter les nouvelles données au tableau existant
+    const updateModelData = (newData: SingleModel | undefined) => {
+      if(newData !== undefined) {
+          setModelData(prevData => ({...prevData, ...newData}));
+      }
     };
 
     return (

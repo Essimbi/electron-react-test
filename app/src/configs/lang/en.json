@@ -156,6 +156,26 @@
     "type_text": "Offline & proprietary, licensed by MIPROMALO",
     "construction": "Construction information :",
     "construction_text": "Software application developed with the programming language JAVASCRIPT",
-    "systeme": "Supported operating system :"
+    "systeme": "Supported operating system :",
+    "auteur": "Authors"
+  },
+  "models":{
+    "infos_gene":"General building information",
+    "nom":"Model name",
+    "type":"Housing type",
+    "caracteristiques": "Building features",
+    "toit": "Roof",
+    "elevation":"Elevation",
+    "sol":"Floor material",
+    "nbr_piece":"Number of parts",
+    "pieces":"Building parts",
+    "salon":"1 Living room",
+    "chambre":"2 Bedrooms",
+    "cuisine":"1 Kitchen",
+    "toillettes":"1 Bathroom/Toilets",
+    "form": {
+      "label_choix": "Room selection for calculation",
+      "titre_dm":"Meteorological data"
+    }
   }
 }

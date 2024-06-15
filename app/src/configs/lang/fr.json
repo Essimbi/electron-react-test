@@ -6,7 +6,7 @@
   "sidebar": {
     "donnes-entree": "Données d'entrée",
     "resultats": "Résultats",
-    "model-predefini": "Modèles prédéfins",
+    "model-predefini": "Modèles prédéfinis",
     "aide": "Aide",
     "apropos": "A propos"
   },
@@ -156,6 +156,26 @@
     "type_text": "Offline & propriétaire, Licence octroyée par la MIPROMALO",
     "construction": "Informations sur la construction :",
     "construction_text": "Application logicielle développée avec le langage de programmation JAVASCRIPT",
-    "systeme": "Système d’exploitation supporté :"
+    "systeme": "Système d’exploitation supporté :",
+    "auteur": "Auteurs"
+  },
+  "models":{
+    "infos_gene":"Informations générales sur le bâtiment",
+    "nom":"Nom du modèle",
+    "type":"Type de logement",
+    "caracteristiques": "Caractéristiques du bâtiment",
+    "toit": "Toit",
+    "elevation":"Élévation",
+    "sol":"Matériau du sol",
+    "nbr_piece":"Nombre de pièces",
+    "pieces":"Pièces du bâtiment",
+    "salon":"1 Séjour/salon",
+    "chambre":"2 Chambres",
+    "cuisine":"1 Cuisine",
+    "toillettes":"1 Salle d'eau/Toillettes",
+    "form": {
+      "label_choix": "Choix de la pièce pour le calcul",
+      "titre_dm":"Données météorologiques"
+    }
   }
 }

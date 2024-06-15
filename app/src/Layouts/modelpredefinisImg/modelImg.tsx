@@ -25,6 +25,56 @@ export interface CardImg {
     largeur: number;
 }
 
+export interface SingleModel {
+  type: string,
+  name: string,
+  info: {
+    batiment:{
+      toit: string,
+      sol: string,
+      mur: string,
+      nbr_piece: number
+    },
+    piece:{
+      materiau:{
+        plafond: string,
+        revet_sol: string,
+        revet_ext: string,
+        revet_int: string
+      },
+      dimension:{
+        nom: string,
+        hauteur: number,
+        largeur: number,
+        longueur: number
+      },
+      ouvertures:{
+        ouverture_1: {
+          type_ouverture: string,
+          materiau: string,
+          largeur: number,
+          hauteur: number,
+          couleur_ouverture: string
+        },
+        ouverture_2: {
+          type_ouverture: string,
+          materiau: string,
+          largeur: number,
+          hauteur: number,
+          couleur_ouverture: number
+        }
+      },
+    },
+    list_pieces: []
+  }
+}
+
+export interface FormDataType {
+  zone_geographique: string | undefined,
+  date: string | undefined,
+  piece: string | undefined
+}
+
 export const t1: CardImg[] = [
     { id: 1, image: `${img0}`, title: "cassia", subtitle: "T1", description: "'Typologie' : Incinérateur à biomasse, 'Envergure' : 2.10 m x 2.40 m x 5.00 m + tube métallique de 2.50 m (cheminée supérieure), 'Materiau': parpaing, tol en alluminium,Moellons de pierre, Blocs de terre comprimée ",materiauxToit:'tol en alluminium',materiauxMur:'parpaing',materiauxPlafond:'contre-plaquet',revetementSol:'Incinérateur à biomasse',revetementExterieurMur:'peinture claire',zoneGeographique:'Douala',dateSelected:'24/01/2024',hauteurSousPlafond:12,longueur:14,largeur:15, },
     { id: 2, image: `${img2}`, title: "BISSAP", subtitle: "T1", description: "'Typologie' : Incinérateur à biomasse, 'Envergure' : 2.10 m x 2.40 m x 5.00 m + tube métallique de 2.50 m (cheminée supérieure), 'Materiau': parpaing, tol en alluminium,peinture claire, Blocs de terre comprimée ",materiauxToit:'tol en alluminium',materiauxMur:'parpaing',materiauxPlafond:'contre-plaquet',revetementSol:'Incinérateur à biomasse',revetementExterieurMur:'peinture foncée',zoneGeographique:'Yaounde',dateSelected:'24/01/2024',hauteurSousPlafond:15,longueur:16,largeur:15, },
