@@ -15,6 +15,7 @@ import { useStepContext } from '../../Hooks/useStep';
 import { saveAs } from 'file-saver';
 import * as XLSX from 'xlsx';
 import { useModelContext } from '../../contexts/ModelPredefiniContext';
+import { useFormDataContext } from '../../contexts/FormDataModelContext';
 import ChooseLang from '../ChooseLang';
 
 const Index: React.FC = () => {
@@ -24,9 +25,10 @@ const Index: React.FC = () => {
 
     const { TintData } = useTintContext()
     const { ModelData } = useModelContext();
+    const { formData } = useFormDataContext();
     const { t } = useTranslation();
-    console.log('la valeur',ModelData);
-    
+    console.log('la valeur',formData);
+
     const hours = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
 
 
@@ -54,16 +56,16 @@ const Index: React.FC = () => {
     const longueur = steps['STEP-1']?.payload?.['STEP-1-0']?.longueur;
     const largeur = steps['STEP-1']?.payload?.['STEP-1-0']?.largeur;
 
-    const materiauxToits = ModelData[0]?.materiauxToit;
-    const materiauxMurs =  ModelData[0]?.materiauxMur;
-    const materiauxPlafonds =  ModelData[0]?.materiauxPlafond;
-    const revetementSols = ModelData[0]?.revetementSol;
-    const revetementExterieurMurs =  ModelData[0]?.revetementExterieurMur;
-    const zoneGeographiques =  ModelData[0]?.zoneGeographique;
-    const dateSelecteds =  ModelData[0]?.dateSelected;
-    const hauteurSousPlafonds =  ModelData[0]?.hauteurSousPlafond;
-    const longueurs =  ModelData[0]?.longueur;
-    const largeurs =  ModelData[0]?.largeur;
+    const materiauxToits = ModelData?.info.batiment.toit;
+    const materiauxMurs =  ModelData?.info.batiment.mur;
+    const materiauxPlafonds =  ModelData?.info.piece.materiau.plafond;
+    const revetementSols = ModelData?.info.batiment.sol;
+    const revetementExterieurMurs =  ModelData?.info.piece.materiau.revet_ext;
+    const zoneGeographiques =  formData?.zone_geographique;
+    const dateSelecteds =  formData?.date;
+    const hauteurSousPlafonds =  ModelData?.info.piece.dimension.hauteur;
+    const longueurs =  ModelData?.info.piece.dimension.longueur;
+    const largeurs =  ModelData?.info.piece.dimension.largeur;
 
     const dataExportation = () => {
         const worksheet = XLSX.utils.aoa_to_sheet([TintData]);
@@ -135,6 +137,14 @@ const Index: React.FC = () => {
                                             <GridItem w='100%' h='10' ><Text>{t('result.h')}:{hauteurSousPlafond ? hauteurSousPlafond : hauteurSousPlafonds}, {t('result.l')}: {longueur ? longueur : longueurs}, {t('result.largeur')}: {largeur ? largeur : largeurs}</Text></GridItem>
                                             <GridItem w='100%' h='10' ><Text>{t('result.temperature')} : </Text></GridItem>
                                             <GridItem w='100%' h='10' ><Text>{globalTemperature} °C</Text></GridItem>
+
+                                            {
+                                              formData ? (
+                                                <GridItem w='100%' h='10' ><Text>Le calcul est fait pour la pièce : {formData.piece}</Text></GridItem>
+                                              ): (
+                                                <div></div>
+                                              )
+                                            }
 
                                         </Grid>
                                     </Card>

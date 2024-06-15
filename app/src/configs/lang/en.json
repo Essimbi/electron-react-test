@@ -144,7 +144,9 @@
     "etape_5": "Step 5",
     "text_5": "Click on the 'Calculate' button to calculate the building's indoor temperature.",
     "etape_6": "Step 6",
-    "text_6" : "The result is displayed in the output section, with an overview of the building's various features."
+    "etape_7": "Step 7",
+    "text_6" : "The result is displayed in the output section, with an overview of the building's various features.",
+    "text_7" : "It is possible to export your results to a Microsoft Office Excel file containing the temperatures for the date indicated. To do so, simply click on the *'export'* button at the top right of your results interface. You can then save the file on your computer, rename it and modify it as you wish."
   },
   "about":{
     "title":"About HTSLM",
@@ -154,6 +156,26 @@
     "type_text": "Offline & proprietary, licensed by MIPROMALO",
     "construction": "Construction information :",
     "construction_text": "Software application developed with the programming language JAVASCRIPT",
-    "systeme": "Supported operating system :"
+    "systeme": "Supported operating system :",
+    "auteur": "Authors"
+  },
+  "models":{
+    "infos_gene":"General building information",
+    "nom":"Model name",
+    "type":"Housing type",
+    "caracteristiques": "Building features",
+    "toit": "Roof",
+    "elevation":"Elevation",
+    "sol":"Floor material",
+    "nbr_piece":"Number of parts",
+    "pieces":"Building parts",
+    "salon":"1 Living room",
+    "chambre":"2 Bedrooms",
+    "cuisine":"1 Kitchen",
+    "toillettes":"1 Bathroom/Toilets",
+    "form": {
+      "label_choix": "Room selection for calculation",
+      "titre_dm":"Meteorological data"
+    }
   }
 }

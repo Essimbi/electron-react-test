@@ -1,0 +1,157 @@
+{
+  "acacia": {
+    "type": "T3",
+    "name": "ACACIA",
+    "info": {
+      "batiment":{
+        "toit":"Toiture en tôles d'aluminium",
+        "sol":"Sol cimente simple",
+        "mur":"Briques de terre compressées",
+        "nbr_piece":5
+      },
+      "piece":{
+        "materiau":{
+          "plafond":"Couche d'air intra-plafond",
+          "revet_sol":"Sol cimente simple",
+          "revet_ext": "Peinture blanche",
+          "revet_int": "Bloc de terre comprimée (ou compressée)"
+        },
+        "dimension":{
+          "nom":"Chambre 1",
+          "hauteur":2.8,
+          "largeur":3,
+          "longueur":3
+        },
+        "ouvertures":{
+          "ouverture_1": {
+            "type_ouverture":"Porte",
+            "materiau": "Bois",
+            "largeur":0.8,
+            "hauteur":2.1,
+            "couleur_ouverture":"Peinture verte"
+          }
+          ,
+          "ouverture_2": {
+            "type_ouverture":"Fenetre",
+            "materiau": "Verre doule vitrage",
+            "largeur":1.2,
+            "hauteur":0.9,
+            "couleur_ouverture":"Verre"
+          }
+        }
+      },
+      "list_pieces":[
+        "Séjour/Salon",
+        "Chambre 1",
+        "Chambre 2",
+        "Cuisine",
+        "Salle d'eau/Toillettes utilisée",
+        "Salle d'eau/Toillettes nom utilisée"
+      ]
+    }
+  },
+
+  "cassia": {
+    "type": "T3",
+    "name": "T3 DOUBLE (CASSIA)",
+    "info": {
+      "batiment":{
+        "toit":"Toiture en tôles d'aluminium",
+        "sol":"Sol cimente simple",
+        "mur":"Briques de terre cuites pleines",
+        "nbr_piece":5
+      },
+      "piece":{
+        "materiau":{
+          "plafond":"Couche d'air intra-plafond",
+          "revet_sol":"Sol cimente simple",
+          "revet_ext": "Peinture blanche",
+          "revet_int": "Briques de terre cuites pleines"
+        },
+        "dimension":{
+          "nom":"Chambre 1",
+          "hauteur":3,
+          "largeur":2.71,
+          "longueur":3.36
+        },
+        "ouvertures":{
+          "ouverture_1": {
+            "type_ouverture":"Porte",
+            "materiau": "Bois",
+            "largeur":0.8,
+            "hauteur":2.1,
+            "couleur_ouverture":"Peinture verte"
+          },
+
+          "ouverture_2": {
+            "type_ouverture":"Fenetre",
+            "materiau": "Verre doule vitrage",
+            "largeur":1.2,
+            "hauteur":0.9,
+            "couleur_ouverture":"Verre"
+          }
+        }
+      },
+      "list_pieces":[
+        "Séjour/Salon",
+        "Chambre 1",
+        "Chambre 2",
+        "Cuisine",
+        "Salle d'eau/Toillettes utilisée",
+        "Salle d'eau/Toillettes nom utilisée"
+      ]
+    }
+  },
+
+  "bissap": {
+    "type": "T4",
+    "name": "BISSAP",
+    "info": {
+      "batiment":{
+        "toit":"Toiture en tôles d'aluminium",
+        "sol":"Sol cimente simple",
+        "mur":"Briques de terre compressées",
+        "nbr_piece":5
+      },
+      "piece":{
+        "materiau":{
+          "plafond":"Couche d'air intra-plafond",
+          "revet_sol":"Sol cimente simple",
+          "revet_ext": "Peinture blanche",
+          "revet_int": "Briques de terre compressées"
+        },
+        "dimension":{
+          "nom":"Chambre 1",
+          "hauteur":2.9,
+          "largeur":3.1,
+          "longueur":3.45
+        },
+        "ouvertures":{
+          "ouverture_1": {
+            "type_ouverture":"Porte",
+            "materiau": "Bois",
+            "largeur":0.8,
+            "hauteur":2.1,
+            "couleur_ouverture":"Peinture verte"
+          },
+
+          "ouverture_2": {
+            "type_ouverture":"Fenetre",
+            "materiau": "Verre doule vitrage",
+            "largeur":1.2,
+            "hauteur":0.9,
+            "couleur_ouverture":"Verre"
+          }
+        }
+      },
+      "list_pieces":[
+        "Séjour/Salon",
+        "Chambre 1",
+        "Chambre 2",
+        "Cuisine",
+        "Salle d'eau/Toillettes utilisée",
+        "Salle d'eau/Toillettes nom utilisée"
+      ]
+    }
+  }
+}

@@ -94,7 +94,7 @@ export const About = () => {
                     textTransform="uppercase"
                     style={{ fontWeight: 'bold' }}
                   >
-                    Auteurs :
+                    { t('about.auteur') } :
                   </Text>
                   <Text pt="2" fontSize="sm">
                     L. P. N. Tchawa (tchawalynda@yahoo.fr), <br /> L. M. Mandeng
