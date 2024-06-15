@@ -6,7 +6,7 @@
   "sidebar": {
     "donnes-entree": "Données d'entrée",
     "resultats": "Résultats",
-    "model-predefini": "Modèles prédéfins",
+    "model-predefini": "Modèles prédéfinis",
     "aide": "Aide",
     "apropos": "A propos"
   },
@@ -144,7 +144,9 @@
     "etape_5": "Étape 5",
     "text_5": "Cliquez sur le bouton 'Calculer' pour calculer la température intérieure du bâtiment.",
     "etape_6": "Étape 6",
-    "text_6" : "Le résultat est affiché dans la section de sortie, avec un aperçu des différentes caractéristiques du bâtiment."
+    "etape_7": "Étape 7",
+    "text_6" : "Le résultat est affiché dans la section de sortie, avec un aperçu des différentes caractéristiques du bâtiment.",
+    "text_7" : "Il est possible d'exporter vos résultats dans un fichier Microsoft Office Excel contenant lesdites températures intérieures de la date indiquée. Il suffit à cet effet, de cliquer sur le *'bouton : exporter'* situé à haut à droite de votre interface résultats. Vous pourrez alors enregistrer le fichier dans votre machine, le renommer et  le modifier à votre guise."
   },
   "about":{
     "title":"A propos de HTSLM",
@@ -154,6 +156,26 @@
     "type_text": "Offline & propriétaire, Licence octroyée par la MIPROMALO",
     "construction": "Informations sur la construction :",
     "construction_text": "Application logicielle développée avec le langage de programmation JAVASCRIPT",
-    "systeme": "Système d’exploitation supporté :"
+    "systeme": "Système d’exploitation supporté :",
+    "auteur": "Auteurs"
+  },
+  "models":{
+    "infos_gene":"Informations générales sur le bâtiment",
+    "nom":"Nom du modèle",
+    "type":"Type de logement",
+    "caracteristiques": "Caractéristiques du bâtiment",
+    "toit": "Toit",
+    "elevation":"Élévation",
+    "sol":"Matériau du sol",
+    "nbr_piece":"Nombre de pièces",
+    "pieces":"Pièces du bâtiment",
+    "salon":"1 Séjour/salon",
+    "chambre":"2 Chambres",
+    "cuisine":"1 Cuisine",
+    "toillettes":"1 Salle d'eau/Toillettes",
+    "form": {
+      "label_choix": "Choix de la pièce pour le calcul",
+      "titre_dm":"Données météorologiques"
+    }
   }
 }

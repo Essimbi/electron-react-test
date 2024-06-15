@@ -374,8 +374,6 @@ export const DonneMetheo = () => {
         Tint[k] = ((T5[k] + T1[k] + T3[k] - phitotal[k]) / T4) - 273;
       }
 
-      console.log(Tint);
-
       // Définition des variables de l'échangeur de chaleur (matériaux du bâtiment)
 
       //setActiveStep("STEP-3")
