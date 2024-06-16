@@ -43,9 +43,11 @@ export const InformForm = () => {
               index < parseInt(steps[_this].payload.nombre_pieces);
               index++
             ) {
-              result['STEP-1-' + index] = {};
+              result['STEP-1-' + index] = result['STEP-1-' + index] ?? {};
             }
-            return result;
+            if(Object.keys(steps['STEP-1'].payload['STEP-1-0']).length > 0){
+              return steps['STEP-1'].payload
+            }else return result;
           })(),
         },
       });
