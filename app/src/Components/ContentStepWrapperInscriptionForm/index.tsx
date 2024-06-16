@@ -46,15 +46,12 @@ export const InformForm = () => {
             ) {
               result['STEP-1-' + index] = {};
             }
-            console.log(steps['STEP-1']);
             if (
               steps['STEP-1']?.payload['STEP-1-0'] &&
               Object.keys(steps['STEP-1']?.payload['STEP-1-0'])?.length > 0
             ) {
-              console.log(' -- 1');
               return steps['STEP-1'].payload;
             } else {
-              console.log(' -- 2');
               return result;
             }
           })(),
