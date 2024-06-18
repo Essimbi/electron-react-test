@@ -1,7 +1,8 @@
 {
   "common": {
       "translate-button": "FR",
-      "translated-text": "C'est du français"
+      "translated-text": "C'est du français",
+      "select": "Choisir un élément"
   },
   "sidebar": {
     "donnes-entree": "Données d'entrée",
@@ -176,6 +177,8 @@
     "form": {
       "label_choix": "Choix de la pièce pour le calcul",
       "titre_dm":"Données météorologiques"
-    }
+    },
+    "info":"Pour plus d'informations",
+    "plan": "Plan de distribution"
   }
 }

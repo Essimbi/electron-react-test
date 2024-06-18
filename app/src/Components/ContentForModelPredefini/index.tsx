@@ -34,6 +34,7 @@ import './style.css';
 import models from '../../Helper/data/modelPredefini/dataset.json'
 import dataPhi from '../../Helper/data/phi/dataPhi.json'
 import data from '../../Helper/data/tempExt/dataTempExt.json'
+// import img5 from '../../img/modelPredefinis/T3/acacia.JPG';
 
 export const ModelPrefinis = () => {
     const [currentData, setCurrentData] = useState<SingleModel>();
@@ -519,6 +520,11 @@ export const ModelPrefinis = () => {
                             <p><b>{t('models.chambre')}</b></p>
                             <p><b>{t('models.cuisine')}</b></p>
                             <p><b>{t('models.toillettes')}</b></p>
+                            <p><b>{t('models.info')}</b> : https://www.mipromalo.cm/index.php/fr/realisations</p>
+                            <hr />
+                            <br />
+                            <h3><b>{t('models.plan')}</b></h3>
+                            <img src={currentData?.img} alt='Plan de distribution' />
 
                           </Box>
                           <Box className="cards">
@@ -531,6 +537,7 @@ export const ModelPrefinis = () => {
                             <FormControl mb={4} isInvalid={isError ? false : !formData.piece}>
                               <FormLabel>{t('models.form.label_choix')}<span style={{color:'red'}}>*</span></FormLabel>
                               <Select onChange={handlePieceChange}>
+                                <option>{t('common.select')}</option>
                                 {currentData?.info.list_pieces.map((option: any, index: any) => (
                                   <option key={index} value={option}>
                                     {option}
@@ -553,6 +560,7 @@ export const ModelPrefinis = () => {
                             <FormControl mb={4} width={'100%'} mt={25} isInvalid={isError ? false : !formData.zone_geographique}>
                               <FormLabel>{t('steper-3.zone')}<span style={{color:'red'}}>*</span> :</FormLabel>
                               <Select onChange={handleSelectChange}>
+                                <option>{t('common.select')}</option>
                                 <option value="Douala" defaultChecked>{t('steper-3.section-zone.val-1')}</option>
                                 <option value="Yaounde">{t('steper-3.section-zone.val-2')}</option>
                                 <option value="Maroua">{t('steper-3.section-zone.val-3')}</option>

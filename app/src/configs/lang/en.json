@@ -1,7 +1,8 @@
 {
   "common": {
       "translate-button": "EN",
-      "translated-text": "This is english"
+      "translated-text": "This is english",
+      "select": "Select an element"
   },
   "sidebar": {
     "donnes-entree": "Input data",
@@ -176,6 +177,8 @@
     "form": {
       "label_choix": "Room selection for calculation",
       "titre_dm":"Meteorological data"
-    }
+    },
+    "info":"For more informations",
+    "plan": "Distribution plan"
   }
 }

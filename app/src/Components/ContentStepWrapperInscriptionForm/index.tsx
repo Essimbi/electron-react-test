@@ -84,7 +84,8 @@ export const InformForm = () => {
               })
             }
           >
-            <option value="Toiture en tuiles romane 1 & 2" defaultChecked>{t('steper-1.section-materiaux-toit.val-1')}</option>
+            <option>{t('common.select')}</option>
+            <option value="Toiture en tuiles romane 1 & 2">{t('steper-1.section-materiaux-toit.val-1')}</option>
             <option value="Toiture en tôles d'aluminium">{t('steper-1.section-materiaux-toit.val-2')}</option>
             <option value="Toiture en dalle de beton">{t('steper-1.section-materiaux-toit.val-3')}</option>
             <option value="Toiture en paille">{t('steper-1.section-materiaux-toit.val-4')}</option>
@@ -118,7 +119,8 @@ export const InformForm = () => {
               })
             }
           >
-            <option value="Parpaing standard" defaultChecked>{t('steper-1.section-materiaux-mur.val-1')}</option>
+            <option>{t('common.select')}</option>
+            <option value="Parpaing standard">{t('steper-1.section-materiaux-mur.val-1')}</option>
             <option value="Briques de terre cuites avec vide">{t('steper-1.section-materiaux-mur.val-2')}</option>
             <option value="Briques de terre cuites pleines">{t('steper-1.section-materiaux-mur.val-3')}</option>
             <option value="Briques de terre compressées">{t('steper-1.section-materiaux-mur.val-4')}</option>
@@ -158,7 +160,8 @@ export const InformForm = () => {
               })
             }
           >
-            <option value="Dalle de beton + carreaux" defaultChecked>{t('steper-1.section-materiaux-sol.val-1')}</option>
+            <option>{t('common.select')}</option>
+            <option value="Dalle de beton + carreaux">{t('steper-1.section-materiaux-sol.val-1')}</option>
             <option value="Sol cimente simple">{t('steper-1.section-materiaux-sol.val-2')}</option>
             <option value="Sol en terre simple">{t('steper-1.section-materiaux-sol.val-3')}</option>
           </Select>

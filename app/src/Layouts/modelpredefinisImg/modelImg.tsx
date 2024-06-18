@@ -66,7 +66,8 @@ export interface SingleModel {
       },
     },
     list_pieces: []
-  }
+  },
+  img: string
 }
 
 export interface FormDataType {

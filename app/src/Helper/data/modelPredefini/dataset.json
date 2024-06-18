@@ -48,7 +48,8 @@
         "Salle d'eau/Toillettes utilisée",
         "Salle d'eau/Toillettes nom utilisée"
       ]
-    }
+    },
+    "img": "../../img/modelPredefinis/T3/acacia.JPG"
   },
 
   "cassia": {
@@ -100,7 +101,8 @@
         "Salle d'eau/Toillettes utilisée",
         "Salle d'eau/Toillettes nom utilisée"
       ]
-    }
+    },
+    "img": "../../img/modelPredefinis/T3/cassia.JPG"
   },
 
   "bissap": {
@@ -152,6 +154,7 @@
         "Salle d'eau/Toillettes utilisée",
         "Salle d'eau/Toillettes nom utilisée"
       ]
-    }
+    },
+    "img": "../../img/modelPredefinis/T4/bissap.JPG"
   }
 }
