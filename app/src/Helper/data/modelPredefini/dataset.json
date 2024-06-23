@@ -48,7 +48,8 @@
         "Salle d'eau/Toillettes utilisée",
         "Salle d'eau/Toillettes nom utilisée"
       ]
-    }
+    },
+    "img": "/static/media/t3Acasia.d52c68aca8b8409a9312.png"
   },
 
   "cassia": {
@@ -100,7 +101,8 @@
         "Salle d'eau/Toillettes utilisée",
         "Salle d'eau/Toillettes nom utilisée"
       ]
-    }
+    },
+    "img": "/static/media/t3Acasia1.f493c673a70a13d121c4.png"
   },
 
   "bissap": {
@@ -152,6 +154,7 @@
         "Salle d'eau/Toillettes utilisée",
         "Salle d'eau/Toillettes nom utilisée"
       ]
-    }
+    },
+    "img": "/static/media/t4Bissap.9ab1905d6e009ca9308b.png"
   }
 }

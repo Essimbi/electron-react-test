@@ -1,9 +1,8 @@
-import React from 'react';
-import { StepperComponent } from '../../Components/stepperComponent';
 import { Box } from '@mui/material';
-import { ContentStepWrapper } from '../ContentStepWrapper';
-import { useDimensions } from '../../Hooks/useDimensions';
 import ChooseLang from '../../Components/ChooseLang';
+import { StepperComponent } from '../../Components/stepperComponent';
+import { useDimensions } from '../../Hooks/useDimensions';
+import { ContentStepWrapper } from '../ContentStepWrapper';
 
 export const MainComponent = () => {
   const { innerHeight, innerWidth } = useDimensions();
@@ -13,6 +12,7 @@ export const MainComponent = () => {
       width={innerWidth - (innerWidth * 20) / 100}
       height={innerHeight - (0.31 * innerHeight) / 100}
       padding={3}
+      style={{overflowX: 'hidden', overflowY: 'hidden'}}
     >
       <Box
         width={'100%'}
@@ -22,6 +22,7 @@ export const MainComponent = () => {
           backgroundColor: 'white',
           boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.05)',
         }}
+        style={{overflowX: 'hidden', overflowY: 'scroll'}}
       >
         <ChooseLang />
         <Box
