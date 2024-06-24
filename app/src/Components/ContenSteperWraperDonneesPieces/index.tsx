@@ -33,10 +33,10 @@ export const DonneesPiecesForm = () => {
             justifyContent: 'center',
           }}
         >
-          <FormControl width={'45%'} mt={10} isInvalid={isError ? false : !steps[_this].payload[_subThis]['materiaux_plafond']}>
+          <FormControl width={'45%'} mt={10} isInvalid={isError ? false : !steps[_this].payload[_subThis]?.materiaux_plafond}>
             <FormLabel>{t('steper-2-0.materiaux-plafond')}<span style={{color:'red'}}>*</span></FormLabel>
             <Select
-              value={steps[_this].payload[_subThis]['materiaux_plafond']}
+              value={steps[_this].payload[_subThis]?.materiaux_plafond}
               onChange={(e) => {
                 let ancian = steps;
                 ancian[_this].payload[_subThis]['materiaux_plafond'] =
@@ -57,7 +57,7 @@ export const DonneesPiecesForm = () => {
           <FormControl ml={'3%'} width={'45%'} mt={10} isInvalid={isError ? false : !steps[_this].payload[_subThis]['revetement_interieur_mur']}>
             <FormLabel>{t('steper-2-0.revetement-int')} <span style={{color:'red'}}>*</span></FormLabel>
             <Select
-              value={steps[_this].payload[_subThis]['revetement_interieur_mur']}
+              value={steps[_this].payload[_subThis]?.revetement_interieur_mur}
               onChange={(e) => {
                 let ancian = steps;
                 ancian[_this].payload[_subThis]['revetement_interieur_mur'] =
@@ -88,7 +88,7 @@ export const DonneesPiecesForm = () => {
           <FormControl width={'45%'} mt={10} isInvalid={isError ? false : !steps[_this].payload[_subThis]['revetement_sol']}>
             <FormLabel>{t('steper-2-0.revetement-sol')}  <span style={{color:'red'}}>*</span></FormLabel>
             <Select
-              value={steps[_this].payload[_subThis]['revetement_sol']}
+              value={steps[_this].payload[_subThis]?.revetement_sol}
               onChange={(e) => {
                 let ancian = steps;
                 ancian[_this].payload[_subThis]['revetement_sol'] =
@@ -107,7 +107,7 @@ export const DonneesPiecesForm = () => {
           <FormControl ml={'3%'} width={'45%'} mt={10} isInvalid={isError ? false : !steps[_this].payload[_subThis]['revetement_exterieur_mur']}>
             <FormLabel>{t('steper-2-0.revetement-ext')} <span style={{color:'red'}}>*</span></FormLabel>
             <Select
-              value={steps[_this].payload[_subThis]['revetement_exterieur_mur']}
+              value={steps[_this].payload[_subThis]?.revetement_exterieur_mur}
               onChange={(e) => {
                 let ancian = steps;
                 ancian[_this].payload[_subThis]['revetement_exterieur_mur'] =

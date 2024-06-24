@@ -25,6 +25,7 @@ const createWindow = () => {
   win.loadURL('http://localhost:3000')
 }
 
+
 app.whenReady().then(() => {
   ipcMain.handle('ping', () => 'pong')
   createWindow()
