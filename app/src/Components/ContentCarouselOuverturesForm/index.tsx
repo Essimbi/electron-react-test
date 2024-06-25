@@ -7,7 +7,8 @@ import {
   Select,
   Text,
   FormErrorMessage,
-  FormHelperText
+  FormHelperText,
+  IconButton
 } from '@chakra-ui/react';
 import {
   Table,
@@ -19,6 +20,7 @@ import {
   TableCaption,
   TableContainer,
 } from '@chakra-ui/react';
+import { DeleteIcon } from '@chakra-ui/icons'
 import { useStepContext } from '../../Hooks/useStep';
 import { useState } from 'react';
 import { useTranslation } from "react-i18next";
@@ -44,7 +46,6 @@ const OuverturesForm = () => {
     hauteur: 0,
     largeur: 0,
   });
-
   const isError = true
 
   return (
@@ -75,7 +76,8 @@ const OuverturesForm = () => {
             }}
             size={'sm'}
           >
-            <option value="Porte" defaultChecked>
+            <option>{t('common.select')}</option>
+            <option value="Porte">
             {t('steper-2-2.section-ouverture.val-1')}
             </option>
             <option value="Fenetre">{t('steper-2-2.section-ouverture.val-2')}</option>
@@ -100,6 +102,7 @@ const OuverturesForm = () => {
             }}
             size={'sm'}
           >
+            <option>{t('common.select')}</option>
             <option value="Verre">{t('steper-2-2.section-materiaux.val-1')} </option>
             <option value="Verre doule vitrage">{t('steper-2-2.section-materiaux.val-2')} </option>
             <option value="Bois">{t('steper-2-2.section-materiaux.val-3')}</option>
@@ -182,7 +185,8 @@ const OuverturesForm = () => {
             }}
             size={'sm'}
           >
-            <option value="Peinture noire" defaultChecked>
+            <option>{t('common.select')}</option>
+            <option value="Peinture noire">
             {t('steper-2-2.couleur_text.val-1')}
             </option>
             <option value="Peinture blanche">{t('steper-2-2.couleur_text.val-2')}</option>
@@ -237,9 +241,9 @@ const OuverturesForm = () => {
               },
             });
             setOpenState({
-              type_ouverture: '',
-              couleur_ouverture: '',
-              materiau: '',
+              type_ouverture: undefined,
+              couleur_ouverture: undefined,
+              materiau: undefined,
               hauteur: 0,
               largeur: 0,
             });
@@ -268,6 +272,7 @@ const OuverturesForm = () => {
                 <Th>{t('steper-2-2.materiaux')}</Th>
                 <Th>{t('steper-2-2.hauteur')}</Th>
                 <Th>{t('steper-2-2.largeur')}</Th>
+                <Th>Action</Th>
               </Tr>
               {Object.keys(steps[_this].payload[_subThis]).map(
                 (key) =>
@@ -282,6 +287,27 @@ const OuverturesForm = () => {
                       <Td>{steps[_this].payload[_subThis][key].materiau}</Td>
                       <Td>{steps[_this].payload[_subThis][key].hauteur}</Td>
                       <Td>{steps[_this].payload[_subThis][key].largeur}</Td>
+                      <Td>
+                        <IconButton aria-label='' icon={<DeleteIcon />}
+                          onClick={() => {
+                            setStep({
+                            ...steps,
+                              [_this]: {
+                              ...steps[_this],
+                                payload: {
+                                ...steps[_this].payload,
+                                  [_subThis]: {
+                                  ...Object.keys(steps[_this].payload[_subThis]).reduce((acc: { [key: string]: any }, k) => {
+                                      if (k!== key) acc[k] = steps[_this].payload[_subThis][k];
+                                      return acc;
+                                    }, {}),
+                                  },
+                                },
+                              },
+                            });
+                          }}
+                        />
+                      </Td>
                     </Tr>
                   )
               )}
