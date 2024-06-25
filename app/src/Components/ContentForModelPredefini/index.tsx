@@ -34,7 +34,9 @@ import './style.css';
 import models from '../../Helper/data/modelPredefini/dataset.json'
 import dataPhi from '../../Helper/data/phi/dataPhi.json'
 import data from '../../Helper/data/tempExt/dataTempExt.json'
-// import img5 from '../../img/modelPredefinis/T3/acacia.JPG';
+import acacia from './modelPredefinis/T3/acacia.png'
+import cassia from './modelPredefinis/T3/cassia.png'
+import bissap from './modelPredefinis/T4/bissap.png'
 
 export const ModelPrefinis = () => {
     const [currentData, setCurrentData] = useState<SingleModel>();
@@ -57,8 +59,19 @@ export const ModelPrefinis = () => {
       // console.log(models[key])
       for (let key in models) {
         if (modelsPredefinis[key].name === name) {
+          switch (modelsPredefinis[key].name) {
+            case "ACACIA":
+              modelsPredefinis[key].img = acacia ;
+              break
+            case "T3 DOUBLE (CASSIA)":
+              modelsPredefinis[key].img = cassia ;
+              break
+            case "BISSAP":
+              modelsPredefinis[key].img = bissap ;
+              break
+          }
           setCurrentData(modelsPredefinis[key]);
-          console.log(modelsPredefinis[key])
+          // console.log(modelsPredefinis[key].name)
           break;
         }
       }
@@ -524,7 +537,9 @@ export const ModelPrefinis = () => {
                             <hr />
                             <br />
                             <h3><b>{t('models.plan')}</b></h3>
+                            {/* <img src={img5} alt='Plan de distribution' /> */}
                             <img src={currentData?.img} alt='Plan de distribution' />
+                            {/* <p>{currentData?.img}</p> */}
 
                           </Box>
                           <Box className="cards">
