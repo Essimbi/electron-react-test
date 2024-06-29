@@ -34,12 +34,12 @@
       "val-2":"Briques de terre cuites avec vide",
       "val-3":"Briques de terre cuites pleines",
       "val-4":"Briques de terre compressées",
-      "val-5":"Briques de terre stabilisées"
+      "val-5":"Bloc autobloquants"
     },
     "materiaux-sol": "Matériaux du sol",
     "section-materiaux-sol": {
-      "val-1": "Dalle de béton + carreaux",
-      "val-2": "Sol cimenté simple",
+      "val-1": "Dallage du sol au béton  armé + carreaux",
+      "val-2": "Chape lissée (mortier de ciment)",
       "val-3": "Sol en terre simple"
     },
     "nombre-piece": "Nombres de pièces",

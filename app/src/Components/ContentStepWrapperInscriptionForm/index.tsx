@@ -104,7 +104,7 @@ export const InformForm = () => {
             <option value="Toiture en dalle de beton">{t('steper-1.section-materiaux-toit.val-3')}</option>
             <option value="Toiture en paille">{t('steper-1.section-materiaux-toit.val-4')}</option>
             <option value="Dalle en Hourdis">{t('steper-1.section-materiaux-toit.val-5')}</option>
-            <option value="Couche d'air intra-plafond">{t('steper-1.section-materiaux-toit.val-6')}</option>
+            {/* <option value="Couche d'air intra-plafond">{t('steper-1.section-materiaux-toit.val-6')}</option> */}
           </Select>
           {isError ? (
             <FormHelperText></FormHelperText>

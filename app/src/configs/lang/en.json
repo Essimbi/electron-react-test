@@ -34,12 +34,12 @@
       "val-2":"Clay bricks with vacuum",
       "val-3":"Solid clay bricks",
       "val-4":"Compressed earth bricks",
-      "val-5":"Stabilized earth bricks"
+      "val-5":"Self-locking blocks"
     },
     "materiaux-sol": "Floor materials",
     "section-materiaux-sol": {
-      "val-1": "Concrete slab + tiles",
-      "val-2": "Single cemented floor",
+      "val-1": "Reinforced concrete floor paving + tiles",
+      "val-2": "Smooth screed (cement mortar)",
       "val-3": "Simple earth floor"
     },
     "nombre-piece": "Number of parts",
