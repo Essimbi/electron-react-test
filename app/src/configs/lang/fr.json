@@ -56,11 +56,11 @@
       "val-4": "Peinture blanche",
       "val-5": "Peinture bleue",
       "val-6": "Peinture grise métallisée (métaux : fer,aluminium…)",
-      "val-7": "Verre",
+      "val-7": "Aucun",
       "val-8": "Peinture verte"
     },
     "revetement-sol": "Revêtement du sol",
-    "revetement-ext": "Revêtement du toit"
+    "revetement-ext": "Couleur de la toiture"
   },
   "steper-2-1": {
     "titre": "Dimensions de la pièce",
@@ -89,14 +89,15 @@
     "largeur": "Largeur",
     "tableau-titre": "Les ouvertures de la pièce",
     "type": "Type",
-    "couleur": "Enrobage",
+    "couleur": "Type de coloration",
     "couleur_text": {
       "val-1": "Peinture noire",
       "val-2": "Peinture blanche",
       "val-3": "Peinture bleue",
       "val-4": "Peinture grise métallisée (métaux : fer,aluminium…)",
-      "val-5": "Verre",
-      "val-6": "Peinture verte"
+      "val-5": "Transparent",
+      "val-6": "Peinture verte",
+      "val-7": "Aucun"
     },
     "btn-ajouter": "Ajouter"
   },

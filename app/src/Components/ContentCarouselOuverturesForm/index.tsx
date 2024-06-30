@@ -194,6 +194,7 @@ const OuverturesForm = () => {
             <option value="Peinture grise métallisée (métaux : fer,aluminium…)">{t('steper-2-2.couleur_text.val-4')}</option>
             <option value="Verre">{t('steper-2-2.couleur_text.val-5')}</option>
             <option value="Peinture verte">{t('steper-2-2.couleur_text.val-6')}</option>
+            <option value="Aucun">{t('steper-2-2.couleur_text.val-7')}</option>
           </Select>
           {isError ? (
             <FormHelperText>

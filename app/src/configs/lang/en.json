@@ -56,11 +56,11 @@
       "val-4": "White paint",
       "val-5": "Blue paint",
       "val-6": "Gray metallic paint (metals: iron, aluminum, etc.)",
-      "val-7": "Glass",
+      "val-7": "Any",
       "val-8": "Green paint"
     },
     "revetement-sol": "Floor covering",
-    "revetement-ext": "Roof sheathing"
+    "revetement-ext": "Roof color"
   },
   "steper-2-1": {
     "titre": "Part dimensions",
@@ -89,13 +89,13 @@
     "largeur": "Width",
     "tableau-titre": "Room openings",
     "type": "Type",
-    "couleur": "Coating",
+    "couleur": "Type of coloring",
     "couleur_text": {
       "val-1": "Black paint",
       "val-2": "White paint",
       "val-3": "Blue paint",
       "val-4": "Gray metallic paint (metals: iron, aluminum, etc.)",
-      "val-5": "Glass",
+      "val-5": "Transparent",
       "val-6": "Green paint"
     },
     "btn-ajouter": "Add"
