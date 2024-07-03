@@ -48,6 +48,13 @@
   "steper-2-0": {
     "titre": "Part materials",
     "materiaux-plafond": "Ceiling materials",
+    "section-plafond":{
+      "val-1":"Interior ceiling in plywood for painting or varnishing",
+      "val-2":"Aluminium sheet metal ceiling",
+      "val-3":"Concrete slab",
+      "val-4":"Panelled interior ceiling",
+      "val-5":"Exterior ceiling in smooth pre-painted sheet metal"
+    },
     "revetement-int": "Wall cladding",
     "section-revetement": {
       "val-1": "Compressed earth blocks",

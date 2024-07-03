@@ -48,6 +48,13 @@
   "steper-2-0": {
     "titre": "Matériaux de la pièce",
     "materiaux-plafond": "Matériaux du plafond",
+    "section-plafond":{
+      "val-1":"Plafond intérieur en contre-plaqué à peindre ou à vernir",
+      "val-2":"Plafond extérieur en tôle Alu",
+      "val-3":"Dalle en béton",
+      "val-4":"Plafond intérieur en Lambris",
+      "val-5":"Plafond extérieur en tôle lisse prélaquée"
+    },
     "revetement-int": "Revêtement du mur",
     "section-revetement": {
       "val-1": "Bloc de terre comprimée (ou compressée)",

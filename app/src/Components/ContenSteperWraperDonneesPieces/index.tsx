@@ -45,12 +45,12 @@ export const DonneesPiecesForm = () => {
               }}
             >
               <option>{t('common.select')}</option>
-              <option value="Toiture en tuiles romane 1 & 2">{t('steper-1.section-materiaux-toit.val-1')}</option>
-              <option value="Toiture en tôles d'aluminium">{t('steper-1.section-materiaux-toit.val-2')}</option>
-              <option value="Toiture en dalle de beton">{t('steper-1.section-materiaux-toit.val-3')}</option>
-              <option value="Toiture en paille">{t('steper-1.section-materiaux-toit.val-4')}</option>
-              <option value="Dalle en Hourdis">{t('steper-1.section-materiaux-toit.val-5')}</option>
-              <option value="Couche d'air intra-plafond">{t('steper-1.section-materiaux-toit.val-6')}</option>
+              <option value="Plafond intérieur en contre-plaqué à peindre ou à vernir">{t('steper-2-0.section-plafond.val-1')}</option>
+              <option value="Plafond extérieur en tôle Alu">{t('steper-2-0.section-plafond.val-2')}</option>
+              <option value="Dalle en béton">{t('steper-2-0.section-plafond.val-3')}</option>
+              <option value="Plafond intérieur en Lambris">{t('steper-2-0.section-plafond.val-4')}</option>
+              <option value="Plafond extérieur en tôle lisse prélaquée">{t('steper-2-0.section-plafond.val-5')}</option>
+              {/* <option value="Couche d'air intra-plafond">{t('steper-1.section-materiaux-toit.val-6')}</option> */}
             </Select>
           </FormControl>
 
