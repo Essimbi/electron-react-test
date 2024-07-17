@@ -1,42 +1,49 @@
 import {
   Alert,
-    AlertIcon,
-    Box,
-    Button,
-    Card,
-    CardBody,
-    CardFooter,
-    CardHeader,
-    FormControl,
-    FormErrorMessage,
-    FormHelperText,
-    FormLabel,
-    Heading,
-    Input,
-    Select,
-    SimpleGrid,
-    Text,
+  AlertIcon,
+  Box,
+  Button,
+  Card,
+  CardBody,
+  CardFooter,
+  CardHeader,
+  FormControl,
+  FormErrorMessage,
+  FormHelperText,
+  FormLabel,
+  Heading,
+  Input,
+  Select,
+  SimpleGrid,
+  Text,
 } from '@chakra-ui/react';
 import React, { useState } from 'react';
+import { useTranslation } from "react-i18next";
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import ChooseLang from '../ChooseLang';
-import { useModelContext } from '../../contexts/ModelPredefiniContext';
-import { SingleModel } from '../../Layouts/modelpredefinisImg/modelImg';
-import { DonneGeographique } from './ContentForAddZoneGeographique';
-import { useTranslation } from "react-i18next";
-import { useSettingsContext } from '../../Hooks/useSettings';
-import { useTintContext } from '../../contexts/GraphContext';
 import { useFormDataContext } from '../../contexts/FormDataModelContext';
+import { useTintContext } from '../../contexts/GraphContext';
+import { useModelContext } from '../../contexts/ModelPredefiniContext';
+import models from '../../Helper/data/modelPredefini/dataset.json';
+import dataPhi from '../../Helper/data/phi/dataPhi.json';
+import data from '../../Helper/data/tempExt/dataTempExt.json';
+import { useSettingsContext } from '../../Hooks/useSettings';
 import { useStepContext } from '../../Hooks/useStep';
+//import img5 from '../../img/modelPredefinis/T3/t3Acasia.png';
+import { SingleModel } from '../../Layouts/modelpredefinisImg/modelImg';
+import ChooseLang from '../ChooseLang';
+import { DonneGeographique } from './ContentForAddZoneGeographique';
 import './style.css';
+<<<<<<< HEAD
+=======
 import models from '../../Helper/data/modelPredefini/dataset.json'
 import dataPhi from '../../Helper/data/phi/dataPhi.json'
 import data from '../../Helper/data/tempExt/dataTempExt.json'
 import acacia from './modelPredefinis/T3/acacia.png'
 import cassia from './modelPredefinis/T3/cassia.png'
 import bissap from './modelPredefinis/T4/bissap.png'
+>>>>>>> 9bb1539633a49d73d2a07fcd4fafd9e22d87539a
 
 export const ModelPrefinis = () => {
     const [currentData, setCurrentData] = useState<SingleModel>();
@@ -48,6 +55,8 @@ export const ModelPrefinis = () => {
     const { settings } = useSettingsContext();
     const [error, setError] = React.useState('')
     const isError = error === ''
+    let images = currentData?.img;
+    //console.log(img5);
 
     interface ModelPredefini {
       [key: string]: any;
@@ -527,6 +536,7 @@ export const ModelPrefinis = () => {
                             <p><b>{t('models.nbr_piece')} : </b>{currentData?.info.batiment.nbr_piece}</p>
                             <br />
                             <hr />
+                            <img src={images}  alt='aucune image'></img>
                             <br />
                             <h3>{t('models.pieces')}</h3>
                             <p><b>{t('models.salon')}</b></p>

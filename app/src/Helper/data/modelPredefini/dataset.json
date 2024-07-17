@@ -49,7 +49,11 @@
         "Salle d'eau/Toillettes nom utilisée"
       ]
     },
+<<<<<<< HEAD
+    "img": "/static/media/t3Acasia.d52c68aca8b8409a9312.png"
+=======
     "img": ".../img/modelPredefinis/T3/acacia.JPG"
+>>>>>>> 9bb1539633a49d73d2a07fcd4fafd9e22d87539a
   },
 
   "cassia": {
@@ -102,7 +106,11 @@
         "Salle d'eau/Toillettes nom utilisée"
       ]
     },
+<<<<<<< HEAD
+    "img": "/static/media/t3Acasia1.f493c673a70a13d121c4.png"
+=======
     "img": "../../img/modelPredefinis/T3/cassia.JPG"
+>>>>>>> 9bb1539633a49d73d2a07fcd4fafd9e22d87539a
   },
 
   "bissap": {
@@ -155,6 +163,10 @@
         "Salle d'eau/Toillettes nom utilisée"
       ]
     },
+<<<<<<< HEAD
+    "img": "/static/media/t4Bissap.9ab1905d6e009ca9308b.png"
+=======
     "img": "../../img/modelPredefinis/T4/bissap.JPG"
+>>>>>>> 9bb1539633a49d73d2a07fcd4fafd9e22d87539a
   }
 }
