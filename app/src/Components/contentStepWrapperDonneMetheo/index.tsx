@@ -410,7 +410,8 @@ export const DonneMetheo = () => {
               })
             }
           >
-            <option value="Douala" defaultChecked>{t('steper-3.section-zone.val-1')}</option>
+            <option>{t('common.select')}</option>
+            <option value="Douala">{t('steper-3.section-zone.val-1')}</option>
             <option value="Yaounde">{t('steper-3.section-zone.val-2')}</option>
             <option value="Maroua">{t('steper-3.section-zone.val-3')}</option>
             <option value="Garoua">{t('steper-3.section-zone.val-4')}</option>

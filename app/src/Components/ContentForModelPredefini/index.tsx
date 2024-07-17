@@ -35,6 +35,15 @@ import { SingleModel } from '../../Layouts/modelpredefinisImg/modelImg';
 import ChooseLang from '../ChooseLang';
 import { DonneGeographique } from './ContentForAddZoneGeographique';
 import './style.css';
+<<<<<<< HEAD
+=======
+import models from '../../Helper/data/modelPredefini/dataset.json'
+import dataPhi from '../../Helper/data/phi/dataPhi.json'
+import data from '../../Helper/data/tempExt/dataTempExt.json'
+import acacia from './modelPredefinis/T3/acacia.png'
+import cassia from './modelPredefinis/T3/cassia.png'
+import bissap from './modelPredefinis/T4/bissap.png'
+>>>>>>> 9bb1539633a49d73d2a07fcd4fafd9e22d87539a
 
 export const ModelPrefinis = () => {
     const [currentData, setCurrentData] = useState<SingleModel>();
@@ -59,8 +68,19 @@ export const ModelPrefinis = () => {
       // console.log(models[key])
       for (let key in models) {
         if (modelsPredefinis[key].name === name) {
+          switch (modelsPredefinis[key].name) {
+            case "ACACIA":
+              modelsPredefinis[key].img = acacia ;
+              break
+            case "T3 DOUBLE (CASSIA)":
+              modelsPredefinis[key].img = cassia ;
+              break
+            case "BISSAP":
+              modelsPredefinis[key].img = bissap ;
+              break
+          }
           setCurrentData(modelsPredefinis[key]);
-          console.log(modelsPredefinis[key])
+          // console.log(modelsPredefinis[key].name)
           break;
         }
       }
@@ -523,6 +543,13 @@ export const ModelPrefinis = () => {
                             <p><b>{t('models.chambre')}</b></p>
                             <p><b>{t('models.cuisine')}</b></p>
                             <p><b>{t('models.toillettes')}</b></p>
+                            <p><b>{t('models.info')}</b> : https://www.mipromalo.cm/index.php/fr/realisations</p>
+                            <hr />
+                            <br />
+                            <h3><b>{t('models.plan')}</b></h3>
+                            {/* <img src={img5} alt='Plan de distribution' /> */}
+                            <img src={currentData?.img} alt='Plan de distribution' />
+                            {/* <p>{currentData?.img}</p> */}
 
                           </Box>
                           <Box className="cards">
@@ -535,6 +562,7 @@ export const ModelPrefinis = () => {
                             <FormControl mb={4} isInvalid={isError ? false : !formData.piece}>
                               <FormLabel>{t('models.form.label_choix')}<span style={{color:'red'}}>*</span></FormLabel>
                               <Select onChange={handlePieceChange}>
+                                <option>{t('common.select')}</option>
                                 {currentData?.info.list_pieces.map((option: any, index: any) => (
                                   <option key={index} value={option}>
                                     {option}
@@ -557,6 +585,7 @@ export const ModelPrefinis = () => {
                             <FormControl mb={4} width={'100%'} mt={25} isInvalid={isError ? false : !formData.zone_geographique}>
                               <FormLabel>{t('steper-3.zone')}<span style={{color:'red'}}>*</span> :</FormLabel>
                               <Select onChange={handleSelectChange}>
+                                <option>{t('common.select')}</option>
                                 <option value="Douala" defaultChecked>{t('steper-3.section-zone.val-1')}</option>
                                 <option value="Yaounde">{t('steper-3.section-zone.val-2')}</option>
                                 <option value="Maroua">{t('steper-3.section-zone.val-3')}</option>

@@ -1,7 +1,8 @@
 {
   "common": {
       "translate-button": "EN",
-      "translated-text": "This is english"
+      "translated-text": "This is english",
+      "select": "Select an element"
   },
   "sidebar": {
     "donnes-entree": "Input data",
@@ -33,12 +34,12 @@
       "val-2":"Clay bricks with vacuum",
       "val-3":"Solid clay bricks",
       "val-4":"Compressed earth bricks",
-      "val-5":"Stabilized earth bricks"
+      "val-5":"Self-locking blocks"
     },
     "materiaux-sol": "Floor materials",
     "section-materiaux-sol": {
-      "val-1": "Concrete slab + tiles",
-      "val-2": "Single cemented floor",
+      "val-1": "Reinforced concrete floor paving + tiles",
+      "val-2": "Smooth screed (cement mortar)",
       "val-3": "Simple earth floor"
     },
     "nombre-piece": "Number of parts",
@@ -47,6 +48,13 @@
   "steper-2-0": {
     "titre": "Part materials",
     "materiaux-plafond": "Ceiling materials",
+    "section-plafond":{
+      "val-1":"Interior ceiling in plywood for painting or varnishing",
+      "val-2":"Aluminium sheet metal ceiling",
+      "val-3":"Concrete slab",
+      "val-4":"Panelled interior ceiling",
+      "val-5":"Exterior ceiling in smooth pre-painted sheet metal"
+    },
     "revetement-int": "Wall cladding",
     "section-revetement": {
       "val-1": "Compressed earth blocks",
@@ -55,11 +63,11 @@
       "val-4": "White paint",
       "val-5": "Blue paint",
       "val-6": "Gray metallic paint (metals: iron, aluminum, etc.)",
-      "val-7": "Glass",
+      "val-7": "Any",
       "val-8": "Green paint"
     },
     "revetement-sol": "Floor covering",
-    "revetement-ext": "Roof sheathing"
+    "revetement-ext": "Roof color"
   },
   "steper-2-1": {
     "titre": "Part dimensions",
@@ -88,13 +96,13 @@
     "largeur": "Width",
     "tableau-titre": "Room openings",
     "type": "Type",
-    "couleur": "Coating",
+    "couleur": "Type of coloring",
     "couleur_text": {
       "val-1": "Black paint",
       "val-2": "White paint",
       "val-3": "Blue paint",
       "val-4": "Gray metallic paint (metals: iron, aluminum, etc.)",
-      "val-5": "Glass",
+      "val-5": "Transparent",
       "val-6": "Green paint"
     },
     "btn-ajouter": "Add"
@@ -176,6 +184,8 @@
     "form": {
       "label_choix": "Room selection for calculation",
       "titre_dm":"Meteorological data"
-    }
+    },
+    "info":"For more informations",
+    "plan": "Distribution plan"
   }
 }

@@ -67,7 +67,11 @@ export interface SingleModel {
     },
     list_pieces: []
   },
+<<<<<<< HEAD
   img: string,
+=======
+  img: string
+>>>>>>> 9bb1539633a49d73d2a07fcd4fafd9e22d87539a
 }
 
 export interface FormDataType {
