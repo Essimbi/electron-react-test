@@ -64,7 +64,8 @@
       "val-5": "Blue paint",
       "val-6": "Gray metallic paint (metals: iron, aluminum, etc.)",
       "val-7": "Any",
-      "val-8": "Green paint"
+      "val-8": "Green paint",
+      "val-9": "White marble color"
     },
     "revetement-sol": "Floor covering",
     "revetement-ext": "Roof color"
@@ -103,7 +104,13 @@
       "val-3": "Blue paint",
       "val-4": "Gray metallic paint (metals: iron, aluminum, etc.)",
       "val-5": "Transparent",
-      "val-6": "Green paint"
+      "val-6": "Green paint",
+      "val-7": "Any",
+      "val-8": "Yellow paint",
+      "val-9": "Grey paint",
+      "val-10": "Brown paint",
+      "val-11": "Red paint",
+      "val-12": "Wood color"
     },
     "btn-ajouter": "Add"
   },

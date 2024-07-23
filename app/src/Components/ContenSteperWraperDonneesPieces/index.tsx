@@ -69,8 +69,13 @@ export const DonneesPiecesForm = () => {
               <option value="Peinture noire">{t('steper-2-0.section-revetement.val-3')}</option>
               <option value="Peinture blanche">{t('steper-2-0.section-revetement.val-4')}</option>
               <option value="Peinture bleue">{t('steper-2-0.section-revetement.val-5')}</option>
+              <option value="Peinture jaune">{t('steper-2-2.couleur_text.val-8')}</option>
+              <option value="Peinture gris/marron">{t('steper-2-2.couleur_text.val-9')}</option>
+              <option value="Peinture brun">{t('steper-2-2.couleur_text.val-10')}</option>
+              <option value="Peinture rouge">{t('steper-2-2.couleur_text.val-11')}</option>
               <option value="Peinture grise métallisée (métaux : fer,aluminium…)">{t('steper-2-0.section-revetement.val-6')}</option>
               <option value="Peinture verte">{t('steper-2-0.section-revetement.val-8')}</option>
+              <option value="Couleur marbre blanc">{t('steper-2-0.section-revetement.val-9')}</option>
               <option value="Aucun">{t('steper-2-0.section-revetement.val-8')}</option>
             </Select>
 
@@ -118,6 +123,10 @@ export const DonneesPiecesForm = () => {
             {t('steper-2-2.couleur_text.val-1')}
             </option>
             <option value="Peinture blanche">{t('steper-2-2.couleur_text.val-2')}</option>
+            <option value="Peinture jaune">{t('steper-2-2.couleur_text.val-8')}</option>
+            <option value="Peinture gris/marron">{t('steper-2-2.couleur_text.val-9')}</option>
+            <option value="Peinture brun">{t('steper-2-2.couleur_text.val-10')}</option>
+            <option value="Peinture rouge">{t('steper-2-2.couleur_text.val-11')}</option>
             <option value="Peinture bleue">{t('steper-2-2.couleur_text.val-3')}</option>
             <option value="Peinture grise métallisée (métaux : fer,aluminium…)">{t('steper-2-2.couleur_text.val-4')}</option>
             {/* <option value="Verre">{t('steper-2-2.couleur_text.val-5')}</option> */}

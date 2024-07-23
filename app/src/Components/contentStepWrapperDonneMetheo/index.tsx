@@ -111,6 +111,30 @@ export const DonneMetheo = () => {
         alpha = 0.8 / 100;
         epsilon = 0.2 / 100;
         break;
+      case 'Peinture jaune':
+        alpha = 0.3 / 100;
+        epsilon = 0.7 / 100;
+        break;
+      case 'Peinture gris/marron':
+        alpha = 0.35 / 100;
+        epsilon = 0.65 / 100;
+        break;
+      case 'Peinture brun':
+        alpha = 0.5 / 100;
+        epsilon = 0.5 / 100;
+        break;
+      case 'Peinture rouge':
+        alpha = 0.25 / 100;
+        epsilon = 0.75 / 100;
+        break;
+      case 'Couleur bois':
+        alpha = 0.45 / 100;
+        epsilon = 0.55 / 100;
+        break;
+      case 'Couleur marbre blanc':
+        alpha = 0.4 / 100;
+        epsilon = 0.6 / 100;
+        break;
     }
     return {
       "alpha": alpha,

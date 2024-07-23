@@ -34,13 +34,13 @@ const Index: React.FC = () => {
 
     // Calcul de la température globale (moyenne)
     const calculateGlobalTemperature = () => {
-        if (TintData.length === 0) return 0;
+      if (TintData.length === 0) return 0;
 
-        const sum = TintData.reduce((acc, temperature) => acc + temperature, 0);
+      const sum = TintData.reduce((acc, temperature) => acc + temperature, 0);
 
-        const average = sum / TintData.length;
+      const average = sum / TintData.length;
 
-        return average.toFixed(2);
+      return average.toFixed(2);
     };
 
     const globalTemperature = calculateGlobalTemperature();
