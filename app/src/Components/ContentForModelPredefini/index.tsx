@@ -16,6 +16,10 @@ import {
     Select,
     SimpleGrid,
     Text,
+    ListItem,
+    ListIcon,
+    OrderedList,
+    UnorderedList,
 } from '@chakra-ui/react';
 import React, { useState } from 'react';
 import 'swiper/css';
@@ -533,7 +537,13 @@ export const ModelPrefinis = () => {
                             <p><b>{t('models.chambre')}</b></p>
                             <p><b>{t('models.cuisine')}</b></p>
                             <p><b>{t('models.toillettes')}</b></p>
-                            <p><b>{t('models.info')}</b> : https://www.mipromalo.cm/index.php/fr/realisations</p>
+                            <p>
+                              <b>{t('models.info')}</b> :
+                              <UnorderedList>
+                                <ListItem>https://www.mipromalo.cm/index.php/fr/realisations</ListItem>
+                                <ListItem>https://www.linkedin.com/company/eco-building-architecture</ListItem>
+                              </UnorderedList>
+                            </p>
                             <hr />
                             <br />
                             <h3><b>{t('models.plan')}</b></h3>
