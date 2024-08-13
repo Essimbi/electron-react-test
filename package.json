@@ -1,7 +1,7 @@
 {
-  "name": "testelectronreact",
+  "name": "lobatin",
   "version": "1.0.0",
-  "description": "Trying to start a new project for desktop using electron and react",
+  "description": "Determination of the indoor temperature in a room of a building constructed in Cameroon using local materials produced by the Mission de Promotion des Matériaux Locaux du Cameroun (MIPROMALO).",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -14,7 +14,7 @@
     "reactjs",
     "typesript"
   ],
-  "author": "Deranot",
+  "author": "Default Name",
   "license": "ISC",
   "dependencies": {
     "@chakra-ui/icons": "^2.1.1",

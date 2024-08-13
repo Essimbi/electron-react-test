@@ -39,24 +39,8 @@ export const DonneMetheo = () => {
   const Rsir = 0.1;
   const Rsig = 0.17;
 
-  var awalle = 0.006;
-  var awind = 0.008;
-  var adoor = 0.007;
-  var aroof = 0.006;
-
-  // const eCEB=0.14;
-  // const lCEB=1;
-
   var eair = 0.0032;
   var lair = 0.024;
-
-  // var Lw=5; var lw=4; var hw=3;
-  // var Lf=1.5; var lf=0.9; var Ld=2; var ld=0.9;
-  // var Swind=(Lf*lf); var Sdoor=Ld*ld;
-  // var Swalle=(Lw*hw)-Swind-Sdoor;
-  // var Swall=(2*lw*hw)+(Lw*hw);
-  // var Sfloor=Lw*lw;
-  // var Sroof=Sfloor;
 
   const calculateU = (materiau: string) => {
     let e = 0; let l = 0; let u = 0;
@@ -92,189 +76,273 @@ export const DonneMetheo = () => {
     return L * l
   }
 
+  const setAlphaAndEpsilon = (coating: string) => {
+    let alpha = 0; let epsilon = 0;
+    switch (coating) {
+      case 'Bloc de terre comprimée (ou compressée)':
+        alpha = 0.6 / 100;
+        epsilon = 0.4 / 100;
+        break;
+      case 'Bloc de terre stabilisée':
+        alpha = 0.6 / 100;
+        epsilon = 0.4 / 100;
+        break;
+      case 'Peinture noire':
+        alpha = 1 / 100;
+        epsilon = 0 ;
+        break;
+      case 'Peinture blanche':
+        alpha = 0.28 / 100;
+        epsilon = 0.72 / 100;
+        break;
+      case 'Peinture bleue':
+        alpha = 0.9 / 100;
+        epsilon = 0.1 / 100;
+        break;
+      case 'Peinture grise métallisée (métaux : fer,aluminium…)':
+        alpha = 0.89 / 100;
+        epsilon = 0.11 / 100;
+        break;
+      case 'Verre':
+        alpha = 0.1 / 100;
+        epsilon = 0.9 / 100;
+        break;
+      case 'Peinture verte':
+        alpha = 0.8 / 100;
+        epsilon = 0.2 / 100;
+        break;
+      case 'Peinture jaune':
+        alpha = 0.3 / 100;
+        epsilon = 0.7 / 100;
+        break;
+      case 'Peinture gris/marron':
+        alpha = 0.35 / 100;
+        epsilon = 0.65 / 100;
+        break;
+      case 'Peinture brun':
+        alpha = 0.5 / 100;
+        epsilon = 0.5 / 100;
+        break;
+      case 'Peinture rouge':
+        alpha = 0.25 / 100;
+        epsilon = 0.75 / 100;
+        break;
+      case 'Couleur bois':
+        alpha = 0.45 / 100;
+        epsilon = 0.55 / 100;
+        break;
+      case 'Couleur marbre blanc':
+        alpha = 0.4 / 100;
+        epsilon = 0.6 / 100;
+        break;
+    }
+    return {
+      "alpha": alpha,
+      "epsilon": epsilon
+    } ;
+  }
+
+
   const [error, setError] = React.useState('')
   const isError = error === ''
 
   const calculate = () => {
 
     if (steps[_this].payload['Zone_geographique'] === undefined ||
-    steps[_this].payload['date'] === undefined) {
-
+      steps[_this].payload['date'] === undefined)
+    {
       setError('Ce champ est required ✍️');
-
-    console.log(error);
-    } else  {
+    }
+    else  {
       setShowAlert(true)
       const dataBuilding = steps['STEP-0'].payload;
       const dataRoomMaterial = steps['STEP-1'].payload['STEP-1-0'];
       const meteoData = steps['STEP-2'].payload;
-  
+
       // var eFT=0.009; var lFT=5.077;
       var eS = 0.15; var lS = 1.75;
       var eRT2 = 0.008; var lRT2 = 1.58; var ep = 10.8 / 1000; var lp = 0.11; var eattic = 0.9;
-  
+
       const h = Number(dataRoomMaterial.hauteur_sous_plafond)
       const L = Number(dataRoomMaterial.longueur)
       const l = Number(dataRoomMaterial.largeur)
-  
+
       var Sfloor = calculateSurface(L, l);
       var Sroof = Sfloor;
       var Swall = calculateSurface(l, h) * 2 + calculateSurface(L, h);
       var Swalle = calculateSurface(L, h);
-  
+
       const openings: any[] = [];
       Object.keys(dataRoomMaterial).map((key) =>
         key.indexOf("ouverture-") !== -1 && openings.push(dataRoomMaterial[key])
       );
-  
+
       var udoor = 0;
       var uwind = 0;
       var Sdoor = 0; var Swind = 0;
-  
+
+      var awind = 0 ; var adoor = 0 ;
+      var epsilonDoor = 0; var epsilonWind = 0;
+
       for (let i = 0; i < openings.length; i++) {
         const opening = openings[i];
         if (opening.type_ouverture === "Fenetre") {
           uwind = calculateU(opening.materiau);
           Swind = calculateSurface(Number(opening.largeur), Number(opening.hauteur))
           Swalle -= Swind
+          awind = setAlphaAndEpsilon(opening.couleur_ouverture).alpha;
+          epsilonWind = setAlphaAndEpsilon(opening.couleur_ouverture).epsilon;
         }
         else {
           udoor = calculateU(opening.materiau);
           Sdoor = calculateSurface(Number(opening.largeur), Number(opening.hauteur))
           Swalle -= Sdoor
+          adoor = setAlphaAndEpsilon(opening.couleur_ouverture).alpha;
+          epsilonDoor = setAlphaAndEpsilon(opening.couleur_ouverture).epsilon;
         }
       }
-  
+
       const floorMaterial = dataBuilding.materiaux_sol;
       const wallMaterial = dataBuilding.materiaux_mur
       const roofMaterial = dataBuilding.materiaux_toit
-  
+
       var eF = 0; var lF = 0;
       var eR = 0; var lR = 0;
       var eWall = 0; var lWall = 0;
-  
+
       switch (floorMaterial) {
         case "Dalle de beton + carreaux":
           eF = 0.16; lF = 1.3;
           break;
-  
+
         case "Sol cimente simple":
           eF = 0.007; lF = 1.215;
           break;
-  
+
         case "Sol en terre simple":
           eF = 0.15; lF = 0.321;
           break;
-  
+
         default:
           break;
       }
-  
+
       switch (wallMaterial) {
         case "Parpaing standard":
           eWall = 0.15; lWall = 0.9;
           break;
-  
+
         case "Briques de terre cuites avec vide":
           eWall = 0.14; lWall = 0.25;
           break;
-  
+
         case "Briques de terre cuites pleines":
           eWall = 0.14; lWall = 1.31;
           break;
-  
+
         case "Briques de terre compressées":
           eWall = 0.14; lWall = 1;
           break;
-  
+
         case "Briques de terre stabilisées":
           eWall = 0.14; lWall = 1.05;
           break;
-  
+
         default:
           break;
       }
-  
+
       switch (roofMaterial) {
         case "Toiture en tuiles romane 1 & 2":
           eR = 0.08; lR = 1.58;
           break;
-  
+
         case "Toiture en tôles d'aluminium":
           eR = 0.15; lR = 221;
           break;
-  
+
         case "Toiture en dalle de beton":
           eR = 0.2; lR = 1.3;
           break;
-  
+
         case "Toiture en paille":
           eR = 0.37; lR = 0.0625;
           break;
-  
+
         case "Dalle en Hourdis":
           eR = 0.37; lR = 1.7;
           break;
-  
+
         case "Couche d'air intra-plafond":
           eR = 0.9; lR = 0.024;
           break;
-  
+
         default:
           break;
       }
-  
-  
+
+      const revetement_exterieur_mur = dataRoomMaterial.revetement_exterieur_mur ;
+      const revetement_interieur_mur = dataRoomMaterial.revetement_interieur_mur ;
+
+      var awalle = setAlphaAndEpsilon(revetement_exterieur_mur).alpha;
+      var epsilonWalle = setAlphaAndEpsilon(revetement_exterieur_mur).epsilon;
+
+      // var adoor = 0.007;
+      var aroof = setAlphaAndEpsilon(revetement_interieur_mur).alpha;
+      var epsilonRoof = setAlphaAndEpsilon(revetement_interieur_mur).epsilon;
+
+
+
       var uenv = 1 / (Rsiw + Rso + (eWall / lWall));
       // var uwind=1/(Rsiw+Rso+(2*eglass/lglass)+(eair/lair));
       // var udoor=1/(Rsiw+Rso+(edoor/ldoor));
       var ufloor = 1 / (Rsig + (eF / lF) + (eS / lS));
       var uroof = 1 / (Rsir + Rso + (eR / lR) + (ep / lp) + (eattic / lair));
-  
-  
-  
+
+
+
       // Récupération des données de température extérieur et de flux de chaleur
-  
+
       const town: string = meteoData.Zone_geographique;
       const dateBrute = meteoData.date;
       const date = dateBrute.split('-');
-  
+
       let dataBrute: any[] = [];
       let dataPhiBrute: any[] = [];
-  
+
       switch (town) {
         case "Bafoussam":
           dataBrute = data.Bafoussam;
           dataPhiBrute = dataPhi.Bafoussam;
           break;
-  
+
         case "Douala":
           dataBrute = data.Douala;
           dataPhiBrute = dataPhi.Douala;
           break;
-  
+
         case "Garoua":
           dataBrute = data.Garoua;
           dataPhiBrute = dataPhi.Garoua;
           break;
-  
+
         case "Maroua":
           dataBrute = data.Maroua;
           dataPhiBrute = dataPhi.Maroua;
           break;
-  
+
         case "Yaounde":
           dataBrute = data.Yaounde;
           dataPhiBrute = dataPhi.Yaounde;
           break;
       }
-  
+
       const temperaturesForDay = dataBrute.filter(obj => {
         return (
           obj.month + "-" + obj.day === date[1] + "-" + date[2]
         );
       });
-  
+
       const phiValuesForDay = dataPhiBrute.filter(obj => {
         const timestampRange = obj.timestamp_range.split("/")[1];
         const timestampDate = new Date(timestampRange);
@@ -284,10 +352,10 @@ export const DonneMetheo = () => {
           timestampHour[1] + "-" + timestampHour[2] === date[1] + "-" + date[2]
         );
       });
-  
+
       var Text = temperaturesForDay.map(obj => obj.temperature);
       var phi = phiValuesForDay.map(obj => obj.phi);
-  
+
       var Tint = [];
       var Tvwalle = [];
       var Tvwind = [];
@@ -306,9 +374,9 @@ export const DonneMetheo = () => {
       var T3 = [];
       var T4: any;
       var T5 = [];
-  
+
       for (var k = 0; k < 24; k++) {
-  
+
         Tvwalle[k] = (Text[k] + 273) + (awalle * phi[k] * Rso);
         Tvdoor[k] = (Text[k] + 273) + (adoor * phi[k] * Rso);
         Tvwind[k] = (Text[k] + 273) + (awind * phi[k] * Rso);
@@ -317,26 +385,24 @@ export const DonneMetheo = () => {
         phidoor[k] = udoor * Sdoor * Tvdoor[k];
         phiwalle[k] = uenv * Swalle * Tvwalle[k];
         phiroof[k] = uroof * Sroof * Tvroof[k];
-  
+
         Tv[k] = (Text[k] + 273);
         phiwall[k] = uenv * Swall * Tv[k];
         phifloor[k] = ufloor * Sfloor * Tv[k];
         T1[k] = (awind * phiwind[k]) + (awalle * phiwalle[k]) + (adoor * phidoor[k]) + (aroof * phiroof[k]);
-        T2[k] = awind * ((Tvwind[k] ^ 4) - (Tsky ^ 4)) + adoor * ((Tvdoor[k] ^ 4) - (Tsky ^ 4)) + aroof * ((Tvroof[k] ^ 4) - (Tsky ^ 4)) + awalle * ((Tvwalle[k] ^ 4) - (Tsky ^ 4));
+        T2[k] = epsilonWind * ((Tvwind[k] ^ 4) - (Tsky ^ 4)) + epsilonDoor * ((Tvdoor[k] ^ 4) - (Tsky ^ 4)) + epsilonRoof * ((Tvroof[k] ^ 4) - (Tsky ^ 4)) + epsilonWalle * ((Tvwalle[k] ^ 4) - (Tsky ^ 4));
         T3[k] = sigma * T2[k];
         phitotal[k] = phi[k] * ((awalle * Swalle) + (awind * Swind) + (adoor * Sdoor) + (aroof * Sroof));
         T4 = uenv * (Swall + Swalle) + (uroof * Sroof) + (ufloor * Sfloor) + (uwind * Swind) + (udoor * Sdoor);
         T5[k] = (phiwall[k] + phiwalle[k] + phiwind[k] + phidoor[k] + phiroof[k] + phifloor[k]);
         Tint[k] = ((T5[k] + T1[k] + T3[k] - phitotal[k]) / T4) - 273;
       }
-  
-      console.log(Tint);
-  
+
       // Définition des variables de l'échangeur de chaleur (matériaux du bâtiment)
-  
+
       //setActiveStep("STEP-3")
       updateTintData(Tint);
-  
+
     }
 
   }
@@ -368,7 +434,8 @@ export const DonneMetheo = () => {
               })
             }
           >
-            <option value="Douala" defaultChecked>{t('steper-3.section-zone.val-1')}</option>
+            <option>{t('common.select')}</option>
+            <option value="Douala">{t('steper-3.section-zone.val-1')}</option>
             <option value="Yaounde">{t('steper-3.section-zone.val-2')}</option>
             <option value="Maroua">{t('steper-3.section-zone.val-3')}</option>
             <option value="Garoua">{t('steper-3.section-zone.val-4')}</option>

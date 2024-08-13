@@ -11,7 +11,7 @@ export const ContentStepWrapper = () => {
   let result: any;
 
   const { activeStep } = useStepContext();
-  console.log(activeStep);
+
   switch (activeStep) {
     case 'STEP-0':
       result = <InformForm />;

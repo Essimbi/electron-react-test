@@ -1,12 +1,13 @@
 {
   "common": {
       "translate-button": "FR",
-      "translated-text": "C'est du français"
+      "translated-text": "C'est du français",
+      "select": "Choisir un élément"
   },
   "sidebar": {
     "donnes-entree": "Données d'entrée",
     "resultats": "Résultats",
-    "model-predefini": "Modèles prédéfins",
+    "model-predefini": "Modèles prédéfinis",
     "aide": "Aide",
     "apropos": "A propos"
   },
@@ -33,12 +34,12 @@
       "val-2":"Briques de terre cuites avec vide",
       "val-3":"Briques de terre cuites pleines",
       "val-4":"Briques de terre compressées",
-      "val-5":"Briques de terre stabilisées"
+      "val-5":"Bloc autobloquants"
     },
     "materiaux-sol": "Matériaux du sol",
     "section-materiaux-sol": {
-      "val-1": "Dalle de béton + carreaux",
-      "val-2": "Sol cimenté simple",
+      "val-1": "Dallage du sol au béton  armé + carreaux",
+      "val-2": "Chape lissée (mortier de ciment)",
       "val-3": "Sol en terre simple"
     },
     "nombre-piece": "Nombres de pièces",
@@ -47,16 +48,27 @@
   "steper-2-0": {
     "titre": "Matériaux de la pièce",
     "materiaux-plafond": "Matériaux du plafond",
-    "revetement-int": "Revêtement intérieur du mur",
+    "section-plafond":{
+      "val-1":"Plafond intérieur en contre-plaqué à peindre ou à vernir",
+      "val-2":"Plafond extérieur en tôle Alu",
+      "val-3":"Dalle en béton",
+      "val-4":"Plafond intérieur en Lambris",
+      "val-5":"Plafond extérieur en tôle lisse prélaquée"
+    },
+    "revetement-int": "Revêtement du mur",
     "section-revetement": {
-      "val-1": "Peinture blanche",
-      "val-2": "Peinture claire",
-      "val-3": "Peinture foncée",
-      "val-4": "Peinture mate",
-      "val-5": "Peinture en aluminium"
+      "val-1": "Bloc de terre comprimée (ou compressée)",
+      "val-2": "Bloc de terre stabilisée",
+      "val-3": "Peinture noire",
+      "val-4": "Peinture blanche",
+      "val-5": "Peinture bleue",
+      "val-6": "Peinture grise métallisée (métaux : fer,aluminium…)",
+      "val-7": "Aucun",
+      "val-8": "Peinture verte",
+      "val-9": "Couleur marbre blanc"
     },
     "revetement-sol": "Revêtement du sol",
-    "revetement-ext": "Revêtement extérieur du mur"
+    "revetement-ext": "Couleur de la toiture"
   },
   "steper-2-1": {
     "titre": "Dimensions de la pièce",
@@ -85,6 +97,21 @@
     "largeur": "Largeur",
     "tableau-titre": "Les ouvertures de la pièce",
     "type": "Type",
+    "couleur": "Type de coloration",
+    "couleur_text": {
+      "val-1": "Peinture noire",
+      "val-2": "Peinture blanche",
+      "val-3": "Peinture bleue",
+      "val-4": "Peinture grise métallisée (métaux : fer,aluminium…)",
+      "val-5": "Transparent",
+      "val-6": "Peinture verte",
+      "val-7": "Aucun",
+      "val-8": "Peinture jaune",
+      "val-9": "Peinture gris/marron",
+      "val-10": "Peinture brun",
+      "val-11": "Peinture rouge",
+      "val-12": "Couleur bois"
+    },
     "btn-ajouter": "Ajouter"
   },
   "steper-3": {
@@ -100,6 +127,7 @@
     "calculer": "Calculer"
   },
   "result": {
+    "date": "Date choisie",
     "plafond": "Matériel du plafond",
     "toit": "Matériaux du toit",
     "mur": "Matériau du mur",
@@ -115,5 +143,56 @@
     "titre-courbe": "Courbe de la température",
     "heure": "Heure",
     "temp": "Température (en °C)"
+  },
+  "help": {
+    "title":"Comment pouvons-nous vous aider ?",
+    "guide":"Guide",
+    "text_guide": "Pour utiliser l'application afin de faire une prédiction, vous devez suivre les étapes suivantes (les étapes sont expliquées plus en détail dans le guide d'utilisation de l'application)",
+    "etape_1":"Étape 1",
+    "text_1": "Choisissez les matériaux de construction par défaut (matériau du toit, matériau du plafond, matériau du mur, matériau du sol, revêtement).",
+    "etape_2": "Étape 2",
+    "text_2": "Ajouter les différents étages du bâtiment",
+    "etape_3": "Étape 3",
+    "text_3" : "Pour chaque étage, ajouter les pièces de l'étage avec leurs dimensions",
+    "etape_4" : "Étape 4",
+    "text_4" : "Ajouter les ouvertures pour chaque pièce",
+    "etape_5": "Étape 5",
+    "text_5": "Cliquez sur le bouton 'Calculer' pour calculer la température intérieure du bâtiment.",
+    "etape_6": "Étape 6",
+    "etape_7": "Étape 7",
+    "text_6" : "Le résultat est affiché dans la section de sortie, avec un aperçu des différentes caractéristiques du bâtiment.",
+    "text_7" : "Il est possible d'exporter vos résultats dans un fichier Microsoft Office Excel contenant lesdites températures intérieures de la date indiquée. Il suffit à cet effet, de cliquer sur le *'bouton : exporter'* situé à haut à droite de votre interface résultats. Vous pourrez alors enregistrer le fichier dans votre machine, le renommer et  le modifier à votre guise."
+  },
+  "about":{
+    "title":"A propos de HTSLM",
+    "version": "Version de l’application HTSLM 2.0",
+    "objectif": "Objectif de l’application : Détermination de la température intérieure dans une pièce d’un bâtiment construit au Cameroun à base de matériaux locaux produits par la Mission de Promotion des Matériaux Locaux du Cameroun (MIPROMALO)",
+    "type": "Type de logiciel :",
+    "type_text": "Offline & propriétaire, Licence octroyée par la MIPROMALO",
+    "construction": "Informations sur la construction :",
+    "construction_text": "Application logicielle développée avec le langage de programmation JAVASCRIPT",
+    "systeme": "Système d’exploitation supporté :",
+    "auteur": "Auteurs"
+  },
+  "models":{
+    "infos_gene":"Informations générales sur le bâtiment",
+    "nom":"Nom du modèle",
+    "type":"Type de logement",
+    "caracteristiques": "Caractéristiques du bâtiment",
+    "toit": "Toit",
+    "elevation":"Élévation",
+    "sol":"Matériau du sol",
+    "nbr_piece":"Nombre de pièces",
+    "pieces":"Pièces du bâtiment",
+    "salon":"1 Séjour/salon",
+    "chambre":"2 Chambres",
+    "cuisine":"1 Cuisine",
+    "toillettes":"1 Salle d'eau/Toillettes",
+    "form": {
+      "label_choix": "Choix de la pièce pour le calcul",
+      "titre_dm":"Données météorologiques"
+    },
+    "info":"Pour plus d'informations",
+    "plan": "Plan de distribution"
   }
 }

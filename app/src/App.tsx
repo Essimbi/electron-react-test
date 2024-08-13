@@ -7,15 +7,17 @@ import './App.css';
 import Box from '@mui/material/Box';
 import { About } from './Components/ContentForAbout';
 import { Help } from './Components/ContentForHelp';
+import { ModelPrefinis } from './Components/ContentForModelPredefini/index';
 import Index from './Components/ContentResult';
 import { SideBarContent } from './Components/SideBarContent';
 import { SideBarStyleType } from './configs/types';
 import { GlobalStyles, useStyles } from './constants/GlobalStyles';
 import { TintProvider } from './contexts/GraphContext';
+import { ModelProvider } from './contexts/ModelPredefiniContext';
 import { useDimensions } from './Hooks/useDimensions';
 import { useSettingsContext } from './Hooks/useSettings';
 import { useStepContext } from './Hooks/useStep';
-import { RouterWrapper } from './RouterWrapper';
+import { MainComponent } from './Layouts/MainComponent';
 
 function App() {
   const classes = useStyles();
@@ -31,19 +33,19 @@ function App() {
   const renderMainContent = () => {
     switch (activeStep) {
       case 'STEP-0':
-        return <RouterWrapper />;
+        return <MainComponent />;
       case 'STEP-1':
-        return <RouterWrapper />;
+        return <MainComponent />;
       case 'STEP-2':
-        return <RouterWrapper />;
+        return <MainComponent />;
       case 'STEP-3':
         return <Index />;
       case 'STEP-4':
-        return 'component 4';
+        return <ModelPrefinis />;
       case 'STEP-5':
-        return <Help/>;
+        return <Help />;
       case 'STEP-6':
-        return <About/>;
+        return <About />;
       default:
         return 'a default component here!';
     }
@@ -51,23 +53,25 @@ function App() {
 
   return (
     <TintProvider>
-      <Box
-        sx={{ backgroundColor: settings.globalColors.lowGray.main }}
-        display={'flex'}
-        flexDirection={'row'}
-      >
+      <ModelProvider>
         <Box
-          className={classes.animatedBox}
-          width={(innerWidth * 20) / 100}
-          sx={sideBarStyle}
-          height={innerHeight - (0.31 * innerHeight) / 100}
+          sx={{ backgroundColor: settings.globalColors.lowGray.main }}
+          display={'flex'}
+          flexDirection={'row'}
         >
-          <SideBarContent />
+          <Box
+            className={classes.animatedBox}
+            width={(innerWidth * 20) / 100}
+            sx={sideBarStyle}
+            height={innerHeight - (0.31 * innerHeight) / 100}
+          >
+            <SideBarContent />
+          </Box>
+          <Box width={innerWidth - (innerWidth * 20) / 100}>
+            {renderMainContent()}
+          </Box>
         </Box>
-        <Box width={innerWidth - (innerWidth * 20) / 100}>
-          {renderMainContent()}
-        </Box>
-      </Box>
+      </ModelProvider>
     </TintProvider>
   );
 }

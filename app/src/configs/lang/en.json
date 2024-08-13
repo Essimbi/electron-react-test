@@ -1,7 +1,8 @@
 {
   "common": {
       "translate-button": "EN",
-      "translated-text": "This is english"
+      "translated-text": "This is english",
+      "select": "Select an element"
   },
   "sidebar": {
     "donnes-entree": "Input data",
@@ -33,12 +34,12 @@
       "val-2":"Clay bricks with vacuum",
       "val-3":"Solid clay bricks",
       "val-4":"Compressed earth bricks",
-      "val-5":"Stabilized earth bricks"
+      "val-5":"Self-locking blocks"
     },
     "materiaux-sol": "Floor materials",
     "section-materiaux-sol": {
-      "val-1": "Concrete slab + tiles",
-      "val-2": "Single cemented floor",
+      "val-1": "Reinforced concrete floor paving + tiles",
+      "val-2": "Smooth screed (cement mortar)",
       "val-3": "Simple earth floor"
     },
     "nombre-piece": "Number of parts",
@@ -47,16 +48,27 @@
   "steper-2-0": {
     "titre": "Part materials",
     "materiaux-plafond": "Ceiling materials",
-    "revetement-int": "Interior wall cladding",
+    "section-plafond":{
+      "val-1":"Interior ceiling in plywood for painting or varnishing",
+      "val-2":"Aluminium sheet metal ceiling",
+      "val-3":"Concrete slab",
+      "val-4":"Panelled interior ceiling",
+      "val-5":"Exterior ceiling in smooth pre-painted sheet metal"
+    },
+    "revetement-int": "Wall cladding",
     "section-revetement": {
-      "val-1": "White paint",
-      "val-2": "Clear paint",
-      "val-3": "Dark paint",
-      "val-4": "Matt paint",
-      "val-5": "Aluminum paint"
+      "val-1": "Compressed earth blocks",
+      "val-2": "Stabilized earth block",
+      "val-3": "Black paint",
+      "val-4": "White paint",
+      "val-5": "Blue paint",
+      "val-6": "Gray metallic paint (metals: iron, aluminum, etc.)",
+      "val-7": "Any",
+      "val-8": "Green paint",
+      "val-9": "White marble color"
     },
     "revetement-sol": "Floor covering",
-    "revetement-ext": "Exterior wall cladding"
+    "revetement-ext": "Roof color"
   },
   "steper-2-1": {
     "titre": "Part dimensions",
@@ -85,6 +97,21 @@
     "largeur": "Width",
     "tableau-titre": "Room openings",
     "type": "Type",
+    "couleur": "Type of coloring",
+    "couleur_text": {
+      "val-1": "Black paint",
+      "val-2": "White paint",
+      "val-3": "Blue paint",
+      "val-4": "Gray metallic paint (metals: iron, aluminum, etc.)",
+      "val-5": "Transparent",
+      "val-6": "Green paint",
+      "val-7": "Any",
+      "val-8": "Yellow paint",
+      "val-9": "Grey paint",
+      "val-10": "Brown paint",
+      "val-11": "Red paint",
+      "val-12": "Wood color"
+    },
     "btn-ajouter": "Add"
   },
   "steper-3": {
@@ -100,6 +127,7 @@
     "calculer": "Calculate"
   },
   "result": {
+    "date": "Selected date",
     "plafond": "Ceiling material",
     "toit": "Roof materials",
     "mur": "Hard material",
@@ -115,5 +143,56 @@
     "titre-courbe": "Temperature curve",
     "heure": "Hour",
     "temp": "Temperature (in °C)"
+  },
+  "help": {
+    "title":"How can we help you ?",
+    "guide":"Guide",
+    "text_guide": "To use the application to make a prediction, you need to follow these steps (the steps are explained in more detail in the application user guide)",
+    "etape_1":"Step 1",
+    "text_1": "Select default building materials (roof material, ceiling material, wall material, floor material, cladding).",
+    "etape_2": "Step 2",
+    "text_2": "Add the different floors of the building",
+    "etape_3": "Step 3",
+    "text_3" : "For each floor, add the floor rooms and their dimensions",
+    "etape_4" : "Step 4",
+    "text_4" : "Add openings for each room",
+    "etape_5": "Step 5",
+    "text_5": "Click on the 'Calculate' button to calculate the building's indoor temperature.",
+    "etape_6": "Step 6",
+    "etape_7": "Step 7",
+    "text_6" : "The result is displayed in the output section, with an overview of the building's various features.",
+    "text_7" : "It is possible to export your results to a Microsoft Office Excel file containing the temperatures for the date indicated. To do so, simply click on the *'export'* button at the top right of your results interface. You can then save the file on your computer, rename it and modify it as you wish."
+  },
+  "about":{
+    "title":"About HTSLM",
+    "version": "Application version HTSLM 2.0",
+    "objectif": "Application objective: Determination of the indoor temperature in a room of a building constructed in Cameroon using local materials produced by the Local Materials Promotion Authority of Cameroon (MIPROMALO).",
+    "type": "Type of software :",
+    "type_text": "Offline & proprietary, licensed by MIPROMALO",
+    "construction": "Construction information :",
+    "construction_text": "Software application developed with the programming language JAVASCRIPT",
+    "systeme": "Supported operating system :",
+    "auteur": "Authors"
+  },
+  "models":{
+    "infos_gene":"General building information",
+    "nom":"Model name",
+    "type":"Housing type",
+    "caracteristiques": "Building features",
+    "toit": "Roof",
+    "elevation":"Elevation",
+    "sol":"Floor material",
+    "nbr_piece":"Number of parts",
+    "pieces":"Building parts",
+    "salon":"1 Living room",
+    "chambre":"2 Bedrooms",
+    "cuisine":"1 Kitchen",
+    "toillettes":"1 Bathroom/Toilets",
+    "form": {
+      "label_choix": "Room selection for calculation",
+      "titre_dm":"Meteorological data"
+    },
+    "info":"For more informations",
+    "plan": "Distribution plan"
   }
 }
