@@ -17,15 +17,15 @@
   "config": {
     "forge": {
       "packagerConfig": {
-        "icon": "app/public/logo17.png"
+        "icon": "./app/public/logo17.ico"
       },
       "makers": [
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
             "name": "Lobatin",
-            "iconUrl": "app/public/logo17.png",
-            "setupIcon": "app/public/logo17.png",
+            "iconUrl": "./app/public/logo17.ico",
+            "setupIcon": "./app/public/logo17.ico",
             "setupExe": "lobatinInstaller.exe",
             "noMsi": true,
             "shortcutName": "Lobatin"
