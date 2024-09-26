@@ -66,6 +66,11 @@ export const DonneMetheo = () => {
         u = 1 / (Rsiw + Rso + (e / l));
         break;
 
+      case "Air":
+        e = 0; l = 0.024;
+        u = 1 / (Rsiw + Rso + (e / l));
+        break;
+
       default:
         break;
     }

@@ -91,7 +91,8 @@
       "val-1": "Verre (simple vitrage)",
       "val-2": "Verre (double vitrage)",
       "val-3": "Bois",
-      "val-4": "Aluminium"
+      "val-4": "Aluminium",
+      "val-5": "Air"
     },
     "hauteur": "Hauteur",
     "largeur": "Largeur",

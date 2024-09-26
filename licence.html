@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Enter License Key</title>
+</head>
+<body>
+    <h1>Enter License Key</h1>
+    <form id="license-form">
+        <input type="text" id="license-key" placeholder="Enter your license key" required />
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        const { ipcRenderer } = require('electron');
+
+        document.getElementById('license-form').addEventListener('submit', (event) => {
+            event.preventDefault();
+            const licenseKey = document.getElementById('license-key').value;
+            ipcRenderer.send('submit-license', licenseKey);
+        });
+    </script>
+</body>
+</html>

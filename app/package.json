@@ -2,13 +2,12 @@
   "name": "app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "./",
   "author": {
-    "name": "Deranot",
-    "email": "essimbideranot@gmail.com"
+    "name": "Deranot"
   },
   "description": "Test 1",
   "main": "public/electron.js",
-  "homepage": "./",
   "dependencies": {
     "@chakra-ui/icons": "^2.1.1",
     "@chakra-ui/react": "^2.8.2",

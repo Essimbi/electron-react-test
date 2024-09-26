@@ -107,6 +107,7 @@ const OuverturesForm = () => {
             <option value="Verre doule vitrage">{t('steper-2-2.section-materiaux.val-2')} </option>
             <option value="Bois">{t('steper-2-2.section-materiaux.val-3')}</option>
             <option value="Aluminium">{t('steper-2-2.section-materiaux.val-4')}</option>
+            <option value="Air">{t('steper-2-2.section-materiaux.val-5')}</option>
           </Select>
           {isError ? (
             <FormHelperText>

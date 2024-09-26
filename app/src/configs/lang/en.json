@@ -91,7 +91,8 @@
       "val-1": "Glass (single glazing)",
       "val-2": "Glass (double glazing)",
       "val-3": "Wood",
-      "val-4": "Aluminum"
+      "val-4": "Aluminum",
+      "val-5": "Air"
     },
     "hauteur": "Height",
     "largeur": "Width",
